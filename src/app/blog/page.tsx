@@ -80,7 +80,7 @@ const PostCard = ({
         <img
           src={heroImage}
           alt={title}
-          className="h-40 w-full object-cover"
+          className="h-32 w-full object-cover"
           loading="lazy"
         />
       </div>
@@ -182,7 +182,7 @@ export default function BlogIndex() {
                         <img
                           src={featured.heroImage}
                           alt={featured.title}
-                          className="h-44 w-full object-cover"
+                          className="h-36 w-full object-cover"
                           loading="lazy"
                         />
                       </div>
