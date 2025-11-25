@@ -36,7 +36,7 @@ export const posts: Post[] = [
     tags: ['AI', 'Customer Experience', 'Automation'],
     excerpt:
       'MagicReply.ai keeps your review responses fast, on-brand, and measurable with approvals and analytics out of the box.',
-    author: 'Somnus Labs Team',
+    author: 'Waleed Judah',
     readTimeMinutes: 4,
     productUrl: 'https://magicreply.ai',
     productLabel: 'MagicReply.ai',
@@ -86,7 +86,7 @@ export const posts: Post[] = [
     tags: ['AI', 'Computer Vision', 'WhatsApp'],
     excerpt:
       'PlantVision.ai identifies plants from photos and answers follow-up care questions right in WhatsApp.',
-    author: 'Somnus Labs Team',
+    author: 'Waleed Judah',
     readTimeMinutes: 4,
     productUrl: 'https://plantvision.ai',
     productLabel: 'PlantVision.ai',
@@ -137,7 +137,7 @@ export const posts: Post[] = [
     tags: ['Real Estate', 'AI', 'Analytics'],
     excerpt:
       'CandyComp lets agents, buyers, and sellers generate CMAs in seconds, tweak assumptions, and share polished branded reports with live market stats.',
-    author: 'Somnus Labs Team',
+    author: 'Waleed Judah',
     readTimeMinutes: 4,
     productUrl: 'https://candycomp.com',
     productLabel: 'CandyComp',
@@ -199,7 +199,7 @@ export const posts: Post[] = [
     tags: ['AI', 'Workflows', 'Observability'],
     excerpt:
       'PromptNexus is a no-code canvas to design, deploy, and observe AI workflows with versioning and guardrails.',
-    author: 'Somnus Labs Team',
+    author: 'Bilal Itani',
     readTimeMinutes: 4,
     productUrl: 'https://promptnexus.ai',
     productLabel: 'PromptNexus.ai',
