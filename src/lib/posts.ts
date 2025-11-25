@@ -90,7 +90,8 @@ export const posts: Post[] = [
     readTimeMinutes: 4,
     productUrl: 'https://plantvision.ai',
     productLabel: 'PlantVision.ai',
-    heroImage: 'https://res.cloudinary.com/dkfrhzkaf/image/upload/plantvision.ai/pv.webp',
+    heroImage:
+      'https://res.cloudinary.com/dkfrhzkaf/image/upload/plantvision.ai/pv.webp',
     canonicalPath: '/blog/plantvision-ai-plant-identification-companion',
     ogTitle: 'PlantVision.ai: AI plant identification companion',
     ogDescription:

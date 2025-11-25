@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { posts } from '@/lib/posts';
@@ -29,7 +30,10 @@ const Section = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <section className={`w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${className || ''}`}>
+  <section
+    className={`w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${
+      className || ''
+    }`}>
     {children}
   </section>
 );
@@ -44,7 +48,6 @@ const PostCard = ({
   readTimeMinutes,
   author,
   heroImage,
-  slug,
 }: {
   slug: string;
   title: string;
@@ -62,8 +65,7 @@ const PostCard = ({
         {tags.map(tag => (
           <span
             key={tag}
-            className="rounded-full bg-indigo-50 px-3 py-1 font-semibold"
-          >
+            className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
             {tag}
           </span>
         ))}
@@ -78,15 +80,16 @@ const PostCard = ({
     </div>
     {heroImage && (
       <div className="overflow-hidden rounded-xl bg-indigo-50/60 aspect-[16/9]">
-        <img
+        <Image
           src={heroImage}
           alt={title}
+          width={800}
+          height={450}
           className={`h-full w-full transition duration-300 ease-out ${
             heroImage.includes('plantvision') || slug.includes('plantvision')
               ? 'object-contain p-4'
               : 'object-cover group-hover:scale-105'
           }`}
-          loading="lazy"
         />
       </div>
     )}
@@ -97,7 +100,9 @@ const PostCard = ({
       <span>{readTimeMinutes} min read</span>
     </div>
     <div className="mt-auto flex items-center justify-between gap-3">
-      <Link href={`/blog/${slug}`} className="text-indigo-700 font-semibold hover:underline">
+      <Link
+        href={`/blog/${slug}`}
+        className="text-indigo-700 font-semibold hover:underline">
         Read more
       </Link>
       <Link href={`/blog/${slug}`}>
@@ -109,7 +114,7 @@ const PostCard = ({
 
 export default function BlogIndex() {
   const sortedPosts = [...posts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   const [featured, ...rest] = sortedPosts;
 
@@ -128,8 +133,9 @@ export default function BlogIndex() {
             Launch notes and thinking from the Somnus team
           </h1>
           <p className="text-lg text-muted-foreground">
-            Deep dives into MagicReply, PlantVision, CandyComp, and PromptNexus—what we are
-            building, why it matters, and how to get the most value from each product.
+            Deep dives into MagicReply, PlantVision, CandyComp, and
+            PromptNexus—what we are building, why it matters, and how to get the
+            most value from each product.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/#products">
@@ -155,8 +161,7 @@ export default function BlogIndex() {
                       {featured.tags.map(tag => (
                         <span
                           key={tag}
-                          className="rounded-full bg-indigo-50 px-3 py-1 font-semibold"
-                        >
+                          className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
                           {tag}
                         </span>
                       ))}
@@ -164,7 +169,9 @@ export default function BlogIndex() {
                     <h2 className="text-2xl sm:text-3xl font-display font-semibold text-zinc-900">
                       {featured.title}
                     </h2>
-                    <p className="text-muted-foreground">{featured.description}</p>
+                    <p className="text-muted-foreground">
+                      {featured.description}
+                    </p>
                     <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                       <span>{formatDate(featured.date)}</span>
                       <span className="h-1 w-1 rounded-full bg-zinc-300" />
@@ -177,22 +184,26 @@ export default function BlogIndex() {
                         <Button>Read featured</Button>
                       </Link>
                       <Link href={featured.productUrl}>
-                        <Button variant="outline">Visit {featured.productLabel}</Button>
+                        <Button variant="outline">
+                          Visit {featured.productLabel}
+                        </Button>
                       </Link>
                     </div>
                   </div>
                   {featured.heroImage && (
                     <div className="mt-4 md:mt-0 md:w-80 md:flex md:justify-center">
                       <div className="overflow-hidden rounded-2xl bg-indigo-50/70 aspect-[16/9] w-full">
-                        <img
+                        <Image
                           src={featured.heroImage}
                           alt={featured.title}
+                          width={800}
+                          height={450}
                           className={`h-full w-full transition duration-300 ease-out ${
-                            featured.heroImage.includes('plantvision') || featured.slug.includes('plantvision')
+                            featured.heroImage.includes('plantvision') ||
+                            featured.slug.includes('plantvision')
                               ? 'object-contain p-4'
                               : 'object-cover hover:scale-105'
                           }`}
-                          loading="lazy"
                         />
                       </div>
                     </div>

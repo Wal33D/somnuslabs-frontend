@@ -49,7 +49,10 @@ const Section = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <section className={`w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${className || ''}`}>
+  <section
+    className={`w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${
+      className || ''
+    }`}>
     {children}
   </section>
 );
@@ -79,7 +82,9 @@ export default function BlogPostPage({ params }: PageProps) {
 
       <Section className="relative pt-14 space-y-8">
         <div className="space-y-4">
-          <Link href="/blog" className="text-sm font-semibold text-indigo-700 hover:underline">
+          <Link
+            href="/blog"
+            className="text-sm font-semibold text-indigo-700 hover:underline">
             ← Back to blog
           </Link>
           <Eyebrow>Somnus Labs</Eyebrow>
@@ -92,7 +97,9 @@ export default function BlogPostPage({ params }: PageProps) {
               {formatDate(post.date)}
             </span>
             {post.tags.map(tag => (
-              <span key={tag} className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+              <span
+                key={tag}
+                className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
                 {tag}
               </span>
             ))}
@@ -115,8 +122,10 @@ export default function BlogPostPage({ params }: PageProps) {
           <article className="prose prose-zinc max-w-none">
             {post.sections.map((section, idx) => {
               const id =
-                section.heading?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') ||
-                `section-${idx}`;
+                section.heading
+                  ?.toLowerCase()
+                  .replace(/[^a-z0-9]+/g, '-')
+                  .replace(/(^-|-$)/g, '') || `section-${idx}`;
               return (
                 <div key={id} className="mb-8 scroll-mt-24" id={id}>
                   {section.heading && <h2>{section.heading}</h2>}
@@ -142,7 +151,10 @@ export default function BlogPostPage({ params }: PageProps) {
               </div>
               <ul className="mt-3 space-y-2 text-sm text-zinc-700">
                 {headings.map(heading => {
-                  const id = heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                  const id = heading
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/(^-|-$)/g, '');
                   return (
                     <li key={heading}>
                       <a href={`#${id}`} className="hover:text-indigo-700">
