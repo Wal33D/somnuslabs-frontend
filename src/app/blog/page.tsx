@@ -141,9 +141,9 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6">
           {featured && (
-            <div className="md:col-span-2">
+            <div className="w-full">
               <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white/90 p-6 shadow-hover backdrop-blur">
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-300/20 blur-3xl" />
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -203,7 +203,9 @@ export default function BlogIndex() {
           )}
 
           {rest.map(post => (
-            <PostCard key={post.slug} {...post} />
+            <div key={post.slug} className="w-full">
+              <PostCard {...post} />
+            </div>
           ))}
         </div>
       </Section>
