@@ -237,6 +237,14 @@ export const posts: Post[] = [
           'Drag in the building blocks you need, connect tools, set guardrails, and ship. Monitor runs and iterate quickly with change tracking.',
         ],
       },
+      {
+        heading: 'Who it is for',
+        bullets: [
+          'Product teams shipping AI features who need speed without sacrificing safety.',
+          'Developers who want to iterate on prompts without redeploying code.',
+          'Operations teams who need visibility into AI workflow performance and failures.',
+        ],
+      },
     ],
     cta: { label: 'Visit PromptNexus', href: 'https://promptnexus.ai' },
   },

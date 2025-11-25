@@ -72,6 +72,8 @@ const PostCard = ({
   readTimeMinutes,
   author,
   heroImage,
+  productUrl,
+  productLabel,
 }: {
   slug: string;
   title: string;
@@ -82,6 +84,8 @@ const PostCard = ({
   readTimeMinutes: number;
   author: string;
   heroImage?: string;
+  productUrl: string;
+  productLabel: string;
 }) => (
   <div className="group grid gap-4 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover md:grid-cols-[1.2fr_0.8fr] md:items-center">
     <div className="flex flex-col gap-3">
@@ -115,9 +119,16 @@ const PostCard = ({
           className="text-indigo-700 font-semibold hover:underline">
           Read more
         </Link>
-        <Link href={`/blog/${slug}`}>
-          <Button size="sm">Open post</Button>
-        </Link>
+        <div className="flex gap-2">
+          <Link href={productUrl}>
+            <Button size="sm" variant="outline">
+              Visit {productLabel}
+            </Button>
+          </Link>
+          <Link href={`/blog/${slug}`}>
+            <Button size="sm">Open post</Button>
+          </Link>
+        </div>
       </div>
     </div>
 
