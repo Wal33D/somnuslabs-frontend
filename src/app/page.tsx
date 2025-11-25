@@ -102,7 +102,7 @@ const pillars: Pillar[] = [
   },
   {
     title: 'Ship faster',
-    copy: 'Reusable components across the Somnus suite accelerate every launch.',
+    copy: 'Reusable components across Somnus products accelerate every launch.',
     icon: 'Launch',
   },
 ];
@@ -233,9 +233,6 @@ const Header = () => (
           priority
           className="h-10 w-auto"
         />
-        <span className="hidden text-sm font-semibold text-indigo-700 sm:inline-flex">
-          Building the future with AI
-        </span>
       </div>
       <nav className="hidden items-center gap-6 text-sm text-zinc-700 md:flex">
         <Link href="#products" className="hover:text-indigo-600">
@@ -256,7 +253,7 @@ const Header = () => (
           <Button variant="ghost">Join waitlist</Button>
         </Link>
         <Link href="#products" className="inline-block">
-          <Button>See the suite</Button>
+          <Button>See the products</Button>
         </Link>
       </div>
     </div>
@@ -345,7 +342,7 @@ const Home: React.FC = () => (
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One suite, four focused apps
+            One company, four focused apps
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Each product solves a real workflow and shares the same Somnus-grade
@@ -412,7 +409,7 @@ const Home: React.FC = () => (
                 <p className="mt-3 text-lg text-zinc-900 font-display leading-snug">
                   &quot;We ship products that feel handcrafted, but they scale
                   like software. Safety, observability, and polish are
-                  non-negotiable across the Somnus suite.&quot;
+                  non-negotiable across every Somnus product.&quot;
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground">
                   - Somnus Labs Team

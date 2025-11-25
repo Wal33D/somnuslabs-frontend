@@ -18,11 +18,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Somnus Labs - AI products that ship faster and stay on-brand',
   description:
-    'Somnus Labs builds AI-powered products—MagicReply, PlantVision, CandyComp, PromptNexus—with safety, observability, and polish.',
+    'Somnus Labs is the team behind MagicReply, PlantVision, CandyComp, and PromptNexus—built with safety, observability, and polish.',
   openGraph: {
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore the Somnus suite: MagicReply, PlantVision, CandyComp, and PromptNexus. Built with guardrails, speed, and measurable outcomes.',
+      'Explore Somnus-built products: MagicReply, PlantVision, CandyComp, and PromptNexus. Built with guardrails, speed, and measurable outcomes.',
     url: 'https://somnuslabs.ai',
     type: 'website',
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore the Somnus suite: MagicReply, PlantVision, CandyComp, and PromptNexus.',
+      'Explore Somnus-built products: MagicReply, PlantVision, CandyComp, and PromptNexus.',
   },
 };
 
