@@ -140,7 +140,10 @@ const PostCard = ({
           width={800}
           height={500}
           className={`h-full w-full transition duration-300 ease-out ${
-            heroImage.includes('plantvision') || slug.includes('plantvision')
+            heroImage.includes('plantvision') ||
+            slug.includes('plantvision') ||
+            heroImage.includes('promptnexus') ||
+            slug.includes('promptnexus')
               ? 'object-contain p-4'
               : 'object-cover group-hover:scale-105'
           }`}
@@ -154,7 +157,6 @@ export default function BlogIndex() {
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
-  const [featured, ...rest] = sortedPosts;
 
   return (
     <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
@@ -187,72 +189,7 @@ export default function BlogIndex() {
         </div>
 
         <div className="grid gap-6">
-          {featured && (
-            <div className="w-full">
-              <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white/90 p-6 shadow-hover backdrop-blur">
-                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-300/20 blur-3xl" />
-                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap gap-2 text-xs text-indigo-700">
-                      <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                        Featured
-                      </span>
-                      {featured.tags.map(tag => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl font-display font-semibold text-zinc-900">
-                      {featured.title}
-                    </h2>
-                    <p className="text-muted-foreground">
-                      {featured.description}
-                    </p>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                      <span>{formatDate(featured.date)}</span>
-                      <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                      <span>{featured.author}</span>
-                      <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                      <span>{featured.readTimeMinutes} min read</span>
-                    </div>
-                    <div className="flex gap-3">
-                      <Link href={`/blog/${featured.slug}`}>
-                        <Button>Read featured</Button>
-                      </Link>
-                      <Link href={featured.productUrl}>
-                        <Button variant="outline">
-                          Visit {featured.productLabel}
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                  {featured.heroImage && (
-                    <div className="mt-4 md:mt-0 md:w-80 md:flex md:justify-center">
-                      <div className="overflow-hidden rounded-2xl bg-indigo-50/70 aspect-[16/9] w-full">
-                        <Image
-                          src={featured.heroImage}
-                          alt={featured.title}
-                          width={800}
-                          height={450}
-                          className={`h-full w-full transition duration-300 ease-out ${
-                            featured.heroImage.includes('plantvision') ||
-                            featured.slug.includes('plantvision')
-                              ? 'object-contain p-4'
-                              : 'object-cover hover:scale-105'
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {rest.map(post => (
+          {sortedPosts.map(post => (
             <div key={post.slug} className="w-full">
               <PostCard {...post} />
             </div>
