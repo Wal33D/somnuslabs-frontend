@@ -79,6 +79,9 @@ export default function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) return notFound();
 
+  const base = 'https://somnuslabs.ai';
+  const url = `${base}${post.canonicalPath}`;
+
   const headings = post.sections
     .map(section => section.heading)
     .filter(Boolean) as string[];
