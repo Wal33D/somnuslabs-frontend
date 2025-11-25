@@ -6,7 +6,9 @@ const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-white/60 bg-white/80 backdrop-blur-md">
     <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
       <div className="flex items-center gap-3">
-        <Link href="/" className="cursor-pointer hover:opacity-80 transition-opacity">
+        <Link
+          href="/"
+          className="cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             width={140}
             height={48}
