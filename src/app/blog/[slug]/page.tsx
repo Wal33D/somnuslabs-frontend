@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { posts, getPostBySlug } from '@/lib/posts';
 import { Button } from '@/components/ui';
+import { Header } from '@/components/site/Header';
 
 type PageProps = {
   params: { slug: string };
@@ -74,6 +75,7 @@ export default function BlogPostPage({ params }: PageProps) {
 
   return (
     <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
+      <Header />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
         <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-purple-200/40 blur-3xl" />
