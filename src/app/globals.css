@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Somnus Labs Color System - Inspired by dreamy, calm aesthetics */
+    --foreground-rgb: 0, 0, 0;
+
+    /* Primary indigo/purple for Somnus "dream" theme */
+    --primary: 234 89% 56%; /* #4F46E5 - Indigo */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary purple accent */
+    --secondary: 271 91% 65%; /* #A855F7 - Purple */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Background and surface colors */
+    --background: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Muted text with good contrast */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 35%;
+
+    /* Border styling */
+    --border: 210 25% 92%;
+
+    /* Accent colors */
+    --accent: 234 89% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(234 89% 56%),
+      hsl(271 91% 65%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(234 89% 56% / 0.05),
+      hsl(271 91% 65% / 0.05)
+    );
+
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(210 30% 15% / 0.08);
+    --shadow-hover: 0 12px 32px hsl(210 30% 15% / 0.15);
+  }
+}
+
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    @apply bg-[hsl(var(--background))];
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        rgba(79, 70, 229, 0.08),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 80% 10%,
+        rgba(168, 85, 247, 0.08),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.9),
+        rgba(247, 249, 255, 0.9)
+      );
+  }
+
+  ::selection {
+    background: hsla(234, 89%, 56%, 0.15);
+  }
+
+  a {
+    color: theme('colors.indigo.600');
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 20px hsl(234 89% 56% / 0.3);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 30px hsl(234 89% 56% / 0.5);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(234 89% 56%), hsl(271 91% 65%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Premium card hover effect */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Somnus gradient backgrounds */
+  .somnus-gradient-bg {
+    background: linear-gradient(135deg, hsl(234 89% 98%), hsl(271 91% 98%));
+  }
+
+  .somnus-gradient-header {
+    background: linear-gradient(135deg, hsl(234 89% 56%), hsl(271 91% 65%));
+  }
+}
