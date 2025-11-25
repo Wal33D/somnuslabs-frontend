@@ -11,6 +11,11 @@ export type Post = {
   date: string;
   tags: string[];
   excerpt: string;
+  author: string;
+  readTimeMinutes: number;
+  productUrl: string;
+  productLabel: string;
+  heroImage?: string;
   canonicalPath: string;
   ogTitle: string;
   ogDescription: string;
@@ -31,6 +36,11 @@ export const posts: Post[] = [
     tags: ['AI', 'Customer Experience', 'Automation'],
     excerpt:
       'MagicReply.ai keeps your review responses fast, on-brand, and measurable with approvals and analytics out of the box.',
+    author: 'Somnus Labs Team',
+    readTimeMinutes: 4,
+    productUrl: 'https://magicreply.ai',
+    productLabel: 'MagicReply.ai',
+    heroImage: '/images/magicreply-logo.png',
     canonicalPath: '/blog/magicreply-ai-automated-review-responses',
     ogTitle: 'MagicReply.ai: AI-powered review responses that stay on-brand',
     ogDescription:
@@ -76,6 +86,11 @@ export const posts: Post[] = [
     tags: ['AI', 'Computer Vision', 'WhatsApp'],
     excerpt:
       'PlantVision.ai identifies plants from photos and answers follow-up care questions right in WhatsApp.',
+    author: 'Somnus Labs Team',
+    readTimeMinutes: 4,
+    productUrl: 'https://plantvision.ai',
+    productLabel: 'PlantVision.ai',
+    heroImage: '/images/plantvision-logo.webp',
     canonicalPath: '/blog/plantvision-ai-plant-identification-companion',
     ogTitle: 'PlantVision.ai: AI plant identification companion',
     ogDescription:
@@ -121,6 +136,11 @@ export const posts: Post[] = [
     tags: ['Real Estate', 'AI', 'Analytics'],
     excerpt:
       'CandyComp lets agents generate CMAs in seconds, tweak assumptions, and share polished reports with their branding.',
+    author: 'Somnus Labs Team',
+    readTimeMinutes: 4,
+    productUrl: 'https://candycomp.com',
+    productLabel: 'CandyComp',
+    heroImage: '/images/candycomp-logo.png',
     canonicalPath: '/blog/candycomp-instant-real-estate-cma',
     ogTitle: 'CandyComp: Instant real estate CMAs that clients can trust',
     ogDescription:
@@ -165,6 +185,11 @@ export const posts: Post[] = [
     tags: ['AI', 'Workflows', 'Observability'],
     excerpt:
       'PromptNexus is a no-code canvas to design, deploy, and observe AI workflows with versioning and guardrails.',
+    author: 'Somnus Labs Team',
+    readTimeMinutes: 4,
+    productUrl: 'https://promptnexus.ai',
+    productLabel: 'PromptNexus.ai',
+    heroImage: '/images/promptnexus-logo.webp',
     canonicalPath: '/blog/promptnexus-build-ai-workflows-with-guardrails',
     ogTitle: 'PromptNexus: Build and monitor AI workflows with guardrails',
     ogDescription:

@@ -15,7 +15,8 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  const url = `https://somnuslabs.ai${post.canonicalPath}`;
+  const base = 'https://somnuslabs.ai';
+  const url = `${base}${post.canonicalPath}`;
 
   return {
     title: post.ogTitle || post.title,
@@ -64,6 +65,10 @@ export default function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) return notFound();
 
+  const headings = post.sections
+    .map(section => section.heading)
+    .filter(Boolean) as string[];
+
   return (
     <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
       <div className="pointer-events-none absolute inset-0">
@@ -91,26 +96,65 @@ export default function BlogPostPage({ params }: PageProps) {
                 {tag}
               </span>
             ))}
+            <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+              {post.readTimeMinutes} min read
+            </span>
+            <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+              {post.author}
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-700">
+            <span className="font-semibold text-indigo-800">Learn more:</span>
+            <Link href={post.productUrl} className="hover:underline">
+              {post.productLabel}
+            </Link>
           </div>
         </div>
 
-        <article className="prose prose-zinc max-w-none">
-          {post.sections.map((section, idx) => (
-            <div key={section.heading || idx} className="mb-8">
-              {section.heading && <h2>{section.heading}</h2>}
-              {section.paragraphs?.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-              {section.bullets && (
-                <ul>
-                  {section.bullets.map(bullet => (
-                    <li key={bullet}>{bullet}</li>
+        <div className="grid gap-8 lg:grid-cols-[1fr_240px] lg:items-start">
+          <article className="prose prose-zinc max-w-none">
+            {post.sections.map((section, idx) => {
+              const id =
+                section.heading?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') ||
+                `section-${idx}`;
+              return (
+                <div key={id} className="mb-8 scroll-mt-24" id={id}>
+                  {section.heading && <h2>{section.heading}</h2>}
+                  {section.paragraphs?.map((p, i) => (
+                    <p key={i}>{p}</p>
                   ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </article>
+                  {section.bullets && (
+                    <ul>
+                      {section.bullets.map(bullet => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
+          </article>
+
+          {headings.length > 0 && (
+            <aside className="sticky top-24 hidden rounded-2xl border border-white/70 bg-white/90 p-4 shadow-card backdrop-blur lg:block">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
+                On this page
+              </div>
+              <ul className="mt-3 space-y-2 text-sm text-zinc-700">
+                {headings.map(heading => {
+                  const id = heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                  return (
+                    <li key={heading}>
+                      <a href={`#${id}`} className="hover:text-indigo-700">
+                        {heading}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </aside>
+          )}
+        </div>
 
         <div className="flex flex-wrap items-center gap-4">
           <Link href="/blog">

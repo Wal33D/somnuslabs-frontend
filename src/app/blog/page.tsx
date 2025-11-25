@@ -41,6 +41,9 @@ const PostCard = ({
   date,
   tags,
   excerpt,
+  readTimeMinutes,
+  author,
+  heroImage,
 }: {
   slug: string;
   title: string;
@@ -48,8 +51,11 @@ const PostCard = ({
   date: string;
   tags: string[];
   excerpt: string;
+  readTimeMinutes: number;
+  author: string;
+  heroImage?: string;
 }) => (
-  <div className="flex flex-col gap-3 rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur">
+  <div className="group flex flex-col gap-3 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover">
     <div className="flex items-center justify-between gap-4 text-xs text-indigo-700">
       <div className="flex flex-wrap gap-2">
         {tags.map(tag => (
@@ -64,10 +70,27 @@ const PostCard = ({
       <span className="text-muted-foreground">{formatDate(date)}</span>
     </div>
     <div className="space-y-2">
-      <h3 className="text-xl font-semibold text-zinc-900 font-display">{title}</h3>
+      <h3 className="text-xl font-semibold text-zinc-900 font-display group-hover:text-indigo-700">
+        {title}
+      </h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>
+    {heroImage && (
+      <div className="overflow-hidden rounded-xl bg-indigo-50/60 p-4">
+        <img
+          src={heroImage}
+          alt={title}
+          className="h-12 w-auto object-contain mx-auto"
+          loading="lazy"
+        />
+      </div>
+    )}
     <p className="text-sm text-zinc-700">{excerpt}</p>
+    <div className="flex items-center gap-3 text-xs text-muted-foreground">
+      <span>{author}</span>
+      <span className="h-1 w-1 rounded-full bg-zinc-300" />
+      <span>{readTimeMinutes} min read</span>
+    </div>
     <div className="mt-auto flex items-center justify-between gap-3">
       <Link href={`/blog/${slug}`} className="text-indigo-700 font-semibold hover:underline">
         Read more
@@ -80,6 +103,11 @@ const PostCard = ({
 );
 
 export default function BlogIndex() {
+  const sortedPosts = [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const [featured, ...rest] = sortedPosts;
+
   return (
     <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
       <div className="pointer-events-none absolute inset-0">
@@ -109,7 +137,63 @@ export default function BlogIndex() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {posts.map(post => (
+          {featured && (
+            <div className="md:col-span-2">
+              <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white/90 p-6 shadow-hover backdrop-blur">
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-300/20 blur-3xl" />
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2 text-xs text-indigo-700">
+                      <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+                        Featured
+                      </span>
+                      {featured.tags.map(tag => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-indigo-50 px-3 py-1 font-semibold"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-display font-semibold text-zinc-900">
+                      {featured.title}
+                    </h2>
+                    <p className="text-muted-foreground">{featured.description}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                      <span>{formatDate(featured.date)}</span>
+                      <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                      <span>{featured.author}</span>
+                      <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                      <span>{featured.readTimeMinutes} min read</span>
+                    </div>
+                    <div className="flex gap-3">
+                      <Link href={`/blog/${featured.slug}`}>
+                        <Button>Read featured</Button>
+                      </Link>
+                      <Link href={featured.productUrl}>
+                        <Button variant="outline">Visit {featured.productLabel}</Button>
+                      </Link>
+                    </div>
+                  </div>
+                  {featured.heroImage && (
+                    <div className="mt-4 md:mt-0 md:w-48 md:flex md:justify-center">
+                      <div className="rounded-2xl bg-indigo-50/70 p-6">
+                        <img
+                          src={featured.heroImage}
+                          alt={featured.title}
+                          className="h-16 w-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {rest.map(post => (
             <PostCard key={post.slug} {...post} />
           ))}
         </div>
