@@ -368,7 +368,8 @@ const Home: React.FC = () => (
             <div
               key={pillar.title}
               className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-card backdrop-blur">
-              <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold uppercase tracking-wide text-indigo-700">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-lg bg-indigo-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-700">
+                <span className="h-2 w-2 rounded-sm bg-indigo-500" />
                 {pillar.icon}
               </div>
               <div className="text-lg font-semibold text-zinc-900 font-display">
