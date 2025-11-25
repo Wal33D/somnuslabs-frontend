@@ -59,32 +59,51 @@ const PostCard = ({
   author: string;
   heroImage?: string;
 }) => (
-  <div className="group flex flex-col gap-3 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover">
-    <div className="flex items-center justify-between gap-4 text-xs text-indigo-700">
-      <div className="flex flex-wrap gap-2">
-        {tags.map(tag => (
-          <span
-            key={tag}
-            className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-            {tag}
-          </span>
-        ))}
+  <div className="group grid gap-4 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover md:grid-cols-[1.2fr_0.8fr] md:items-center">
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between gap-4 text-xs text-indigo-700">
+        <div className="flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span
+              key={tag}
+              className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <span className="text-muted-foreground">{formatDate(date)}</span>
       </div>
-      <span className="text-muted-foreground">{formatDate(date)}</span>
+      <div className="space-y-2">
+        <h3 className="text-xl font-semibold text-zinc-900 font-display group-hover:text-indigo-700">
+          {title}
+        </h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </div>
+      <p className="text-sm text-zinc-700">{excerpt}</p>
+      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+        <span>{author}</span>
+        <span className="h-1 w-1 rounded-full bg-zinc-300" />
+        <span>{readTimeMinutes} min read</span>
+      </div>
+      <div className="mt-auto flex items-center justify-between gap-3">
+        <Link
+          href={`/blog/${slug}`}
+          className="text-indigo-700 font-semibold hover:underline">
+          Read more
+        </Link>
+        <Link href={`/blog/${slug}`}>
+          <Button size="sm">Open post</Button>
+        </Link>
+      </div>
     </div>
-    <div className="space-y-2">
-      <h3 className="text-xl font-semibold text-zinc-900 font-display group-hover:text-indigo-700">
-        {title}
-      </h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
-    </div>
+
     {heroImage && (
-      <div className="overflow-hidden rounded-xl bg-indigo-50/60 aspect-[16/9]">
+      <div className="overflow-hidden rounded-xl bg-indigo-50/60 aspect-[16/10] w-full md:max-w-xs md:justify-self-end">
         <Image
           src={heroImage}
           alt={title}
           width={800}
-          height={450}
+          height={500}
           className={`h-full w-full transition duration-300 ease-out ${
             heroImage.includes('plantvision') || slug.includes('plantvision')
               ? 'object-contain p-4'
@@ -93,22 +112,6 @@ const PostCard = ({
         />
       </div>
     )}
-    <p className="text-sm text-zinc-700">{excerpt}</p>
-    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-      <span>{author}</span>
-      <span className="h-1 w-1 rounded-full bg-zinc-300" />
-      <span>{readTimeMinutes} min read</span>
-    </div>
-    <div className="mt-auto flex items-center justify-between gap-3">
-      <Link
-        href={`/blog/${slug}`}
-        className="text-indigo-700 font-semibold hover:underline">
-        Read more
-      </Link>
-      <Link href={`/blog/${slug}`}>
-        <Button size="sm">Open post</Button>
-      </Link>
-    </div>
   </div>
 );
 
