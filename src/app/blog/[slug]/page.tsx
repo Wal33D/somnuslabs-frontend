@@ -23,16 +23,26 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: post.ogTitle || post.title,
     description: post.ogDescription || post.description,
     alternates: { canonical: url },
+    keywords: [post.title, post.productLabel, 'Somnus Labs', ...post.tags],
     openGraph: {
       title: post.ogTitle || post.title,
       description: post.ogDescription || post.description,
       url,
       type: 'article',
+      images: post.heroImage
+        ? [
+            {
+              url: post.heroImage,
+              alt: post.title,
+            },
+          ]
+        : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.ogTitle || post.title,
       description: post.ogDescription || post.description,
+      images: post.heroImage ? [post.heroImage] : undefined,
     },
   };
 }
@@ -122,6 +132,29 @@ export default function BlogPostPage({ params }: PageProps) {
 
         <div className="grid gap-8 lg:grid-cols-[1fr_240px] lg:items-start">
           <article className="prose prose-zinc max-w-none">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'Article',
+                  headline: post.title,
+                  description: post.description,
+                  author: { '@type': 'Organization', name: post.author },
+                  publisher: {
+                    '@type': 'Organization',
+                    name: 'Somnus Labs',
+                    logo: {
+                      '@type': 'ImageObject',
+                      url: 'https://somnuslabs.ai/images/logo-with-text.png',
+                    },
+                  },
+                  mainEntityOfPage: url,
+                  datePublished: post.date,
+                  image: post.heroImage,
+                }),
+              }}
+            />
             {post.sections.map((section, idx) => {
               const id =
                 section.heading

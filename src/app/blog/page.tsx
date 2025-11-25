@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   title: 'Somnus Labs Blog - AI product notes and launches',
   description:
     'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
+  keywords: [
+    'Somnus Labs blog',
+    'MagicReply updates',
+    'PlantVision updates',
+    'CandyComp updates',
+    'PromptNexus updates',
+  ],
+  alternates: {
+    canonical: 'https://somnuslabs.ai/blog',
+  },
+  openGraph: {
+    title: 'Somnus Labs Blog - AI product notes and launches',
+    description:
+      'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
+    url: 'https://somnuslabs.ai/blog',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Somnus Labs Blog - AI product notes and launches',
+    description:
+      'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
+  },
 };
 
 const formatDate = (date: string) =>
