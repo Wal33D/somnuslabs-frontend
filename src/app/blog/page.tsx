@@ -44,6 +44,7 @@ const PostCard = ({
   readTimeMinutes,
   author,
   heroImage,
+  slug,
 }: {
   slug: string;
   title: string;
@@ -80,7 +81,11 @@ const PostCard = ({
         <img
           src={heroImage}
           alt={title}
-          className="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-105"
+          className={`h-full w-full transition duration-300 ease-out ${
+            heroImage.includes('plantvision') || slug.includes('plantvision')
+              ? 'object-contain p-4'
+              : 'object-cover group-hover:scale-105'
+          }`}
           loading="lazy"
         />
       </div>
@@ -182,7 +187,11 @@ export default function BlogIndex() {
                         <img
                           src={featured.heroImage}
                           alt={featured.title}
-                          className="h-full w-full object-cover transition duration-300 ease-out hover:scale-105"
+                          className={`h-full w-full transition duration-300 ease-out ${
+                            featured.heroImage.includes('plantvision') || featured.slug.includes('plantvision')
+                              ? 'object-contain p-4'
+                              : 'object-cover hover:scale-105'
+                          }`}
                           loading="lazy"
                         />
                       </div>
