@@ -247,6 +247,9 @@ const Header = () => (
         <Link href="#contact" className="hover:text-indigo-600">
           Contact
         </Link>
+        <Link href="/blog" className="hover:text-indigo-600">
+          Blog
+        </Link>
       </nav>
       <div className="flex items-center gap-3">
         <Link href="#contact" className="hidden md:inline-block">
