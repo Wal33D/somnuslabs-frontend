@@ -40,7 +40,7 @@ export const posts: Post[] = [
     readTimeMinutes: 4,
     productUrl: 'https://magicreply.ai',
     productLabel: 'MagicReply.ai',
-    heroImage: '/images/magicreply-logo.png',
+    heroImage: 'https://magicreply.ai/images/magicReplyHeadOpenGraphImage.png',
     canonicalPath: '/blog/magicreply-ai-automated-review-responses',
     ogTitle: 'MagicReply.ai: AI-powered review responses that stay on-brand',
     ogDescription:
@@ -90,7 +90,7 @@ export const posts: Post[] = [
     readTimeMinutes: 4,
     productUrl: 'https://plantvision.ai',
     productLabel: 'PlantVision.ai',
-    heroImage: '/images/plantvision-logo.webp',
+    heroImage: 'https://res.cloudinary.com/dkfrhzkaf/image/upload/plantvision.ai/pv.webp',
     canonicalPath: '/blog/plantvision-ai-plant-identification-companion',
     ogTitle: 'PlantVision.ai: AI plant identification companion',
     ogDescription:
@@ -140,7 +140,8 @@ export const posts: Post[] = [
     readTimeMinutes: 4,
     productUrl: 'https://candycomp.com',
     productLabel: 'CandyComp',
-    heroImage: '/images/candycomp-logo.png',
+    heroImage:
+      'https://storage.googleapis.com/gpt-engineer-file-uploads/rwScSRzEyPVYN49nxhrDmw5TcbS2/social-images/social-1763714112466-og-image.png',
     canonicalPath: '/blog/candycomp-instant-real-estate-cma',
     ogTitle: 'CandyComp: Instant real estate CMAs that clients can trust',
     ogDescription:

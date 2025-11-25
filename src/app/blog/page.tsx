@@ -76,11 +76,11 @@ const PostCard = ({
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>
     {heroImage && (
-      <div className="overflow-hidden rounded-xl bg-indigo-50/60 p-4">
+      <div className="overflow-hidden rounded-xl bg-indigo-50/60">
         <img
           src={heroImage}
           alt={title}
-          className="h-12 w-auto object-contain mx-auto"
+          className="h-40 w-full object-cover"
           loading="lazy"
         />
       </div>
@@ -177,12 +177,12 @@ export default function BlogIndex() {
                     </div>
                   </div>
                   {featured.heroImage && (
-                    <div className="mt-4 md:mt-0 md:w-48 md:flex md:justify-center">
-                      <div className="rounded-2xl bg-indigo-50/70 p-6">
+                    <div className="mt-4 md:mt-0 md:w-72 md:flex md:justify-center">
+                      <div className="overflow-hidden rounded-2xl bg-indigo-50/70">
                         <img
                           src={featured.heroImage}
                           alt={featured.title}
-                          className="h-16 w-auto object-contain"
+                          className="h-44 w-full object-cover"
                           loading="lazy"
                         />
                       </div>
