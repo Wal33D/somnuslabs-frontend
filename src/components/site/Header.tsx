@@ -25,7 +25,7 @@ const Header = () => (
           Why Somnus
         </Link>
         <Link href="/#proof" className="hover:text-indigo-600">
-          Proof
+          Results
         </Link>
         <Link href="/#contact" className="hover:text-indigo-600">
           Contact
