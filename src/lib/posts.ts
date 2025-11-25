@@ -132,11 +132,11 @@ export const posts: Post[] = [
     slug: 'candycomp-instant-real-estate-cma',
     title: 'CandyComp: Instant real estate CMAs that clients can trust',
     description:
-      'Generate agent-grade comparative market analyses in seconds with CandyComp.',
+      'Generate agent-grade comparative market analyses in seconds with CandyComp—branded, defensible, and ready to share.',
     date: '2024-11-05',
     tags: ['Real Estate', 'AI', 'Analytics'],
     excerpt:
-      'CandyComp lets agents generate CMAs in seconds, tweak assumptions, and share polished reports with their branding.',
+      'CandyComp lets agents, buyers, and sellers generate CMAs in seconds, tweak assumptions, and share polished branded reports with live market stats.',
     author: 'Somnus Labs Team',
     readTimeMinutes: 4,
     productUrl: 'https://candycomp.com',
@@ -150,7 +150,7 @@ export const posts: Post[] = [
     sections: [
       {
         paragraphs: [
-          'Agents and brokers need defensible CMAs quickly, without sacrificing quality. CandyComp makes comps sweet and simple, while keeping pro-level controls.',
+          'Agents, buyers, and sellers need defensible CMAs quickly, without sacrificing quality. CandyComp makes comps sweet and simple, while keeping pro-level controls for the people who need them.',
         ],
       },
       {
@@ -158,21 +158,33 @@ export const posts: Post[] = [
         bullets: [
           'Manual CMA creation that takes hours and delays client follow-up.',
           'Generic outputs that are hard to defend with clients.',
-          'Reports that do not match the agent’s brand.',
+          'Reports that do not match your brand or look polished.',
+          'Out-of-date market data that erodes trust.',
         ],
       },
       {
         heading: 'Key capabilities',
         bullets: [
-          'Instant comparative market analyses with solid defaults.',
-          'Tweak assumptions (filters, weightings) and regenerate quickly.',
-          'Shareable, branded reports clients can understand.',
+          'Instant comparative market analyses with solid defaults and live market stats.',
+          'Tweak assumptions (filters, weighting, excluded comps) and regenerate quickly.',
+          'Professional, branded PDF and link-based reports ready to share with clients.',
+          'Real-time MLS and public record data refreshes so your comps stay current.',
+          'Roadmap: native mobile app and Chrome extension to run comps from anywhere.',
         ],
       },
       {
         heading: 'Getting started',
         paragraphs: [
-          'Enter a property, review the generated comps, adjust assumptions if needed, and export or share the branded report—all in minutes.',
+          'Enter a property, review the generated comps, adjust assumptions if needed, and export or share a branded report—all in minutes.',
+          'Use the free tier for quick valuations; upgrade to Pro for unlimited CMAs, detailed market reports, and PDF exports.',
+        ],
+      },
+      {
+        heading: 'Who it is for',
+        bullets: [
+          'Agents and brokers who need client-ready CMAs fast.',
+          'Buyers and sellers who want confident pricing guidance.',
+          'Investors evaluating multiple properties with consistent, repeatable analysis.',
         ],
       },
     ],
