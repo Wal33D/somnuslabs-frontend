@@ -29,7 +29,8 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: 'cmaforge-ai-powered-real-estate-analysis',
-    title: 'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
+    title:
+      'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
     description:
       'CMAForge transforms how real estate agents research and price properties with AI-powered market analysis, real-time data, and professional branded reports.',
     date: '2024-12-15',
@@ -42,7 +43,8 @@ export const posts: Post[] = [
     productLabel: 'CMAForge',
     heroImage: 'https://cmaforge.com/og-image.png',
     canonicalPath: '/blog/cmaforge-ai-powered-real-estate-analysis',
-    ogTitle: 'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
+    ogTitle:
+      'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
     ogDescription:
       'Generate professional CMAs in seconds with real-time Zillow data, AI strategy recommendations, and branded PDF reports from Somnus Labs.',
     sections: [
