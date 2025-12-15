@@ -53,6 +53,21 @@ const products: Product[] = [
     secondaryCta: { label: 'Talk to us', href: '#contact' },
   },
   {
+    name: 'CMAForge',
+    href: 'https://cmaforge.app',
+    imageSrc: '/images/cmaforge-logo.png',
+    imageAlt: 'CMAForge Logo',
+    badge: 'Live',
+    description: 'AI-powered CMAs with real-time market data.',
+    bullets: [
+      'Generate professional CMAs in seconds with live Zillow data',
+      'AI strategy recommendations and appraisal risk analysis',
+      'Branded PDF reports and shareable client links',
+    ],
+    primaryCta: 'Visit CMAForge',
+    secondaryCta: { label: 'See it in action', href: '#contact' },
+  },
+  {
     name: 'CandyComp',
     href: 'https://candycomp.com',
     imageSrc: '/images/candycomp-logo.png',
@@ -115,9 +130,9 @@ const sneakPeeks: SneakPeek[] = [
     tag: 'MagicReply.ai',
   },
   {
-    title: 'Guided CMAs',
-    copy: 'Adjust assumptions, regenerate comps, and share polished reports.',
-    tag: 'CandyComp',
+    title: 'AI-powered market analysis',
+    copy: 'Real-time data meets AI strategy for CMAs that win listings.',
+    tag: 'CMAForge',
   },
   {
     title: 'AI workflow canvas',
@@ -304,7 +319,7 @@ const Home: React.FC = () => (
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One company, four focused apps
+            One company, five focused apps
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Each product solves a real workflow and shares the same Somnus-grade

@@ -28,6 +28,78 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: 'cmaforge-ai-powered-real-estate-analysis',
+    title: 'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
+    description:
+      'CMAForge transforms how real estate agents research and price properties with AI-powered market analysis, real-time data, and professional branded reports.',
+    date: '2024-12-15',
+    tags: ['Real Estate', 'AI', 'SaaS', 'Market Analysis'],
+    excerpt:
+      'CMAForge combines fresh Zillow, Redfin, and Realtor.com data with AI-powered strategy recommendations to generate professional CMAs in seconds—complete with shareable links, PDF exports, and custom branding.',
+    author: 'Waleed Judah',
+    readTimeMinutes: 5,
+    productUrl: 'https://cmaforge.app',
+    productLabel: 'CMAForge',
+    heroImage: 'https://cmaforge.com/og-image.png',
+    canonicalPath: '/blog/cmaforge-ai-powered-real-estate-analysis',
+    ogTitle: 'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
+    ogDescription:
+      'Generate professional CMAs in seconds with real-time Zillow data, AI strategy recommendations, and branded PDF reports from Somnus Labs.',
+    sections: [
+      {
+        paragraphs: [
+          'Real estate professionals know the pain of creating comparative market analyses. Hours spent pulling comps, adjusting values, and formatting reports—all while clients wait. CMAForge changes the game by combining real-time property data with AI-powered insights to generate professional CMAs in seconds, not hours.',
+        ],
+      },
+      {
+        heading: 'What CMAForge solves',
+        bullets: [
+          'Time-consuming manual CMA creation that delays client follow-up and costs deals.',
+          'Outdated market data from stale MLS exports that erode client trust.',
+          'Generic reports that lack defensibility and professional polish.',
+          'No strategic guidance on pricing—just raw numbers without context.',
+          'Difficulty sharing analyses with clients in a professional, branded format.',
+        ],
+      },
+      {
+        heading: 'Key capabilities',
+        bullets: [
+          'Real-time data from Zillow, Redfin, and Realtor.com APIs for always-current comps.',
+          'AI-powered market briefs and strategy recommendations via Google Gemini.',
+          'Dual workflow modes: Seller CMA for listing agents and Buyer CMA for offer strategy.',
+          'Professional PDF reports and secure shareable links with custom branding.',
+          'Condition assessment with AI-assisted photo analysis for accurate adjustments.',
+          'Market trends and rental signals with 7+ years of historical data.',
+          'Chrome extension to run CMAs while browsing listing sites.',
+        ],
+      },
+      {
+        heading: 'How it works',
+        paragraphs: [
+          'Enter a property address and CMAForge pulls subject property details with Street View verification. Select your workflow—seller or buyer—and the platform fetches relevant sold, pending, and active listings.',
+          'Review AI-generated comparable scoring, adjust conditions if needed, and receive strategic pricing recommendations with risk assessment. Export a branded PDF or share a secure link with your client.',
+        ],
+      },
+      {
+        heading: 'Who it is for',
+        bullets: [
+          'Listing agents who need client-ready CMAs with defensible pricing strategy.',
+          'Buyer agents analyzing offer positions and appraisal risk.',
+          'Brokerages seeking consistent, branded market analysis across teams.',
+          'Investors evaluating multiple properties with repeatable methodology.',
+        ],
+      },
+      {
+        heading: 'Getting started',
+        paragraphs: [
+          'Sign up with Google, run your first CMA for free, and see the difference AI-powered analysis makes. Pro subscribers get 25 CMAs per month, full branding customization, and access to AI video and photo enhancement features.',
+          'Launch offer includes 50% off for the first three months.',
+        ],
+      },
+    ],
+    cta: { label: 'Visit CMAForge', href: 'https://cmaforge.app' },
+  },
+  {
     slug: 'magicreply-ai-automated-review-responses',
     title: 'MagicReply.ai: AI-powered review responses that stay on-brand',
     description:
