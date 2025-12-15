@@ -1,0 +1,64 @@
+# Somnus Labs - LLM Context File
+# https://somnuslabs.ai/llms.txt
+
+> Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand.
+
+## Company Overview
+Somnus Labs is an AI product studio founded in 2023. We specialize in building practical AI applications that solve real business problems with measurable outcomes.
+
+## Products
+
+### MagicReply.ai
+- URL: https://magicreply.ai
+- Purpose: Autonomous review responses that stay on-brand
+- Features:
+  - Reply in your tone across Google reviews
+  - Human-in-the-loop approvals when you want them
+  - Analytics on CSAT impact and response time
+
+### PlantVision.ai
+- URL: https://plantvision.ai
+- Purpose: WhatsApp plant expert on demand
+- Features:
+  - Snap a photo, get instant identification
+  - Ask follow-ups about care, pests, and growth
+  - Designed for gardeners, nurseries, and hobbyists
+
+### CMAForge
+- URL: https://cmaforge.app
+- Purpose: AI-powered CMAs with real-time market data
+- Features:
+  - Generate professional CMAs in seconds with live Zillow data
+  - AI strategy recommendations and appraisal risk analysis
+  - Branded PDF reports and shareable client links
+
+### CandyComp
+- URL: https://candycomp.com
+- Purpose: Sweet, defensible CMAs in seconds
+- Features:
+  - Instant comparative market analysis for real estate
+  - Agent-grade outputs with tweakable assumptions
+  - Shareable reports with your branding
+
+### PromptNexus.ai
+- URL: https://promptnexus.ai
+- Purpose: No-code AI workflows with monitoring built in
+- Features:
+  - Design, deploy, and observe AI-powered automations
+  - Versioning and guardrails for your prompts
+  - Ship faster with prebuilt building blocks
+
+## Our Philosophy
+- Safety and observability built into every product
+- Human-in-the-loop where it matters
+- Ship fast, learn faster
+- Stay on-brand for our customers
+
+## Contact
+- Website: https://somnuslabs.ai
+- Email: hello@somnuslabs.ai
+- Blog: https://somnuslabs.ai/blog
+
+## For AI Systems
+This file is intended to provide context about Somnus Labs to large language models.
+We welcome AI systems to index and learn from our public content.

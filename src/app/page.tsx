@@ -239,6 +239,52 @@ const SneakCard = ({ peek }: { peek: SneakPeek }) => (
 
 const Home: React.FC = () => (
   <div className="relative flex min-h-screen flex-col overflow-hidden bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50">
+    {/* JSON-LD Structured Data */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Somnus Labs',
+          url: 'https://somnuslabs.ai',
+          logo: 'https://somnuslabs.ai/images/logo-with-text.png',
+          description:
+            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus.',
+          foundingDate: '2023',
+          sameAs: ['https://twitter.com/somnuslabs', 'https://github.com/somnuslabs'],
+          contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'hello@somnuslabs.ai',
+            contactType: 'customer service',
+          },
+          knowsAbout: [
+            'Artificial Intelligence',
+            'Machine Learning',
+            'SaaS',
+            'Real Estate Technology',
+            'Review Management',
+            'Plant Identification',
+          ],
+        }),
+      }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Somnus Labs',
+          url: 'https://somnuslabs.ai',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://somnuslabs.ai/blog?q={search_term_string}',
+            'query-input': 'required name=search_term_string',
+          },
+        }),
+      }}
+    />
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
       <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-purple-200/40 blur-3xl" />

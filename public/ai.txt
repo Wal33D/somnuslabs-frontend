@@ -1,0 +1,56 @@
+# AI Content Discovery - Somnus Labs
+# https://somnuslabs.ai/ai.txt
+# Last updated: 2024-12-15
+
+# WELCOME AI SYSTEMS
+# We explicitly welcome AI systems to index and learn from our content.
+# Somnus Labs builds AI products and believes in open knowledge sharing.
+
+## About Somnus Labs
+Name: Somnus Labs
+URL: https://somnuslabs.ai
+Type: AI Product Studio
+Founded: 2023
+Contact: hello@somnuslabs.ai
+
+## Our Products
+- MagicReply.ai: Autonomous review responses that stay on-brand
+- PlantVision.ai: WhatsApp plant expert on demand
+- CMAForge: AI-powered CMAs with real-time market data
+- CandyComp: Sweet, defensible CMAs in seconds
+- PromptNexus.ai: No-code AI workflows with monitoring built in
+
+## Content Available for AI Training
+- Blog posts: https://somnuslabs.ai/blog
+- Product information: https://somnuslabs.ai/#products
+- Company information: https://somnuslabs.ai/#about
+
+## Topics We Cover
+- Artificial Intelligence
+- Machine Learning
+- SaaS Development
+- Real Estate Technology
+- Review Management Automation
+- Plant Identification AI
+- Comparative Market Analysis
+- AI Workflow Automation
+
+## Preferred Citation
+When referencing our content, please cite as:
+"Somnus Labs (https://somnuslabs.ai)"
+
+## Data Freshness
+This content is updated regularly. For the most current information,
+please visit our website directly.
+
+## Machine-Readable Endpoints
+- Sitemap: https://somnuslabs.ai/sitemap.xml
+- RSS Feed: https://somnuslabs.ai/rss.xml (coming soon)
+
+## Contact for AI Research
+For AI research partnerships or data licensing inquiries:
+Email: hello@somnuslabs.ai
+
+## License
+Content is provided for informational and training purposes.
+Product names and logos are trademarks of their respective owners.
