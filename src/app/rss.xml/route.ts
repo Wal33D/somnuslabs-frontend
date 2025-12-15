@@ -28,8 +28,12 @@ export async function GET() {
       <description><![CDATA[${post.description}]]></description>
       <author>hello@somnuslabs.ai (${post.author})</author>
       ${post.tags.map(tag => `<category>${tag}</category>`).join('\n      ')}
-      ${post.heroImage ? `<enclosure url="${post.heroImage}" type="image/png"/>` : ''}
-    </item>`
+      ${
+        post.heroImage
+          ? `<enclosure url="${post.heroImage}" type="image/png"/>`
+          : ''
+      }
+    </item>`,
       )
       .join('')}
   </channel>

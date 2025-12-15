@@ -252,7 +252,10 @@ const Home: React.FC = () => (
           description:
             'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus.',
           foundingDate: '2023',
-          sameAs: ['https://twitter.com/somnuslabs', 'https://github.com/somnuslabs'],
+          sameAs: [
+            'https://twitter.com/somnuslabs',
+            'https://github.com/somnuslabs',
+          ],
           contactPoint: {
             '@type': 'ContactPoint',
             email: 'hello@somnuslabs.ai',
