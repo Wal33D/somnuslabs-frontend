@@ -97,6 +97,21 @@ const products: Product[] = [
     primaryCta: 'Visit PromptNexus',
     secondaryCta: { label: 'Explore workflows', href: '#contact' },
   },
+  {
+    name: 'HYDMG',
+    href: 'https://hydmg.com',
+    imageSrc: '/images/hydmg-logo.png',
+    imageAlt: 'HYDMG Logo',
+    badge: 'Live',
+    description: 'The hardcore Hytale server for true gamers.',
+    bullets: [
+      'No pay-to-win - all players compete on equal footing',
+      'Low latency infrastructure with zero lag',
+      'Bug bounty rewards instead of bans',
+    ],
+    primaryCta: 'Visit HYDMG',
+    secondaryCta: { label: 'Join Discord', href: 'https://hydmg.com' },
+  },
 ];
 
 const stats: Stat[] = [
