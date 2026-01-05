@@ -100,7 +100,7 @@ const products: Product[] = [
   {
     name: 'HYDMG',
     href: 'https://hydmg.com',
-    imageSrc: '/images/hydmg-logo.png',
+    imageSrc: '/images/hydmg-logo.svg',
     imageAlt: 'HYDMG Logo',
     badge: 'Live',
     description: 'The hardcore Hytale server for true gamers.',

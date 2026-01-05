@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="50%" style="stop-color:#ff8c00"/>
+      <stop offset="100%" style="stop-color:#ffd700"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="120" height="120" rx="24" fill="url(#bgGrad)"/>
+  <!-- Fire/Flame Icon -->
+  <path d="M60 20c0 0-25 25-25 50c0 20 15 30 25 30s25-10 25-30c0-25-25-50-25-50z" fill="url(#fireGrad)"/>
+  <path d="M60 45c0 0-12 12-12 25c0 10 7 15 12 15s12-5 12-15c0-13-12-25-12-25z" fill="#1a1a2e"/>
+  <!-- Sword overlay -->
+  <rect x="57" y="30" width="6" height="50" rx="2" fill="#e0e0e0"/>
+  <rect x="50" y="35" width="20" height="6" rx="2" fill="#e0e0e0"/>
+  <rect x="55" y="80" width="10" height="15" rx="2" fill="#8b4513"/>
+</svg>
