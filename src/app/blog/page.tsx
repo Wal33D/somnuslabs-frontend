@@ -8,29 +8,29 @@ import { Header } from '@/components/site/Header';
 export const metadata: Metadata = {
   title: 'Somnus Labs Blog - AI product notes and launches',
   description:
-    'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
+    'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
   keywords: [
     'Somnus Labs blog',
+    'CMAForge updates',
     'MagicReply updates',
     'PlantVision updates',
-    'CandyComp updates',
     'PromptNexus updates',
   ],
   alternates: {
-    canonical: 'https://somnuslabs.ai/blog',
+    canonical: 'https://www.somnuslabs.com/blog',
   },
   openGraph: {
     title: 'Somnus Labs Blog - AI product notes and launches',
     description:
-      'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
-    url: 'https://somnuslabs.ai/blog',
+      'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
+    url: 'https://www.somnuslabs.com/blog',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Somnus Labs Blog - AI product notes and launches',
     description:
-      'Stories and launch notes from Somnus Labs, covering MagicReply, PlantVision, CandyComp, and PromptNexus.',
+      'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
   },
 };
 
@@ -174,7 +174,7 @@ export default function BlogIndex() {
             Launch notes and thinking from the Somnus team
           </h1>
           <p className="text-lg text-muted-foreground">
-            Deep dives into MagicReply, PlantVision, CandyComp, and
+            Deep dives into CMAForge, MagicReply, PlantVision, and
             PromptNexus—what we are building, why it matters, and how to get the
             most value from each product.
           </p>

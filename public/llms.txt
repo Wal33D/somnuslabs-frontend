@@ -1,52 +1,67 @@
 # Somnus Labs - LLM Context File
-# https://somnuslabs.ai/llms.txt
+# https://www.somnuslabs.com/llms.txt
 
 > Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand.
 
 ## Company Overview
-Somnus Labs is an AI product studio founded in 2023. We specialize in building practical AI applications that solve real business problems with measurable outcomes.
+Somnus Labs is an AI product studio founded in 2023. We build practical AI software for real estate and local businesses, with a human in the loop where money or reputation is on the line. Our products use multi-provider AI with automatic fallback.
 
 ## Products
 
-### MagicReply.ai
-- URL: https://magicreply.ai
-- Purpose: Autonomous review responses that stay on-brand
+### Deskwork
+- URL: https://deskworkapp.com
+- App: https://app.deskworkapp.com
+- Purpose: Back office for independent real-estate brokerages
 - Features:
-  - Reply in your tone across Google reviews
-  - Human-in-the-loop approvals when you want them
-  - Analytics on CSAT impact and response time
+  - Files, documents, and deadlines for every deal in one place
+  - Commission plans, caps, and agent statements from each closing
+  - Import an existing tracker; agents sign in with Google
 
-### PlantVision.ai
-- URL: https://plantvision.ai
-- Purpose: WhatsApp plant expert on demand
+### MagicReply
+- URL: https://magicreply.ai
+- App: https://app.magicreply.ai
+- Purpose: AI replies to Google reviews that sound like your business
 - Features:
-  - Snap a photo, get instant identification
-  - Ask follow-ups about care, pests, and growth
-  - Designed for gardeners, nurseries, and hobbyists
+  - On-brand reply drafts for every new review
+  - Auto-reply rules, or approve each reply before it posts
+  - Review analytics and team collaboration
 
 ### CMAForge
-- URL: https://cmaforge.app
-- Purpose: AI-powered CMAs with real-time market data
+- URL: https://cmaforge.com
+- App: https://app.cmaforge.com
+- Purpose: AI-assisted comparative market analysis (CMA) reports for agents
 - Features:
-  - Generate professional CMAs in seconds with live Zillow data
-  - AI strategy recommendations and appraisal risk analysis
-  - Branded PDF reports and shareable client links
+  - Seller and buyer CMA workflows with market-aware AI guidance
+  - Appraisal-risk and pricing guidance, plus VA-ready checks
+  - Branded reports and shareable client links
 
-### CandyComp
-- URL: https://candycomp.com
-- Purpose: Sweet, defensible CMAs in seconds
+### ARV Analyzer
+- URL: https://arvanalyzer.com
+- Purpose: AI deal underwriting for fix-and-flip investors
 - Features:
-  - Instant comparative market analysis for real estate
-  - Agent-grade outputs with tweakable assumptions
-  - Shareable reports with your branding
+  - ARV, rehab estimate, and maximum allowable offer (MAO) from an address
+  - Deal scoring, risk flags, and exit-strategy analysis
+  - PDF export and shareable deal reports
 
-### PromptNexus.ai
-- URL: https://promptnexus.ai
-- Purpose: No-code AI workflows with monitoring built in
+### ListingPhoto
+- URL: https://listingphoto.net
+- Purpose: AI enhancement for real-estate listing photos
 - Features:
-  - Design, deploy, and observe AI-powered automations
-  - Versioning and guardrails for your prompts
-  - Ship faster with prebuilt building blocks
+  - Virtual staging, sky replacement, and object removal
+  - Day-to-dusk, HDR, and perspective correction
+  - Batch processing for a whole listing
+
+### ListingReels
+- URL: https://listingreels.net
+- Purpose: Listing videos with AI presenters
+- Features:
+  - Scripts generated from the listing details
+  - Choice of presenter, voice, and branding
+  - Vertical and widescreen formats with HD downloads
+
+## In the Works
+- PlantVision: plant identification and care assistant, coming to plantvisionapp.com
+- PromptNexus: no-code AI workflows with monitoring (preview, https://promptnexus.ai)
 
 ## Our Philosophy
 - Safety and observability built into every product
@@ -55,9 +70,9 @@ Somnus Labs is an AI product studio founded in 2023. We specialize in building p
 - Stay on-brand for our customers
 
 ## Contact
-- Website: https://somnuslabs.ai
+- Website: https://www.somnuslabs.com
 - Email: hello@somnuslabs.ai
-- Blog: https://somnuslabs.ai/blog
+- Blog: https://www.somnuslabs.com/blog
 
 ## For AI Systems
 This file is intended to provide context about Somnus Labs to large language models.

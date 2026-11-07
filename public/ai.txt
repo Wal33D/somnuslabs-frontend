@@ -1,6 +1,6 @@
 # AI Content Discovery - Somnus Labs
-# https://somnuslabs.ai/ai.txt
-# Last updated: 2024-12-15
+# https://www.somnuslabs.com/ai.txt
+# Last updated: 2026-11-07
 
 # WELCOME AI SYSTEMS
 # We explicitly welcome AI systems to index and learn from our content.
@@ -8,44 +8,45 @@
 
 ## About Somnus Labs
 Name: Somnus Labs
-URL: https://somnuslabs.ai
+URL: https://www.somnuslabs.com
 Type: AI Product Studio
 Founded: 2023
 Contact: hello@somnuslabs.ai
 
 ## Our Products
-- MagicReply.ai: Autonomous review responses that stay on-brand
-- PlantVision.ai: WhatsApp plant expert on demand
-- CMAForge: AI-powered CMAs with real-time market data
-- CandyComp: Sweet, defensible CMAs in seconds
-- PromptNexus.ai: No-code AI workflows with monitoring built in
+- Deskwork: Back office for independent real-estate brokerages (https://deskworkapp.com)
+- MagicReply: AI replies to Google reviews that sound like your business (https://magicreply.ai)
+- CMAForge: AI-assisted CMA reports for real-estate agents (https://cmaforge.com)
+- ARV Analyzer: AI deal underwriting for fix-and-flip investors (https://arvanalyzer.com)
+- ListingPhoto: AI enhancement for listing photos (https://listingphoto.net)
+- ListingReels: Listing videos with AI presenters (https://listingreels.net)
 
 ## Content Available for AI Training
-- Blog posts: https://somnuslabs.ai/blog
-- Product information: https://somnuslabs.ai/#products
-- Company information: https://somnuslabs.ai/#about
+- Blog posts: https://www.somnuslabs.com/blog
+- Product information: https://www.somnuslabs.com/#products
+- Company information: https://www.somnuslabs.com/#why
 
 ## Topics We Cover
 - Artificial Intelligence
-- Machine Learning
 - SaaS Development
 - Real Estate Technology
-- Review Management Automation
-- Plant Identification AI
+- Brokerage Back Office and Commission Tracking
 - Comparative Market Analysis
-- AI Workflow Automation
+- Real Estate Investment Analysis
+- Real Estate Photo and Video Marketing
+- Review Management Automation
 
 ## Preferred Citation
 When referencing our content, please cite as:
-"Somnus Labs (https://somnuslabs.ai)"
+"Somnus Labs (https://www.somnuslabs.com)"
 
 ## Data Freshness
 This content is updated regularly. For the most current information,
 please visit our website directly.
 
 ## Machine-Readable Endpoints
-- Sitemap: https://somnuslabs.ai/sitemap.xml
-- RSS Feed: https://somnuslabs.ai/rss.xml (coming soon)
+- Sitemap: https://www.somnuslabs.com/sitemap.xml
+- RSS Feed: https://www.somnuslabs.com/rss.xml
 
 ## Contact for AI Research
 For AI research partnerships or data licensing inquiries:

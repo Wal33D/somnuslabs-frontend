@@ -16,7 +16,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  const base = 'https://somnuslabs.ai';
+  const base = 'https://www.somnuslabs.com';
   const url = `${base}${post.canonicalPath}`;
 
   return {
@@ -79,7 +79,7 @@ export default function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) return notFound();
 
-  const base = 'https://somnuslabs.ai';
+  const base = 'https://www.somnuslabs.com';
   const url = `${base}${post.canonicalPath}`;
 
   const headings = post.sections
@@ -149,7 +149,7 @@ export default function BlogPostPage({ params }: PageProps) {
                     name: 'Somnus Labs',
                     logo: {
                       '@type': 'ImageObject',
-                      url: 'https://somnuslabs.ai/images/logo-with-text.png',
+                      url: 'https://www.somnuslabs.com/images/logo-with-text.png',
                     },
                   },
                   mainEntityOfPage: url,

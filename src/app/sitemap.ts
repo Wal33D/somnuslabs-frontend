@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { posts } from '@/lib/posts';
 
-const baseUrl = 'https://somnuslabs.ai';
+const baseUrl = 'https://www.somnuslabs.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [
