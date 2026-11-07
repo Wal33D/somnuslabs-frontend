@@ -23,101 +23,101 @@ type SneakPeek = { title: string; copy: string; tag: string };
 
 const products: Product[] = [
   {
-    name: 'MagicReply.ai',
+    name: 'Deskwork',
+    href: 'https://deskworkapp.com',
+    imageSrc: '/images/deskwork-logo.png',
+    imageAlt: 'Deskwork Logo',
+    badge: 'Live',
+    description: 'The back office for independent real-estate brokerages.',
+    bullets: [
+      'Files, documents, and deadlines for every deal in one place',
+      'Commission plans, caps, and agent statements from each closing',
+      'Bring your existing tracker; agents sign in with Google',
+    ],
+    primaryCta: 'Visit Deskwork',
+    secondaryCta: { label: 'Sign in', href: 'https://app.deskworkapp.com' },
+  },
+  {
+    name: 'MagicReply',
     href: 'https://magicreply.ai',
     imageSrc: '/images/magicreply-logo.png',
     imageAlt: 'MagicReply Logo',
     badge: 'Live',
-    description: 'Autonomous review responses that stay on-brand.',
+    description: 'AI replies to Google reviews that sound like your business.',
     bullets: [
-      'Reply in your tone across Google reviews',
-      'Human-in-the-loop approvals when you want them',
-      'Analytics on CSAT impact and response time',
+      'On-brand reply drafts for every new review',
+      'Auto-reply rules, or approve each reply before it posts',
+      'Review analytics and team collaboration built in',
     ],
     primaryCta: 'Visit MagicReply',
-    secondaryCta: { label: 'See how it works', href: '#contact' },
-  },
-  {
-    name: 'PlantVision.ai',
-    href: 'https://plantvision.ai',
-    imageSrc: '/images/plantvision-logo.webp',
-    imageAlt: 'PlantVision.ai Logo',
-    badge: 'Live',
-    description: 'WhatsApp plant expert on demand.',
-    bullets: [
-      'Snap a photo, get instant identification',
-      'Ask follow-ups about care, pests, and growth',
-      'Designed for gardeners, nurseries, and hobbyists',
-    ],
-    primaryCta: 'Visit PlantVision',
-    secondaryCta: { label: 'Talk to us', href: '#contact' },
+    secondaryCta: { label: 'Sign in', href: 'https://app.magicreply.ai' },
   },
   {
     name: 'CMAForge',
-    href: 'https://cmaforge.app',
+    href: 'https://cmaforge.com',
     imageSrc: '/images/cmaforge-logo.png',
     imageAlt: 'CMAForge Logo',
     badge: 'Live',
-    description: 'AI-powered CMAs with real-time market data.',
+    description: 'AI-assisted CMAs your clients can actually follow.',
     bullets: [
-      'Generate professional CMAs in seconds with live Zillow data',
-      'AI strategy recommendations and appraisal risk analysis',
-      'Branded PDF reports and shareable client links',
+      'Seller and buyer CMA workflows with an AI that knows your market',
+      'Appraisal-risk and pricing guidance, plus VA-ready checks',
+      'Branded reports and shareable client links',
     ],
     primaryCta: 'Visit CMAForge',
-    secondaryCta: { label: 'See it in action', href: '#contact' },
+    secondaryCta: { label: 'Open the app', href: 'https://app.cmaforge.com' },
   },
   {
-    name: 'CandyComp',
-    href: 'https://candycomp.com',
-    imageSrc: '/images/candycomp-logo.png',
-    imageAlt: 'CandyComp Logo',
-    badge: 'Beta',
-    description: 'Sweet, defensible CMAs in seconds.',
-    bullets: [
-      'Instant comparative market analysis for real estate',
-      'Agent-grade outputs with tweakable assumptions',
-      'Shareable reports with your branding',
-    ],
-    primaryCta: 'Visit CandyComp',
-    secondaryCta: { label: 'Request a demo', href: '#contact' },
-  },
-  {
-    name: 'PromptNexus.ai',
-    href: 'https://promptnexus.ai',
-    imageSrc: '/images/promptnexus-logo.webp',
-    imageAlt: 'PromptNexus Logo',
+    name: 'ARV Analyzer',
+    href: 'https://arvanalyzer.com',
+    imageSrc: '/images/arvanalyzer-logo.png',
+    imageAlt: 'ARV Analyzer Logo',
     badge: 'New',
-    description: 'No-code AI workflows with monitoring built in.',
+    description: 'AI deal underwriting for fix-and-flip investors.',
     bullets: [
-      'Design, deploy, and observe AI-powered automations',
-      'Versioning and guardrails for your prompts',
-      'Ship faster with prebuilt building blocks',
+      'ARV, rehab estimate, and maximum allowable offer from an address',
+      'Deal scoring, risk flags, and exit-strategy analysis',
+      'Export a PDF or share the deal report',
     ],
-    primaryCta: 'Visit PromptNexus',
-    secondaryCta: { label: 'Explore workflows', href: '#contact' },
+    primaryCta: 'Visit ARV Analyzer',
+    secondaryCta: { label: 'Talk to us', href: '#contact' },
   },
   {
-    name: 'HYDMG',
-    href: 'https://hydmg.com',
-    imageSrc: '/images/hydmg-logo.webp',
-    imageAlt: 'HYDMG Logo',
-    badge: 'Live',
-    description: 'The hardcore Hytale server for true gamers.',
+    name: 'ListingPhoto',
+    href: 'https://listingphoto.net',
+    imageSrc: '/images/listingphoto-logo.png',
+    imageAlt: 'ListingPhoto Logo',
+    badge: 'New',
+    description: 'AI enhancement that makes every listing photo shine.',
     bullets: [
-      'No pay-to-win - all players compete on equal footing',
-      'Low latency infrastructure with zero lag',
-      'Bug bounty rewards instead of bans',
+      'Virtual staging, sky replacement, and object removal',
+      'Day-to-dusk, HDR, and perspective correction',
+      'Batch-process a whole listing at once',
     ],
-    primaryCta: 'Visit HYDMG',
-    secondaryCta: { label: 'Join Discord', href: 'https://hydmg.com' },
+    primaryCta: 'Visit ListingPhoto',
+    secondaryCta: { label: 'Talk to us', href: '#contact' },
+  },
+  {
+    name: 'ListingReels',
+    href: 'https://listingreels.net',
+    imageSrc: '/images/listingreels-logo.png',
+    imageAlt: 'ListingReels Logo',
+    badge: 'New',
+    description: 'Listing videos with AI presenters, ready for social.',
+    bullets: [
+      'Scripts written for you from the listing details',
+      'Pick a presenter, voice, and your branding',
+      'Vertical and widescreen formats with HD downloads',
+    ],
+    primaryCta: 'Visit ListingReels',
+    secondaryCta: { label: 'Talk to us', href: '#contact' },
   },
 ];
 
 const stats: Stat[] = [
-  { label: 'Automated replies delivered', value: '1.2M+' },
-  { label: 'Plant IDs answered', value: '840k' },
-  { label: 'CMAs generated', value: '62k' },
+  { label: 'Products live', value: '6' },
+  { label: 'Built for real estate', value: '5' },
+  { label: 'Building since', value: '2023' },
 ];
 
 const pillars: Pillar[] = [
@@ -133,7 +133,7 @@ const pillars: Pillar[] = [
   },
   {
     title: 'Ship faster',
-    copy: 'Reusable components across Somnus products accelerate every launch.',
+    copy: 'Shared building blocks - sign-in, reporting, and multi-provider AI with automatic fallback - give every launch a head start.',
     icon: 'Launch',
   },
 ];
@@ -142,12 +142,12 @@ const sneakPeeks: SneakPeek[] = [
   {
     title: 'Conversational reviews',
     copy: 'Tone-adaptive replies that sound like your team - without the wait.',
-    tag: 'MagicReply.ai',
+    tag: 'MagicReply',
   },
   {
-    title: 'AI-powered market analysis',
-    copy: 'Real-time data meets AI strategy for CMAs that win listings.',
-    tag: 'CMAForge',
+    title: 'Plant ID and care, rebuilt',
+    copy: 'Snap a plant, learn what it is and how to keep it thriving. Coming to plantvisionapp.com.',
+    tag: 'PlantVision',
   },
   {
     title: 'AI workflow canvas',
@@ -262,10 +262,10 @@ const Home: React.FC = () => (
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Somnus Labs',
-          url: 'https://somnuslabs.ai',
-          logo: 'https://somnuslabs.ai/images/logo-with-text.png',
+          url: 'https://www.somnuslabs.com',
+          logo: 'https://www.somnuslabs.com/images/logo-with-text.png',
           description:
-            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus.',
+            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
           foundingDate: '2023',
           sameAs: [
             'https://twitter.com/somnuslabs',
@@ -281,8 +281,12 @@ const Home: React.FC = () => (
             'Machine Learning',
             'SaaS',
             'Real Estate Technology',
+            'Brokerage Back Office Software',
+            'Comparative Market Analysis',
+            'Real Estate Investment Analysis',
+            'Real Estate Photo Enhancement',
+            'Real Estate Video Marketing',
             'Review Management',
-            'Plant Identification',
           ],
         }),
       }}
@@ -294,10 +298,10 @@ const Home: React.FC = () => (
           '@context': 'https://schema.org',
           '@type': 'WebSite',
           name: 'Somnus Labs',
-          url: 'https://somnuslabs.ai',
+          url: 'https://www.somnuslabs.com',
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://somnuslabs.ai/blog?q={search_term_string}',
+            target: 'https://www.somnuslabs.com/blog?q={search_term_string}',
             'query-input': 'required name=search_term_string',
           },
         }),
@@ -320,9 +324,10 @@ const Home: React.FC = () => (
               AI products that ship faster, learn faster, and stay on-brand.
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              We build automation you can trust - reviews that sound like you,
-              plant answers that feel human, CMAs that clients can act on, and
-              workflows you can monitor.
+              We build software you can trust with real work - a back office for
+              real-estate brokerages, CMAs clients can follow, deal underwriting
+              for investors, listing photos and videos, and review replies that
+              sound like you.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="#products">
@@ -383,7 +388,7 @@ const Home: React.FC = () => (
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One company, five focused apps
+            One studio, six focused apps
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Each product solves a real workflow and shares the same Somnus-grade
@@ -430,12 +435,13 @@ const Home: React.FC = () => (
             <div className="space-y-3">
               <Eyebrow>Proof</Eyebrow>
               <h3 className="text-2xl font-display font-semibold text-zinc-900">
-                Metrics that compound
+                Live products, real workflows
               </h3>
               <p className="text-sm text-muted-foreground">
-                From customer response times to plant identifications, we obsess
-                over measurable wins and ship iteratively to keep improving
-                them.
+                Every product here is live and taking sign-ups. We ship in small
+                rounds, keep a human in the loop where money or reputation is on
+                the line, and run multi-provider AI so one outage does not stop
+                your work.
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {stats.map(stat => (

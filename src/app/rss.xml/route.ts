@@ -1,6 +1,6 @@
 import { posts } from '@/lib/posts';
 
-const baseUrl = 'https://somnuslabs.ai';
+const baseUrl = 'https://www.somnuslabs.com';
 
 export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
@@ -8,7 +8,7 @@ export async function GET() {
   <channel>
     <title>Somnus Labs Blog</title>
     <link>${baseUrl}</link>
-    <description>AI products that ship faster, learn faster, and stay on-brand. Insights from the team behind MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus.</description>
+    <description>AI products that ship faster, learn faster, and stay on-brand. Insights from the team behind Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>

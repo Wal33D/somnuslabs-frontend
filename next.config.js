@@ -8,6 +8,16 @@ const nextConfig = {
       'cmaforge.com',
     ],
   },
+  async redirects() {
+    return [
+      {
+        // CandyComp CMA post retired: candycomp.com now hosts the Together game.
+        source: '/blog/candycomp-instant-real-estate-cma',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

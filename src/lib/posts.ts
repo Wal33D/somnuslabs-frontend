@@ -39,7 +39,7 @@ export const posts: Post[] = [
       'CMAForge combines fresh Zillow, Redfin, and Realtor.com data with AI-powered strategy recommendations to generate professional CMAs in seconds—complete with shareable links, PDF exports, and custom branding.',
     author: 'Waleed Judah',
     readTimeMinutes: 5,
-    productUrl: 'https://cmaforge.app',
+    productUrl: 'https://cmaforge.com',
     productLabel: 'CMAForge',
     heroImage: 'https://cmaforge.com/og-image.png',
     canonicalPath: '/blog/cmaforge-ai-powered-real-estate-analysis',
@@ -67,7 +67,7 @@ export const posts: Post[] = [
         heading: 'Key capabilities',
         bullets: [
           'Real-time data from Zillow, Redfin, and Realtor.com APIs for always-current comps.',
-          'AI-powered market briefs and strategy recommendations via Google Gemini.',
+          'AI-powered market briefs and strategy recommendations from multi-provider AI.',
           'Dual workflow modes: Seller CMA for listing agents and Buyer CMA for offer strategy.',
           'Professional PDF reports and secure shareable links with custom branding.',
           'Condition assessment with AI-assisted photo analysis for accurate adjustments.',
@@ -94,12 +94,11 @@ export const posts: Post[] = [
       {
         heading: 'Getting started',
         paragraphs: [
-          'Sign up with Google, run your first CMA for free, and see the difference AI-powered analysis makes. Pro subscribers get 25 CMAs per month, full branding customization, and access to AI video and photo enhancement features.',
-          'Launch offer includes 50% off for the first three months.',
+          'Sign up with Google, run your first CMA, and see the difference AI-powered analysis makes. Current plans and trial details are on cmaforge.com.',
         ],
       },
     ],
-    cta: { label: 'Visit CMAForge', href: 'https://cmaforge.app' },
+    cta: { label: 'Visit CMAForge', href: 'https://cmaforge.com' },
   },
   {
     slug: 'magicreply-ai-automated-review-responses',
@@ -162,7 +161,7 @@ export const posts: Post[] = [
       'PlantVision.ai identifies plants from photos and answers follow-up care questions right in WhatsApp.',
     author: 'Waleed Judah',
     readTimeMinutes: 4,
-    productUrl: 'https://plantvision.ai',
+    productUrl: '/#contact',
     productLabel: 'PlantVision.ai',
     heroImage:
       'https://res.cloudinary.com/dkfrhzkaf/image/upload/plantvision.ai/pv.webp',
@@ -173,6 +172,7 @@ export const posts: Post[] = [
     sections: [
       {
         paragraphs: [
+          'Update (November 2026): PlantVision is being rebuilt and is coming to plantvisionapp.com. Join the Somnus list below to hear when it opens.',
           'Plant lovers, gardeners, and nurseries need fast answers when they see an unfamiliar plant or spot an issue. PlantVision.ai lives in WhatsApp so you can get plant IDs and care guidance without new logins.',
         ],
       },
@@ -200,69 +200,7 @@ export const posts: Post[] = [
         ],
       },
     ],
-    cta: { label: 'Visit PlantVision.ai', href: 'https://plantvision.ai' },
-  },
-  {
-    slug: 'candycomp-instant-real-estate-cma',
-    title: 'CandyComp: Instant real estate CMAs that clients can trust',
-    description:
-      'Generate agent-grade comparative market analyses in seconds with CandyComp—branded, defensible, and ready to share.',
-    date: '2024-11-05',
-    tags: ['Real Estate', 'AI', 'Analytics'],
-    excerpt:
-      'CandyComp lets agents, buyers, and sellers generate CMAs in seconds, tweak assumptions, and share polished branded reports with live market stats.',
-    author: 'Waleed Judah',
-    readTimeMinutes: 4,
-    productUrl: 'https://candycomp.com',
-    productLabel: 'CandyComp',
-    heroImage:
-      'https://storage.googleapis.com/gpt-engineer-file-uploads/rwScSRzEyPVYN49nxhrDmw5TcbS2/social-images/social-1763714112466-og-image.png',
-    canonicalPath: '/blog/candycomp-instant-real-estate-cma',
-    ogTitle: 'CandyComp: Instant real estate CMAs that clients can trust',
-    ogDescription:
-      'Build defensible CMAs in seconds with CandyComp from Somnus Labs—agent-grade outputs, tweakable assumptions, shareable reports.',
-    sections: [
-      {
-        paragraphs: [
-          'Agents, buyers, and sellers need defensible CMAs quickly, without sacrificing quality. CandyComp makes comps sweet and simple, while keeping pro-level controls for the people who need them.',
-        ],
-      },
-      {
-        heading: 'What CandyComp solves',
-        bullets: [
-          'Manual CMA creation that takes hours and delays client follow-up.',
-          'Generic outputs that are hard to defend with clients.',
-          'Reports that do not match your brand or look polished.',
-          'Out-of-date market data that erodes trust.',
-        ],
-      },
-      {
-        heading: 'Key capabilities',
-        bullets: [
-          'Instant comparative market analyses with solid defaults and live market stats.',
-          'Tweak assumptions (filters, weighting, excluded comps) and regenerate quickly.',
-          'Professional, branded PDF and link-based reports ready to share with clients.',
-          'Real-time MLS and public record data refreshes so your comps stay current.',
-          'Roadmap: native mobile app and Chrome extension to run comps from anywhere.',
-        ],
-      },
-      {
-        heading: 'Getting started',
-        paragraphs: [
-          'Enter a property, review the generated comps, adjust assumptions if needed, and export or share a branded report—all in minutes.',
-          'Use the free tier for quick valuations; upgrade to Pro for unlimited CMAs, detailed market reports, and PDF exports.',
-        ],
-      },
-      {
-        heading: 'Who it is for',
-        bullets: [
-          'Agents and brokers who need client-ready CMAs fast.',
-          'Buyers and sellers who want confident pricing guidance.',
-          'Investors evaluating multiple properties with consistent, repeatable analysis.',
-        ],
-      },
-    ],
-    cta: { label: 'Visit CandyComp', href: 'https://candycomp.com' },
+    cta: { label: 'Get PlantVision launch updates', href: '/#contact' },
   },
   {
     slug: 'promptnexus-build-ai-workflows-with-guardrails',

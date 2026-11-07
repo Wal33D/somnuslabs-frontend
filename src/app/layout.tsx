@@ -16,24 +16,31 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://somnuslabs.ai'),
+  metadataBase: new URL('https://www.somnuslabs.com'),
   title: 'Somnus Labs - AI products that ship faster and stay on-brand',
   description:
-    'Somnus Labs is the team behind MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus—built with safety, observability, and polish.',
+    'Somnus Labs builds AI software for real estate and local business: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
   keywords: [
     'Somnus Labs',
+    'Deskwork',
     'MagicReply',
-    'PlantVision',
     'CMAForge',
-    'CandyComp',
-    'PromptNexus',
-    'AI workflows',
-    'AI automation',
+    'ARV Analyzer',
+    'ListingPhoto',
+    'ListingReels',
+    'brokerage back office software',
+    'commission tracking',
     'comparative market analysis',
-    'AI review responses',
     'real estate CMA',
+    'ARV calculator',
+    'fix and flip deal analysis',
+    'real estate photo enhancement',
+    'virtual staging',
+    'real estate listing videos',
+    'AI review responses',
+    'AI automation',
   ],
-  authors: [{ name: 'Somnus Labs', url: 'https://somnuslabs.ai' }],
+  authors: [{ name: 'Somnus Labs', url: 'https://www.somnuslabs.com' }],
   creator: 'Somnus Labs',
   publisher: 'Somnus Labs',
   robots: {
@@ -48,16 +55,16 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://somnuslabs.ai',
+    canonical: 'https://www.somnuslabs.com',
     types: {
-      'application/rss+xml': 'https://somnuslabs.ai/rss.xml',
+      'application/rss+xml': 'https://www.somnuslabs.com/rss.xml',
     },
   },
   openGraph: {
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore Somnus-built products: MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus. Built with guardrails, speed, and measurable outcomes.',
-    url: 'https://somnuslabs.ai',
+      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels. Built with guardrails, speed, and measurable outcomes.',
+    url: 'https://www.somnuslabs.com',
     siteName: 'Somnus Labs',
     locale: 'en_US',
     type: 'website',
@@ -74,7 +81,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore Somnus-built products: MagicReply, PlantVision, CMAForge, CandyComp, and PromptNexus.',
+      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
     images: ['/images/logo-with-text.png'],
     creator: '@somnuslabs',
     site: '@somnuslabs',

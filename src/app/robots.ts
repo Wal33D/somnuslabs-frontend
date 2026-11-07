@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://somnuslabs.ai';
+  const baseUrl = 'https://www.somnuslabs.com';
   return {
     rules: [
       // Allow all search engines and AI bots
