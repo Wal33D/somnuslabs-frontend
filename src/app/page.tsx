@@ -17,6 +17,13 @@ type Product = {
   secondaryCta?: { label: string; href: string };
 };
 
+type ClientWork = {
+  name: string;
+  client: string;
+  description: string;
+  bullets: string[];
+};
+
 type Stat = { label: string; value: string };
 type Pillar = { title: string; copy: string; icon: string };
 type SneakPeek = { title: string; copy: string; tag: string };
@@ -112,10 +119,40 @@ const products: Product[] = [
     primaryCta: 'Visit ListingReels',
     secondaryCta: { label: 'Talk to us', href: '#contact' },
   },
+  {
+    name: 'PlantVision',
+    href: 'https://plantvisionapp.com',
+    imageSrc: '/images/plantvision-logo.webp',
+    imageAlt: 'PlantVision Logo',
+    badge: 'New',
+    description:
+      'Identify any plant from a photo and learn how to care for it.',
+    bullets: [
+      'Upload a photo in your browser or send it on WhatsApp',
+      'Get the plant name and care tips, then ask follow-up questions',
+      'Free to start, no sign-up needed',
+    ],
+    primaryCta: 'Visit PlantVision',
+    secondaryCta: {
+      label: 'Identify a plant',
+      href: 'https://plantvisionapp.com/identify',
+    },
+  },
 ];
 
+const clientWork: ClientWork = {
+  name: 'Dealer assistant',
+  client: 'Deals Unlimited Inc.',
+  description: 'A WhatsApp assistant built for a used-car dealership.',
+  bullets: [
+    'Custom software built for Deals Unlimited Inc., not sold as a product',
+    'Answers dealership staff questions about warranties and inventory',
+    'Available to staff only today',
+  ],
+};
+
 const stats: Stat[] = [
-  { label: 'Products live', value: '6' },
+  { label: 'Products live', value: '7' },
   { label: 'Built for real estate', value: '5' },
   { label: 'Building since', value: '2023' },
 ];
@@ -143,11 +180,6 @@ const sneakPeeks: SneakPeek[] = [
     title: 'Conversational reviews',
     copy: 'Tone-adaptive replies that sound like your team - without the wait.',
     tag: 'MagicReply',
-  },
-  {
-    title: 'Plant ID and care, rebuilt',
-    copy: 'Snap a plant, learn what it is and how to keep it thriving. Coming to plantvisionapp.com.',
-    tag: 'PlantVision',
   },
   {
     title: 'AI workflow canvas',
@@ -237,6 +269,26 @@ const ProductCard = ({ product }: { product: Product }) => (
   </div>
 );
 
+const ClientWorkCard = ({ work }: { work: ClientWork }) => (
+  <div className="rounded-2xl bg-white/90 p-6 shadow-card backdrop-blur border border-white/60 ring-1 ring-indigo-50">
+    <div className="flex items-center justify-between gap-3">
+      <h3 className="text-xl font-semibold text-zinc-900 font-display">
+        {work.name}
+      </h3>
+      <Badge>For {work.client}</Badge>
+    </div>
+    <p className="mt-4 text-sm text-muted-foreground">{work.description}</p>
+    <ul className="mt-4 space-y-2 text-sm text-zinc-700">
+      {work.bullets.map(point => (
+        <li key={point} className="flex gap-2">
+          <span className="text-indigo-500">-</span>
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const SneakCard = ({ peek }: { peek: SneakPeek }) => (
   <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-gradient-to-br from-indigo-500/10 via-white to-purple-200/30 p-5 shadow-card backdrop-blur">
     <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-400/30 to-purple-500/30 blur-3xl" />
@@ -265,7 +317,7 @@ const Home: React.FC = () => (
           url: 'https://www.somnuslabs.com',
           logo: 'https://www.somnuslabs.com/images/logo-with-text.png',
           description:
-            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
+            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, ListingReels, and PlantVision. We also build custom software for clients.',
           foundingDate: '2023',
           sameAs: [
             'https://twitter.com/somnuslabs',
@@ -388,7 +440,7 @@ const Home: React.FC = () => (
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One studio, six focused apps
+            One studio, seven focused apps
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Each product solves a real workflow and shares the same Somnus-grade
@@ -399,6 +451,22 @@ const Home: React.FC = () => (
           {products.map(product => (
             <ProductCard key={product.name} product={product} />
           ))}
+        </div>
+      </Section>
+
+      <Section id="client-work" className="space-y-8 scroll-mt-32">
+        <div className="text-center space-y-3">
+          <Eyebrow>Client work</Eyebrow>
+          <h2 className="text-3xl font-display font-semibold text-zinc-900">
+            Custom software, built for clients
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Some of what we build is made for one business. It is under the same
+            Somnus umbrella, but it is not a product you can sign up for.
+          </p>
+        </div>
+        <div className="mx-auto max-w-2xl">
+          <ClientWorkCard work={clientWork} />
         </div>
       </Section>
 
@@ -438,10 +506,10 @@ const Home: React.FC = () => (
                 Live products, real workflows
               </h3>
               <p className="text-sm text-muted-foreground">
-                Every product here is live and taking sign-ups. We ship in small
-                rounds, keep a human in the loop where money or reputation is on
-                the line, and run multi-provider AI so one outage does not stop
-                your work.
+                Every product here is live. Some you can start on your own; for
+                the rest, talk to us. We ship in small rounds, keep a human in
+                the loop where money or reputation is on the line, and run
+                multi-provider AI so one outage does not stop your work.
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {stats.map(stat => (
@@ -479,7 +547,7 @@ const Home: React.FC = () => (
             spoiling the full UI.
           </p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {sneakPeeks.map(peek => (
             <SneakCard key={peek.title} peek={peek} />
           ))}

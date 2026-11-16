@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.somnuslabs.com'),
   title: 'Somnus Labs - AI products that ship faster and stay on-brand',
   description:
-    'Somnus Labs builds AI software for real estate and local business: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
+    'Somnus Labs builds AI software for real estate and local business: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, ListingReels, and PlantVision.',
   keywords: [
     'Somnus Labs',
     'Deskwork',
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     'ARV Analyzer',
     'ListingPhoto',
     'ListingReels',
+    'PlantVision',
     'brokerage back office software',
     'commission tracking',
     'comparative market analysis',
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels. Built with guardrails, speed, and measurable outcomes.',
+      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, ListingReels, and PlantVision. Built with guardrails, speed, and measurable outcomes.',
     url: 'https://www.somnuslabs.com',
     siteName: 'Somnus Labs',
     locale: 'en_US',
@@ -81,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Somnus Labs - AI products that ship faster and stay on-brand',
     description:
-      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.',
+      'Explore Somnus-built products: Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, ListingReels, and PlantVision.',
     images: ['/images/logo-with-text.png'],
     creator: '@somnuslabs',
     site: '@somnuslabs',

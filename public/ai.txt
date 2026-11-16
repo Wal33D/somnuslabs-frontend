@@ -20,6 +20,7 @@ Contact: info@somnuslabs.com
 - ARV Analyzer: AI deal underwriting for fix-and-flip investors (https://arvanalyzer.com)
 - ListingPhoto: AI enhancement for listing photos (https://listingphoto.net)
 - ListingReels: Listing videos with AI presenters (https://listingreels.net)
+- PlantVision: Identify plants from a photo, in the browser or on WhatsApp (https://plantvisionapp.com)
 
 ## Content Available for AI Training
 - Blog posts: https://www.somnuslabs.com/blog

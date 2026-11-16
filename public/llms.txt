@@ -59,8 +59,18 @@ Somnus Labs is an AI product studio founded in 2023. We build practical AI softw
   - Choice of presenter, voice, and branding
   - Vertical and widescreen formats with HD downloads
 
+### PlantVision
+- URL: https://plantvisionapp.com
+- Purpose: Identify any plant from a photo and get care tips, in the browser or on WhatsApp
+- Features:
+  - Upload a photo or send it on WhatsApp
+  - Plant name and care guidance, with follow-up questions
+  - Free to start, no sign-up needed
+
+## Client Work
+- Dealer assistant: custom messaging assistant built for Deals Unlimited Inc., a used-car dealership. Answers dealership staff questions about warranties and inventory. Not a public product.
+
 ## In the Works
-- PlantVision: plant identification and care assistant, coming to plantvisionapp.com
 - PromptNexus: no-code AI workflows with monitoring (preview, https://promptnexus.ai)
 
 ## Our Philosophy
