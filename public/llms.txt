@@ -71,7 +71,7 @@ Somnus Labs is an AI product studio founded in 2023. We build practical AI softw
 
 ## Contact
 - Website: https://www.somnuslabs.com
-- Email: hello@somnuslabs.ai
+- Email: info@somnuslabs.com
 - Blog: https://www.somnuslabs.com/blog
 
 ## For AI Systems
