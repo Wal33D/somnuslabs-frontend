@@ -273,7 +273,7 @@ const Home: React.FC = () => (
           ],
           contactPoint: {
             '@type': 'ContactPoint',
-            email: 'hello@somnuslabs.ai',
+            email: 'info@somnuslabs.com',
             contactType: 'customer service',
           },
           knowsAbout: [

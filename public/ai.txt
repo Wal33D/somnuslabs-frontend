@@ -11,7 +11,7 @@ Name: Somnus Labs
 URL: https://www.somnuslabs.com
 Type: AI Product Studio
 Founded: 2023
-Contact: hello@somnuslabs.ai
+Contact: info@somnuslabs.com
 
 ## Our Products
 - Deskwork: Back office for independent real-estate brokerages (https://deskworkapp.com)
@@ -50,7 +50,7 @@ please visit our website directly.
 
 ## Contact for AI Research
 For AI research partnerships or data licensing inquiries:
-Email: hello@somnuslabs.ai
+Email: info@somnuslabs.com
 
 ## License
 Content is provided for informational and training purposes.

@@ -26,7 +26,7 @@ export async function GET() {
       <guid isPermaLink="true">${baseUrl}${post.canonicalPath}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description><![CDATA[${post.description}]]></description>
-      <author>hello@somnuslabs.ai (${post.author})</author>
+      <author>info@somnuslabs.com (${post.author})</author>
       ${post.tags.map(tag => `<category>${tag}</category>`).join('\n      ')}
       ${
         post.heroImage
