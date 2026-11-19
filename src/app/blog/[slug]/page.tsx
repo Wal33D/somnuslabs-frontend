@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { posts, getPostBySlug } from '@/lib/posts';
-import { Button } from '@/components/ui';
+import { ButtonLink } from '@/components/ui';
+import { OG_IMAGE, SITE_URL, buildMetadata } from '@/lib/site';
 import { Header } from '@/components/site/Header';
 
 type PageProps = {
@@ -16,34 +17,18 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  const base = 'https://www.somnuslabs.com';
-  const url = `${base}${post.canonicalPath}`;
 
   return {
-    title: post.ogTitle || post.title,
-    description: post.ogDescription || post.description,
-    alternates: { canonical: url },
-    keywords: [post.title, post.productLabel, 'Somnus Labs', ...post.tags],
-    openGraph: {
+    ...buildMetadata({
       title: post.ogTitle || post.title,
       description: post.ogDescription || post.description,
-      url,
+      path: post.canonicalPath,
       type: 'article',
-      images: post.heroImage
-        ? [
-            {
-              url: post.heroImage,
-              alt: post.title,
-            },
-          ]
-        : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.ogTitle || post.title,
-      description: post.ogDescription || post.description,
-      images: post.heroImage ? [post.heroImage] : undefined,
-    },
+      image: post.shareImage
+        ? { ...post.shareImage, alt: post.title }
+        : OG_IMAGE,
+      keywords: [post.title, post.productLabel, 'Somnus Labs', ...post.tags],
+    }),
   };
 }
 
@@ -79,15 +64,16 @@ export default function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) return notFound();
 
-  const base = 'https://www.somnuslabs.com';
-  const url = `${base}${post.canonicalPath}`;
+  const url = `${SITE_URL}${post.canonicalPath}`;
+  const absolute = (src: string) =>
+    src.startsWith('/') ? `${SITE_URL}${src}` : src;
 
   const headings = post.sections
     .map(section => section.heading)
     .filter(Boolean) as string[];
 
   return (
-    <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
+    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
       <Header />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
@@ -95,131 +81,130 @@ export default function BlogPostPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(168,85,247,0.08),transparent_30%)]" />
       </div>
 
-      <Section className="relative pt-14 space-y-8">
-        <div className="space-y-4">
-          <Link
-            href="/blog"
-            className="text-sm font-semibold text-indigo-700 hover:underline">
-            ← Back to blog
-          </Link>
-          <Eyebrow>Somnus Labs</Eyebrow>
-          <h1 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900 leading-tight">
-            {post.title}
-          </h1>
-          <p className="text-lg text-muted-foreground">{post.description}</p>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-700">
-            <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-              {formatDate(post.date)}
-            </span>
-            {post.tags.map(tag => (
-              <span
-                key={tag}
-                className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                {tag}
+      <main id="main">
+        <Section className="relative pt-14 space-y-8">
+          <div className="space-y-4">
+            <Link
+              href="/blog"
+              className="text-sm font-semibold text-indigo-700 hover:underline">
+              ← Back to blog
+            </Link>
+            <Eyebrow>Somnus Labs</Eyebrow>
+            <h1 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900 leading-tight">
+              {post.title}
+            </h1>
+            <p className="text-lg text-muted-foreground">{post.description}</p>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-700">
+              <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+                {formatDate(post.date)}
               </span>
-            ))}
-            <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-              {post.readTimeMinutes} min read
-            </span>
-            <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-              {post.author}
-            </span>
+              {post.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+                  {tag}
+                </span>
+              ))}
+              <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+                {post.readTimeMinutes} min read
+              </span>
+              <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
+                {post.author}
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-700">
+              <span className="font-semibold text-indigo-800">Learn more:</span>
+              <Link
+                href={post.productUrl}
+                rel="noopener"
+                className="hover:underline">
+                {post.productLabel}
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-indigo-700">
-            <span className="font-semibold text-indigo-800">Learn more:</span>
-            <Link href={post.productUrl} className="hover:underline">
-              {post.productLabel}
-            </Link>
-          </div>
-        </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_240px] lg:items-start">
-          <article className="prose prose-zinc max-w-none">
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  '@context': 'https://schema.org',
-                  '@type': 'Article',
-                  headline: post.title,
-                  description: post.description,
-                  author: { '@type': 'Organization', name: post.author },
-                  publisher: {
-                    '@type': 'Organization',
-                    name: 'Somnus Labs',
-                    logo: {
-                      '@type': 'ImageObject',
-                      url: 'https://www.somnuslabs.com/images/logo-with-text.png',
-                    },
-                  },
-                  mainEntityOfPage: url,
-                  datePublished: post.date,
-                  image: post.heroImage,
-                }),
-              }}
-            />
-            {post.sections.map((section, idx) => {
-              const id =
-                section.heading
-                  ?.toLowerCase()
-                  .replace(/[^a-z0-9]+/g, '-')
-                  .replace(/(^-|-$)/g, '') || `section-${idx}`;
-              return (
-                <div key={id} className="mb-8 scroll-mt-24" id={id}>
-                  {section.heading && <h2>{section.heading}</h2>}
-                  {section.paragraphs?.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                  {section.bullets && (
-                    <ul>
-                      {section.bullets.map(bullet => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              );
-            })}
-          </article>
-
-          {headings.length > 0 && (
-            <aside className="sticky top-24 hidden rounded-2xl border border-white/70 bg-white/90 p-4 shadow-card backdrop-blur lg:block">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
-                On this page
-              </div>
-              <ul className="mt-3 space-y-2 text-sm text-zinc-700">
-                {headings.map(heading => {
-                  const id = heading
-                    .toLowerCase()
+          <div className="grid gap-8 lg:grid-cols-[1fr_240px] lg:items-start">
+            <article className="prose prose-zinc max-w-none">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Article',
+                    headline: post.title,
+                    description: post.description,
+                    author: { '@type': 'Person', name: post.author },
+                    publisher: { '@id': `${SITE_URL}/#organization` },
+                    mainEntityOfPage: url,
+                    datePublished: post.date,
+                    dateModified: post.updated || post.date,
+                    image: absolute(post.shareImage?.url || OG_IMAGE.url),
+                  }),
+                }}
+              />
+              {post.sections.map((section, idx) => {
+                const id =
+                  section.heading
+                    ?.toLowerCase()
                     .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '');
-                  return (
-                    <li key={heading}>
-                      <a href={`#${id}`} className="hover:text-indigo-700">
-                        {heading}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </aside>
-          )}
-        </div>
+                    .replace(/(^-|-$)/g, '') || `section-${idx}`;
+                return (
+                  <div key={id} className="mb-8 scroll-mt-24" id={id}>
+                    {section.heading && <h2>{section.heading}</h2>}
+                    {section.paragraphs?.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                    {section.bullets && (
+                      <ul>
+                        {section.bullets.map(bullet => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </article>
 
-        <div className="flex flex-wrap items-center gap-4">
-          <Link href="/blog">
-            <Button variant="outline">Back to all posts</Button>
-          </Link>
-          <Link href="/#products">
-            <Button variant="ghost">Explore products</Button>
-          </Link>
-          {post.cta && (
-            <Link href={post.cta.href}>
-              <Button>{post.cta.label}</Button>
-            </Link>
-          )}
-        </div>
-      </Section>
-    </main>
+            {headings.length > 0 && (
+              <aside
+                aria-label="On this page"
+                className="sticky top-24 hidden rounded-2xl border border-white/70 bg-white/90 p-4 shadow-card lg:block">
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
+                  On this page
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-zinc-700">
+                  {headings.map(heading => {
+                    const id = heading
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, '-')
+                      .replace(/(^-|-$)/g, '');
+                    return (
+                      <li key={heading}>
+                        <a href={`#${id}`} className="hover:text-indigo-700">
+                          {heading}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </aside>
+            )}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <ButtonLink href="/blog" variant="outline">
+              Back to all posts
+            </ButtonLink>
+            <ButtonLink href="/#products" variant="ghost">
+              Explore products
+            </ButtonLink>
+            {post.cta && (
+              <ButtonLink href={post.cta.href}>{post.cta.label}</ButtonLink>
+            )}
+          </div>
+        </Section>
+      </main>
+    </div>
   );
 }

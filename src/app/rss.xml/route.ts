@@ -8,7 +8,7 @@ export async function GET() {
   <channel>
     <title>Somnus Labs Blog</title>
     <link>${baseUrl}</link>
-    <description>AI products that ship faster, learn faster, and stay on-brand. Insights from the team behind Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, and ListingReels.</description>
+    <description>AI products that ship faster, learn faster, and stay on-brand. Notes from the team behind Deskwork, MagicReply, CMAForge, ARV Analyzer, and PlantVision.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
@@ -30,7 +30,13 @@ export async function GET() {
       ${post.tags.map(tag => `<category>${tag}</category>`).join('\n      ')}
       ${
         post.heroImage
-          ? `<enclosure url="${post.heroImage}" type="image/png"/>`
+          ? `<enclosure url="${
+              post.heroImage.startsWith('/')
+                ? baseUrl + post.heroImage
+                : post.heroImage
+            }" length="0" type="${
+              post.heroImage.endsWith('.webp') ? 'image/webp' : 'image/png'
+            }"/>`
           : ''
       }
     </item>`,

@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui';
+import { ButtonLink } from '@/components/ui';
 import { Header } from '@/components/site/Header';
 import { SubscribeForm } from 'src/components/molecules/SignupForm';
+import { CONTACT_EMAIL } from '@/lib/site';
 
 type Product = {
   name: string;
@@ -33,13 +34,14 @@ const products: Product[] = [
     name: 'Deskwork',
     href: 'https://deskworkapp.com',
     imageSrc: '/images/deskwork-logo.png',
-    imageAlt: 'Deskwork Logo',
+    imageAlt: 'Deskwork logo',
     badge: 'Live',
-    description: 'The back office for independent real-estate brokerages.',
+    description:
+      'One back office for independent real estate brokerages: transactions, documents, deadlines, commissions, payouts and reporting.',
     bullets: [
-      'Files, documents, and deadlines for every deal in one place',
-      'Commission plans, caps, and agent statements from each closing',
-      'Bring your existing tracker; agents sign in with Google',
+      'One screen to open a file: agent, address, price',
+      'Agent statements with the split, fees and cap, emailed to each agent',
+      "Sign up with your brokerage's Google Workspace or a Gmail address",
     ],
     primaryCta: 'Visit Deskwork',
     secondaryCta: { label: 'Sign in', href: 'https://app.deskworkapp.com' },
@@ -48,13 +50,14 @@ const products: Product[] = [
     name: 'MagicReply',
     href: 'https://magicreply.ai',
     imageSrc: '/images/magicreply-logo.png',
-    imageAlt: 'MagicReply Logo',
+    imageAlt: 'MagicReply logo',
     badge: 'Live',
-    description: 'AI replies to Google reviews that sound like your business.',
+    description:
+      'Drafts a reply to each Google review in your brand voice; you edit it, approve it, and post it to Google.',
     bullets: [
-      'On-brand reply drafts for every new review',
-      'Auto-reply rules, or approve each reply before it posts',
-      'Review analytics and team collaboration built in',
+      'A reply drafted for every review, in your brand voice',
+      'You stay in control: edit and approve before anything posts',
+      'Start free',
     ],
     primaryCta: 'Visit MagicReply',
     secondaryCta: { label: 'Sign in', href: 'https://app.magicreply.ai' },
@@ -63,13 +66,14 @@ const products: Product[] = [
     name: 'CMAForge',
     href: 'https://cmaforge.com',
     imageSrc: '/images/cmaforge-logo.png',
-    imageAlt: 'CMAForge Logo',
+    imageAlt: 'CMAForge logo',
     badge: 'Live',
-    description: 'AI-assisted CMAs your clients can actually follow.',
+    description:
+      'Chat with AI that knows your market: instant CMAs, comps, offer analysis, and client-ready reports for real estate agents.',
     bullets: [
-      'Seller and buyer CMA workflows with an AI that knows your market',
-      'Appraisal-risk and pricing guidance, plus VA-ready checks',
-      'Branded reports and shareable client links',
+      'Seller CMAs with sold, pending and active comps',
+      'Appraisal-risk flags, pricing scenarios, and a VA Ready Check',
+      'PDF reports and shareable web links; free to start, no card',
     ],
     primaryCta: 'Visit CMAForge',
     secondaryCta: { label: 'Open the app', href: 'https://app.cmaforge.com' },
@@ -78,59 +82,29 @@ const products: Product[] = [
     name: 'ARV Analyzer',
     href: 'https://arvanalyzer.com',
     imageSrc: '/images/arvanalyzer-logo.png',
-    imageAlt: 'ARV Analyzer Logo',
+    imageAlt: 'ARV Analyzer logo',
     badge: 'New',
-    description: 'AI deal underwriting for fix-and-flip investors.',
+    description:
+      'AI deal underwriting for real estate investors: ARV, rehab estimate, MAO, deal score, risk flags and exit strategies.',
     bullets: [
-      'ARV, rehab estimate, and maximum allowable offer from an address',
-      'Deal scoring, risk flags, and exit-strategy analysis',
-      'Export a PDF or share the deal report',
+      'A full deal analysis from an address in under 60 seconds',
+      'ARV, rehab estimate, and maximum allowable offer',
+      'Start free',
     ],
     primaryCta: 'Visit ARV Analyzer',
-    secondaryCta: { label: 'Talk to us', href: '#contact' },
-  },
-  {
-    name: 'ListingPhoto',
-    href: 'https://listingphoto.net',
-    imageSrc: '/images/listingphoto-logo.png',
-    imageAlt: 'ListingPhoto Logo',
-    badge: 'New',
-    description: 'AI enhancement that makes every listing photo shine.',
-    bullets: [
-      'Virtual staging, sky replacement, and object removal',
-      'Day-to-dusk, HDR, and perspective correction',
-      'Batch-process a whole listing at once',
-    ],
-    primaryCta: 'Visit ListingPhoto',
-    secondaryCta: { label: 'Talk to us', href: '#contact' },
-  },
-  {
-    name: 'ListingReels',
-    href: 'https://listingreels.net',
-    imageSrc: '/images/listingreels-logo.png',
-    imageAlt: 'ListingReels Logo',
-    badge: 'New',
-    description: 'Listing videos with AI presenters, ready for social.',
-    bullets: [
-      'Scripts written for you from the listing details',
-      'Pick a presenter, voice, and your branding',
-      'Vertical and widescreen formats with HD downloads',
-    ],
-    primaryCta: 'Visit ListingReels',
-    secondaryCta: { label: 'Talk to us', href: '#contact' },
   },
   {
     name: 'PlantVision',
     href: 'https://plantvisionapp.com',
     imageSrc: '/images/plantvision-logo.webp',
-    imageAlt: 'PlantVision Logo',
+    imageAlt: 'PlantVision logo',
     badge: 'New',
     description:
-      'Identify any plant from a photo and learn how to care for it.',
+      'Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat.',
     bullets: [
-      'Upload a photo in your browser or send it on WhatsApp',
-      'Get the plant name and care tips, then ask follow-up questions',
-      'Free to start, no sign-up needed',
+      'Upload a photo in your browser: free, no sign-up',
+      'Get the name and care basics, then ask follow-ups by text or voice note on WhatsApp',
+      'A library of care notes for 40 houseplants and garden plants',
     ],
     primaryCta: 'Visit PlantVision',
     secondaryCta: {
@@ -152,8 +126,8 @@ const clientWork: ClientWork = {
 };
 
 const stats: Stat[] = [
-  { label: 'Products live', value: '7' },
-  { label: 'Built for real estate', value: '5' },
+  { label: 'Products live', value: '5' },
+  { label: 'Client builds', value: '1' },
   { label: 'Building since', value: '2023' },
 ];
 
@@ -177,14 +151,14 @@ const pillars: Pillar[] = [
 
 const sneakPeeks: SneakPeek[] = [
   {
-    title: 'Conversational reviews',
-    copy: 'Tone-adaptive replies that sound like your team - without the wait.',
-    tag: 'MagicReply',
+    title: 'ListingPhoto',
+    copy: 'Photo enhancement for real estate listings. Coming soon.',
+    tag: 'In development',
   },
   {
-    title: 'AI workflow canvas',
-    copy: 'Chain tools, prompts, and checks with observability out of the box.',
-    tag: 'PromptNexus',
+    title: 'ListingReels',
+    copy: 'Listing videos for real estate marketing. Coming soon.',
+    tag: 'In development',
   },
 ];
 
@@ -220,8 +194,8 @@ const Section = ({
 );
 
 const StatCard = ({ stat }: { stat: Stat }) => (
-  <div className="rounded-xl border border-white/70 bg-white/80 p-4 shadow-card backdrop-blur-md text-center">
-    <div className="text-3xl font-bold text-zinc-900 font-display">
+  <div className="rounded-xl border border-white/70 bg-white/80 p-3 sm:p-4 shadow-card text-center">
+    <div className="text-2xl sm:text-3xl font-bold text-zinc-900 font-display">
       {stat.value}
     </div>
     <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
@@ -229,20 +203,21 @@ const StatCard = ({ stat }: { stat: Stat }) => (
 );
 
 const ProductCard = ({ product }: { product: Product }) => (
-  <div className="flex flex-col rounded-2xl bg-white/90 p-6 shadow-card backdrop-blur border border-white/60 ring-1 ring-indigo-50 card-hover">
+  <article className="flex flex-col rounded-2xl bg-white/90 p-6 shadow-card border border-white/60 ring-1 ring-indigo-50 card-hover">
     <div className="flex items-center justify-between gap-3">
       <h3 className="text-xl font-semibold text-zinc-900 font-display">
         {product.name}
       </h3>
       <Badge>{product.badge}</Badge>
     </div>
-    <div className="mt-4 flex items-center gap-4">
-      <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-50">
+    <div className="mt-4 flex items-start gap-4">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-indigo-50">
         <Image
           src={product.imageSrc}
           alt={product.imageAlt}
-          width={64}
-          height={64}
+          width={48}
+          height={48}
+          sizes="48px"
           className="h-12 w-12 object-contain"
         />
       </div>
@@ -251,26 +226,28 @@ const ProductCard = ({ product }: { product: Product }) => (
     <ul className="mt-4 space-y-2 text-sm text-zinc-700">
       {product.bullets.map(point => (
         <li key={point} className="flex gap-2">
-          <span className="text-indigo-500">-</span>
+          <span aria-hidden="true" className="text-indigo-500">
+            -
+          </span>
           <span>{point}</span>
         </li>
       ))}
     </ul>
     <div className="mt-6 flex flex-wrap gap-3">
-      <Link href={product.href} className="inline-block" rel="noreferrer">
-        <Button>{product.primaryCta}</Button>
-      </Link>
+      <ButtonLink href={product.href} external>
+        {product.primaryCta}
+      </ButtonLink>
       {product.secondaryCta && (
-        <Link href={product.secondaryCta.href} className="inline-block">
-          <Button variant="outline">{product.secondaryCta.label}</Button>
-        </Link>
+        <ButtonLink href={product.secondaryCta.href} variant="outline" external>
+          {product.secondaryCta.label}
+        </ButtonLink>
       )}
     </div>
-  </div>
+  </article>
 );
 
 const ClientWorkCard = ({ work }: { work: ClientWork }) => (
-  <div className="rounded-2xl bg-white/90 p-6 shadow-card backdrop-blur border border-white/60 ring-1 ring-indigo-50">
+  <article className="rounded-2xl bg-white/90 p-6 shadow-card border border-white/60 ring-1 ring-indigo-50">
     <div className="flex items-center justify-between gap-3">
       <h3 className="text-xl font-semibold text-zinc-900 font-display">
         {work.name}
@@ -281,24 +258,25 @@ const ClientWorkCard = ({ work }: { work: ClientWork }) => (
     <ul className="mt-4 space-y-2 text-sm text-zinc-700">
       {work.bullets.map(point => (
         <li key={point} className="flex gap-2">
-          <span className="text-indigo-500">-</span>
+          <span aria-hidden="true" className="text-indigo-500">
+            -
+          </span>
           <span>{point}</span>
         </li>
       ))}
     </ul>
-  </div>
+  </article>
 );
 
 const SneakCard = ({ peek }: { peek: SneakPeek }) => (
-  <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-gradient-to-br from-indigo-500/10 via-white to-purple-200/30 p-5 shadow-card backdrop-blur">
-    <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-400/30 to-purple-500/30 blur-3xl" />
+  <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-gradient-to-br from-indigo-500/10 via-white to-purple-200/30 p-5 shadow-card">
     <div className="relative flex flex-col gap-2">
       <span className="inline-flex w-fit rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-indigo-700">
         {peek.tag}
       </span>
-      <div className="text-lg font-semibold text-zinc-900 font-display">
+      <h3 className="text-lg font-semibold text-zinc-900 font-display">
         {peek.title}
-      </div>
+      </h3>
       <p className="text-sm text-muted-foreground">{peek.copy}</p>
     </div>
   </div>
@@ -306,59 +284,6 @@ const SneakCard = ({ peek }: { peek: SneakPeek }) => (
 
 const Home: React.FC = () => (
   <div className="relative flex min-h-screen flex-col overflow-hidden bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50">
-    {/* JSON-LD Structured Data */}
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'Somnus Labs',
-          url: 'https://www.somnuslabs.com',
-          logo: 'https://www.somnuslabs.com/images/logo-with-text.png',
-          description:
-            'Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand. Home of Deskwork, MagicReply, CMAForge, ARV Analyzer, ListingPhoto, ListingReels, and PlantVision. We also build custom software for clients.',
-          foundingDate: '2023',
-          sameAs: [
-            'https://twitter.com/somnuslabs',
-            'https://github.com/somnuslabs',
-          ],
-          contactPoint: {
-            '@type': 'ContactPoint',
-            email: 'info@somnuslabs.com',
-            contactType: 'customer service',
-          },
-          knowsAbout: [
-            'Artificial Intelligence',
-            'Machine Learning',
-            'SaaS',
-            'Real Estate Technology',
-            'Brokerage Back Office Software',
-            'Comparative Market Analysis',
-            'Real Estate Investment Analysis',
-            'Real Estate Photo Enhancement',
-            'Real Estate Video Marketing',
-            'Review Management',
-          ],
-        }),
-      }}
-    />
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name: 'Somnus Labs',
-          url: 'https://www.somnuslabs.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: 'https://www.somnuslabs.com/blog?q={search_term_string}',
-            'query-input': 'required name=search_term_string',
-          },
-        }),
-      }}
-    />
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
       <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-purple-200/40 blur-3xl" />
@@ -367,7 +292,7 @@ const Home: React.FC = () => (
 
     <Header />
 
-    <main className="relative flex flex-col gap-16 pb-20">
+    <main id="main" className="relative flex flex-col gap-16 pb-20">
       <Section className="pt-10" id="hero">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
@@ -376,39 +301,32 @@ const Home: React.FC = () => (
               AI products that ship faster, learn faster, and stay on-brand.
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              We build software you can trust with real work - a back office for
-              real-estate brokerages, CMAs clients can follow, deal underwriting
-              for investors, listing photos and videos, and review replies that
-              sound like you.
+              Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer
+              and PlantVision: a back office for real estate brokerages, replies
+              to Google reviews, CMAs clients can follow, deal underwriting for
+              investors, and plant identification from a photo.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="#products">
-                <Button size="lg">Explore products</Button>
-              </Link>
-              <Link href="#contact">
-                <Button size="lg" variant="outline">
-                  Book a call
-                </Button>
-              </Link>
+              <ButtonLink href="#products" size="lg">
+                Explore products
+              </ButtonLink>
+              <ButtonLink href="#contact" size="lg" variant="outline">
+                Get updates
+              </ButtonLink>
             </div>
-            <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/80 bg-white/80 p-4 shadow-card backdrop-blur">
+            <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/80 bg-white/80 p-4 shadow-card">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
-                Trusted in production
+                Our products
               </span>
               <div className="flex flex-wrap items-center gap-3">
                 {products.map(product => (
-                  <span
+                  <a
                     key={product.name}
-                    className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
-                    <Image
-                      src={product.imageSrc}
-                      alt={product.imageAlt}
-                      width={20}
-                      height={20}
-                      className="h-5 w-5 object-contain"
-                    />
+                    href={product.href}
+                    rel="noopener"
+                    className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100">
                     {product.name}
-                  </span>
+                  </a>
                 ))}
               </div>
             </div>
@@ -416,17 +334,17 @@ const Home: React.FC = () => (
 
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-indigo-500/10 via-white to-purple-300/30 blur-2xl" />
-            <div className="relative rounded-[28px] border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur">
+            <div className="relative rounded-[28px] border border-white/70 bg-white/90 p-6 shadow-card">
               <Image
                 width={420}
                 height={240}
-                alt="Somnus Labs Logo"
+                alt="Somnus Labs"
                 src="/images/logo-with-text.png"
                 priority
                 className="mx-auto h-auto w-[320px] max-w-full animate-float"
-                sizes="(max-width: 1024px) 100vw, 420px"
+                sizes="(max-width: 640px) 80vw, 320px"
               />
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
                 {stats.map(stat => (
                   <StatCard key={stat.label} stat={stat} />
                 ))}
@@ -440,11 +358,10 @@ const Home: React.FC = () => (
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One studio, seven focused apps
+            One studio, five live products
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Each product solves a real workflow and shares the same Somnus-grade
-            observability, guardrails, and polish.
+            Each product solves one job and has its own site.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -481,14 +398,17 @@ const Home: React.FC = () => (
           {pillars.map(pillar => (
             <div
               key={pillar.title}
-              className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-card backdrop-blur">
+              className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-card">
               <div className="mb-3 inline-flex items-center gap-2 rounded-lg bg-indigo-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-700">
-                <span className="h-2 w-2 rounded-sm bg-indigo-500" />
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 rounded-sm bg-indigo-500"
+                />
                 {pillar.icon}
               </div>
-              <div className="text-lg font-semibold text-zinc-900 font-display">
+              <h3 className="text-lg font-semibold text-zinc-900 font-display">
                 {pillar.title}
-              </div>
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 {pillar.copy}
               </p>
@@ -497,38 +417,37 @@ const Home: React.FC = () => (
         </div>
       </Section>
 
-      <Section id="proof" className="space-y-8 scroll-mt-32">
-        <div className="rounded-[28px] border border-white/70 bg-white/85 p-6 shadow-card backdrop-blur">
+      <Section id="about" className="space-y-8 scroll-mt-32">
+        <div className="rounded-[28px] border border-white/70 bg-white/85 p-6 shadow-card">
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-3">
-              <Eyebrow>Proof</Eyebrow>
-              <h3 className="text-2xl font-display font-semibold text-zinc-900">
-                Live products, real workflows
-              </h3>
+              <Eyebrow>About Somnus Labs</Eyebrow>
+              <h2 className="text-2xl font-display font-semibold text-zinc-900">
+                A small studio that builds and runs its own software
+              </h2>
               <p className="text-sm text-muted-foreground">
-                Every product here is live. Some you can start on your own; for
-                the rest, talk to us. We ship in small rounds, keep a human in
-                the loop where money or reputation is on the line, and run
-                multi-provider AI so one outage does not stop your work.
+                Somnus Labs has been building software since 2023. We make and
+                run Deskwork, MagicReply, CMAForge, ARV Analyzer and
+                PlantVision, and we build custom software for clients. We ship
+                in small rounds and keep a person in the loop where money or
+                reputation is on the line.
               </p>
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {stats.map(stat => (
                   <StatCard key={`proof-${stat.label}`} stat={stat} />
                 ))}
               </div>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 p-[1px]">
-              <div className="h-full rounded-2xl bg-white/90 p-6 text-left shadow-hover">
-                <p className="text-sm text-indigo-800 font-semibold">
-                  Founder note
-                </p>
+              <div className="h-full rounded-2xl bg-white p-6 text-left shadow-hover">
+                <h3 className="text-sm font-semibold text-indigo-800">
+                  Get in touch
+                </h3>
                 <p className="mt-3 text-lg text-zinc-900 font-display leading-snug">
-                  &quot;We ship products that feel handcrafted, but they scale
-                  like software. Safety, observability, and polish are
-                  non-negotiable across every Somnus product.&quot;
+                  Questions about a product, or something you want built?
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  - Somnus Labs Team
+                  Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
                 </p>
               </div>
             </div>
@@ -540,11 +459,10 @@ const Home: React.FC = () => (
         <div className="text-center space-y-2">
           <Eyebrow>In the works</Eyebrow>
           <h2 className="text-3xl font-display font-semibold text-zinc-900">
-            Sneak peeks
+            Coming soon
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Lightweight previews of the experiences we obsess over - without
-            spoiling the full UI.
+            Two more products are in development. Neither is open yet.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -555,7 +473,7 @@ const Home: React.FC = () => (
       </Section>
 
       <Section id="contact" className="scroll-mt-32">
-        <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur">
+        <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-8 shadow-card">
           <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl" />
           <div className="absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-purple-400/10 blur-3xl" />
           <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -589,20 +507,28 @@ const Home: React.FC = () => (
     </main>
 
     <footer className="relative mt-12 w-full border-t border-white/70 bg-gradient-to-t from-indigo-100/70 to-white/40">
-      <Section className="flex flex-col items-center gap-3 py-8 text-center">
+      <Section className="flex flex-col items-center gap-4 py-8 text-center">
         <Image
           width={150}
-          height={50}
-          alt="Somnus Labs Footer Logo"
+          height={67}
+          alt="Somnus Labs"
           src="/images/somnuslabs-header-logo.png"
           className="h-10 w-auto"
         />
+        <nav
+          aria-label="Products"
+          className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+          {products.map(product => (
+            <a key={product.name} href={product.href} rel="noopener">
+              {product.name}
+            </a>
+          ))}
+          <Link href="/blog">Blog</Link>
+          <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
+        </nav>
         <p className="text-muted-foreground">
           &copy; 2023 - {new Date().getFullYear()} Somnus Labs. All rights
           reserved.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Building the future with AI
         </p>
       </Section>
     </footer>

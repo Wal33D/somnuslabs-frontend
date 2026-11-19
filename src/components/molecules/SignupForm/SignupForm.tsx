@@ -80,6 +80,7 @@ const SubscribeForm: FC = () => {
               className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-800 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 disabled:text-gray-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
               id="email"
               name="email"
+              autoComplete="email"
               type="email"
               placeholder="you@company.com"
               value={email}
@@ -99,6 +100,7 @@ const SubscribeForm: FC = () => {
               className="w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-800 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 disabled:text-gray-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
               id="name"
               name="name"
+              autoComplete="name"
               type="text"
               placeholder="Your name"
               value={name}
@@ -113,12 +115,16 @@ const SubscribeForm: FC = () => {
           </div>
         </form>
         {message && status === 'success' && (
-          <p className="mt-3 text-center text-sm font-semibold text-green-600">
+          <p
+            role="status"
+            className="mt-3 text-center text-sm font-semibold text-green-700">
             {message}
           </p>
         )}
         {error && status === 'error' && (
-          <p className="mt-3 text-center text-sm font-semibold text-red-600">
+          <p
+            role="alert"
+            className="mt-3 text-center text-sm font-semibold text-red-700">
             {error}
           </p>
         )}

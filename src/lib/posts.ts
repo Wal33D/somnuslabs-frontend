@@ -9,6 +9,8 @@ export type Post = {
   title: string;
   description: string;
   date: string;
+  /** ISO date of the last substantive edit; used for sitemap lastmod. */
+  updated?: string;
   tags: string[];
   excerpt: string;
   author: string;
@@ -16,6 +18,8 @@ export type Post = {
   productUrl: string;
   productLabel: string;
   heroImage?: string;
+  /** 1200x630-ish image for Open Graph/Twitter; the site default is used when absent. */
+  shareImage?: { url: string; width: number; height: number };
   canonicalPath: string;
   ogTitle: string;
   ogDescription: string;
@@ -42,11 +46,15 @@ export const posts: Post[] = [
     productUrl: 'https://cmaforge.com',
     productLabel: 'CMAForge',
     heroImage: 'https://cmaforge.com/og-image.png',
+    shareImage: {
+      url: 'https://cmaforge.com/og-image.png',
+      width: 1200,
+      height: 630,
+    },
     canonicalPath: '/blog/cmaforge-ai-powered-real-estate-analysis',
-    ogTitle:
-      'CMAForge: AI-Powered Comparative Market Analysis for Real Estate Professionals',
+    ogTitle: 'CMAForge: AI-Powered CMAs for Real Estate Agents',
     ogDescription:
-      'Generate professional CMAs in seconds with real-time Zillow data, AI strategy recommendations, and branded PDF reports from Somnus Labs.',
+      'How CMAForge turns an address into a client-ready comparative market analysis with AI pricing guidance, shareable links and PDF reports.',
     sections: [
       {
         paragraphs: [
@@ -113,9 +121,14 @@ export const posts: Post[] = [
     readTimeMinutes: 4,
     productUrl: 'https://magicreply.ai',
     productLabel: 'MagicReply.ai',
-    heroImage: 'https://magicreply.ai/images/magicReplyHeadOpenGraphImage.png',
+    heroImage: '/images/magicReplyHeadOpenGraphImage.png',
+    shareImage: {
+      url: '/images/magicReplyHeadOpenGraphImage.png',
+      width: 1201,
+      height: 627,
+    },
     canonicalPath: '/blog/magicreply-ai-automated-review-responses',
-    ogTitle: 'MagicReply.ai: AI-powered review responses that stay on-brand',
+    ogTitle: 'MagicReply: AI replies to reviews that stay on-brand',
     ogDescription:
       'Automate Google review replies with tone-matching, guardrails, and analytics from Somnus Labs.',
     sections: [
@@ -151,56 +164,64 @@ export const posts: Post[] = [
     cta: { label: 'Visit MagicReply.ai', href: 'https://magicreply.ai' },
   },
   {
-    slug: 'plantvision-ai-plant-identification-companion',
-    title: 'PlantVision.ai: Your AI plant identification companion',
+    slug: 'plantvision-identify-plants-from-a-photo',
+    title: 'PlantVision: identify any plant from a photo',
     description:
-      'Identify plants and get care guidance instantly with PlantVision.ai on WhatsApp.',
+      'PlantVision names a plant from a photo and explains how to care for it, in your browser or on WhatsApp. Free to start, no sign-up.',
     date: '2024-11-03',
+    updated: '2026-11-19',
     tags: ['AI', 'Computer Vision', 'WhatsApp'],
     excerpt:
-      'PlantVision.ai identifies plants from photos and answers follow-up care questions right in WhatsApp.',
+      'Upload a photo of a leaf, a flower or the whole plant, and PlantVision tells you what it is and how to look after it. Keep asking follow-up questions in the chat.',
     author: 'Waleed Judah',
-    readTimeMinutes: 4,
-    productUrl: '/#contact',
-    productLabel: 'PlantVision.ai',
-    heroImage:
-      'https://res.cloudinary.com/dkfrhzkaf/image/upload/plantvision.ai/pv.webp',
-    canonicalPath: '/blog/plantvision-ai-plant-identification-companion',
-    ogTitle: 'PlantVision.ai: AI plant identification companion',
+    readTimeMinutes: 3,
+    productUrl: 'https://plantvisionapp.com',
+    productLabel: 'PlantVision',
+    heroImage: '/images/plantvision-logo.webp',
+    canonicalPath: '/blog/plantvision-identify-plants-from-a-photo',
+    ogTitle: 'PlantVision: identify any plant from a photo',
     ogDescription:
-      'Snap a plant photo, get instant ID and care tips with PlantVision.ai from Somnus Labs.',
+      'Identify a plant from a photo in your browser or on WhatsApp, then ask care questions in the chat. A product of Somnus Labs.',
     sections: [
       {
         paragraphs: [
-          'Update (November 2026): PlantVision is being rebuilt and is coming to plantvisionapp.com. Join the Somnus list below to hear when it opens.',
-          'Plant lovers, gardeners, and nurseries need fast answers when they see an unfamiliar plant or spot an issue. PlantVision.ai lives in WhatsApp so you can get plant IDs and care guidance without new logins.',
+          'PlantVision identifies a plant from a photo and tells you how to care for it. It works in your browser at plantvisionapp.com, and on WhatsApp when you want to keep asking questions in a chat.',
+          'This post was first written in 2024 for an earlier version of PlantVision. It has been updated for the current product at plantvisionapp.com.',
         ],
       },
       {
-        heading: 'What PlantVision.ai solves',
+        heading: 'What PlantVision solves',
         bullets: [
-          'Uncertainty about plant species and care requirements.',
-          'Time-consuming research across forums and sites.',
-          'No easy way to ask follow-up questions after an ID.',
+          'Not knowing what a plant is, or how to look after it.',
+          'Hunting through forums and sites for care advice.',
+          'No easy way to ask a follow-up question after you get a name.',
         ],
       },
       {
-        heading: 'Key capabilities',
+        heading: 'How it works',
         bullets: [
-          'Snap a photo to get instant identification with confidence cues.',
-          'Ask follow-up questions about care, pests, watering, and growth.',
-          'Works directly in WhatsApp—no new apps or accounts to manage.',
-          'Great for home gardeners and nursery teams alike.',
+          'Open Identify in your browser and add a clear photo of a leaf, a flower or the whole plant. No account and no sign-up.',
+          'PlantVision gives the common and scientific names and the basics of care.',
+          'Prefer a chat? Send the photo on WhatsApp and ask about watering, light, pests or yellowing leaves by text or voice note.',
         ],
       },
       {
-        heading: 'Getting started',
+        heading: 'Plant care notes',
         paragraphs: [
-          'Add PlantVision.ai on WhatsApp, send a photo, and start asking questions. Save your favorites and share results with teammates or friends.',
+          'The PlantVision plant library has notes on light, water, soil, temperature, pet safety and common problems for 40 houseplants and garden plants.',
+        ],
+      },
+      {
+        heading: 'Pricing',
+        paragraphs: [
+          'PlantVision is free while it is in early access. Your first few messages are free, and there are no paid plans yet.',
         ],
       },
     ],
-    cta: { label: 'Get PlantVision launch updates', href: '/#contact' },
+    cta: {
+      label: 'Identify a plant',
+      href: 'https://plantvisionapp.com/identify',
+    },
   },
   {
     slug: 'promptnexus-build-ai-workflows-with-guardrails',
@@ -218,10 +239,9 @@ export const posts: Post[] = [
     productLabel: 'PromptNexus.ai',
     heroImage: '/images/promptnexus-logo.webp',
     canonicalPath: '/blog/promptnexus-build-ai-workflows-with-guardrails',
-    ogTitle:
-      'Unlocking AI Potential with PromptNexus: A No-Code Solution Builder',
+    ogTitle: 'PromptNexus: A No-Code Builder for AI Workflows',
     ogDescription:
-      'Design, deploy, and observe AI-powered workflows without code. PromptNexus democratizes AI across organizational roles and departments.',
+      'Design, deploy, and observe AI-powered workflows without code. How PromptNexus brings AI to teams across an organization.',
     sections: [
       {
         paragraphs: [
