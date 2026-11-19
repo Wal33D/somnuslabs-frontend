@@ -16,10 +16,7 @@ export const OG_IMAGE = {
   alt: 'Somnus Labs: software for real estate, reviews and plants',
 };
 
-export const SOCIAL_LINKS = [
-  'https://github.com/somnuslabs',
-  'https://twitter.com/somnuslabs',
-];
+export const SOCIAL_LINKS = ['https://github.com/somnuslabs'];
 
 export type SiteProduct = {
   name: string;
