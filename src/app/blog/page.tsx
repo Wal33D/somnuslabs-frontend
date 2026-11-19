@@ -2,37 +2,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { posts } from '@/lib/posts';
-import { Button } from '@/components/ui';
+import { ButtonLink } from '@/components/ui';
+import { buildMetadata } from '@/lib/site';
 import { Header } from '@/components/site/Header';
 
-export const metadata: Metadata = {
-  title: 'Somnus Labs Blog - AI product notes and launches',
+export const metadata: Metadata = buildMetadata({
+  title: 'Somnus Labs Blog: product notes and launches',
   description:
-    'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
+    'Notes and launch posts from Somnus Labs on CMAForge, MagicReply, PlantVision and PromptNexus: what each product does and who it is for.',
+  path: '/blog',
   keywords: [
     'Somnus Labs blog',
-    'CMAForge updates',
-    'MagicReply updates',
-    'PlantVision updates',
-    'PromptNexus updates',
+    'CMAForge',
+    'MagicReply',
+    'PlantVision',
+    'PromptNexus',
   ],
-  alternates: {
-    canonical: 'https://www.somnuslabs.com/blog',
-  },
-  openGraph: {
-    title: 'Somnus Labs Blog - AI product notes and launches',
-    description:
-      'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
-    url: 'https://www.somnuslabs.com/blog',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Somnus Labs Blog - AI product notes and launches',
-    description:
-      'Stories and launch notes from Somnus Labs, covering CMAForge, MagicReply, PlantVision, and PromptNexus.',
-  },
-};
+});
 
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('en-US', {
@@ -87,7 +73,7 @@ const PostCard = ({
   productUrl: string;
   productLabel: string;
 }) => (
-  <div className="group grid gap-4 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover md:grid-cols-[1.2fr_0.8fr] md:items-center">
+  <article className="group grid gap-4 overflow-hidden rounded-2xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur transition hover:-translate-y-1 hover:shadow-hover md:grid-cols-[1.2fr_0.8fr] md:items-center">
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-4 text-xs text-indigo-700">
         <div className="flex flex-wrap gap-2">
@@ -102,9 +88,9 @@ const PostCard = ({
         <span className="text-muted-foreground">{formatDate(date)}</span>
       </div>
       <div className="space-y-2">
-        <h3 className="text-xl font-semibold text-zinc-900 font-display group-hover:text-indigo-700">
+        <h2 className="text-xl font-semibold text-zinc-900 font-display group-hover:text-indigo-700">
           {title}
-        </h3>
+        </h2>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
       <p className="text-sm text-zinc-700">{excerpt}</p>
@@ -116,18 +102,17 @@ const PostCard = ({
       <div className="mt-auto flex items-center justify-between gap-3">
         <Link
           href={`/blog/${slug}`}
+          aria-label={`Read more: ${title}`}
           className="text-indigo-700 font-semibold hover:underline">
           Read more
         </Link>
         <div className="flex gap-2">
-          <Link href={productUrl}>
-            <Button size="sm" variant="outline">
-              Visit {productLabel}
-            </Button>
-          </Link>
-          <Link href={`/blog/${slug}`}>
-            <Button size="sm">Open post</Button>
-          </Link>
+          <ButtonLink href={productUrl} size="sm" variant="outline">
+            Visit {productLabel}
+          </ButtonLink>
+          <ButtonLink href={`/blog/${slug}`} size="sm">
+            Open post
+          </ButtonLink>
         </div>
       </div>
     </div>
@@ -136,9 +121,10 @@ const PostCard = ({
       <div className="overflow-hidden rounded-xl bg-indigo-50/60 aspect-[16/10] w-full md:max-w-xs md:justify-self-end">
         <Image
           src={heroImage}
-          alt={title}
-          width={800}
-          height={500}
+          alt=""
+          width={400}
+          height={250}
+          sizes="(max-width: 768px) 100vw, 320px"
           className={`h-full w-full transition duration-300 ease-out ${
             heroImage.includes('plantvision') ||
             slug.includes('plantvision') ||
@@ -150,7 +136,7 @@ const PostCard = ({
         />
       </div>
     )}
-  </div>
+  </article>
 );
 
 export default function BlogIndex() {
@@ -159,7 +145,7 @@ export default function BlogIndex() {
   );
 
   return (
-    <main className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
+    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
       <Header />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
@@ -167,35 +153,34 @@ export default function BlogIndex() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(168,85,247,0.08),transparent_30%)]" />
       </div>
 
-      <Section className="relative pt-14 space-y-10">
-        <div className="max-w-3xl space-y-4">
-          <Eyebrow>Somnus Labs</Eyebrow>
-          <h1 className="text-4xl sm:text-5xl font-display font-semibold text-zinc-900 leading-tight">
-            Launch notes and thinking from the Somnus team
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Deep dives into CMAForge, MagicReply, PlantVision, and
-            PromptNexus—what we are building, why it matters, and how to get the
-            most value from each product.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/#products">
-              <Button>See products</Button>
-            </Link>
-            <Link href="/#contact">
-              <Button variant="outline">Join updates</Button>
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-6">
-          {sortedPosts.map(post => (
-            <div key={post.slug} className="w-full">
-              <PostCard {...post} />
+      <main id="main">
+        <Section className="relative pt-14 space-y-10">
+          <div className="max-w-3xl space-y-4">
+            <Eyebrow>Somnus Labs</Eyebrow>
+            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-zinc-900 leading-tight">
+              Launch notes and thinking from the Somnus team
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Posts about CMAForge, MagicReply, PlantVision, and PromptNexus:
+              what each product does and who it is for.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href="/#products">See products</ButtonLink>
+              <ButtonLink href="/#contact" variant="outline">
+                Get updates
+              </ButtonLink>
             </div>
-          ))}
-        </div>
-      </Section>
-    </main>
+          </div>
+
+          <div className="grid gap-6">
+            {sortedPosts.map(post => (
+              <div key={post.slug} className="w-full">
+                <PostCard {...post} />
+              </div>
+            ))}
+          </div>
+        </Section>
+      </main>
+    </div>
   );
 }

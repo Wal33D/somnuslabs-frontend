@@ -1,18 +1,34 @@
 import type { MetadataRoute } from 'next';
 import { posts } from '@/lib/posts';
-
-const baseUrl = 'https://www.somnuslabs.com';
+import { SITE_UPDATED, SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const latestPost = posts
+    .map(post => post.updated || post.date)
+    .sort()
+    .pop();
+
   const routes: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/`, lastModified: new Date() },
-    { url: `${baseUrl}/blog`, lastModified: new Date() },
+    {
+      url: `${SITE_URL}/`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: latestPost,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   posts.forEach(post => {
     routes.push({
-      url: `${baseUrl}${post.canonicalPath}`,
-      lastModified: new Date(),
+      url: `${SITE_URL}${post.canonicalPath}`,
+      lastModified: post.updated || post.date,
+      changeFrequency: 'yearly',
+      priority: 0.5,
     });
   });
 

@@ -4,74 +4,39 @@
 > Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand.
 
 ## Company Overview
-Somnus Labs is an AI product studio founded in 2023. We build practical AI software for real estate and local businesses, with a human in the loop where money or reputation is on the line. Our products use multi-provider AI with automatic fallback.
+Somnus Labs is a software studio founded in 2023. We build and run Deskwork, MagicReply, CMAForge, ARV Analyzer and PlantVision, and we build custom software for clients. We keep a person in the loop where money or reputation is on the line.
 
 ## Products
 
 ### Deskwork
 - URL: https://deskworkapp.com
 - App: https://app.deskworkapp.com
-- Purpose: Back office for independent real-estate brokerages
-- Features:
-  - Files, documents, and deadlines for every deal in one place
-  - Commission plans, caps, and agent statements from each closing
-  - Import an existing tracker; agents sign in with Google
+- Purpose: One back office for independent real estate brokerages: transactions, documents, deadlines, commissions, payouts and reporting
 
 ### MagicReply
 - URL: https://magicreply.ai
 - App: https://app.magicreply.ai
-- Purpose: AI replies to Google reviews that sound like your business
-- Features:
-  - On-brand reply drafts for every new review
-  - Auto-reply rules, or approve each reply before it posts
-  - Review analytics and team collaboration
+- Purpose: Drafts a reply to each Google review in your brand voice; you edit it, approve it, and post it to Google
 
 ### CMAForge
 - URL: https://cmaforge.com
 - App: https://app.cmaforge.com
-- Purpose: AI-assisted comparative market analysis (CMA) reports for agents
-- Features:
-  - Seller and buyer CMA workflows with market-aware AI guidance
-  - Appraisal-risk and pricing guidance, plus VA-ready checks
-  - Branded reports and shareable client links
+- Purpose: Chat with AI that knows your market: instant CMAs, comps, offer analysis, and client-ready reports for real estate agents
 
 ### ARV Analyzer
 - URL: https://arvanalyzer.com
-- Purpose: AI deal underwriting for fix-and-flip investors
-- Features:
-  - ARV, rehab estimate, and maximum allowable offer (MAO) from an address
-  - Deal scoring, risk flags, and exit-strategy analysis
-  - PDF export and shareable deal reports
-
-### ListingPhoto
-- URL: https://listingphoto.net
-- Purpose: AI enhancement for real-estate listing photos
-- Features:
-  - Virtual staging, sky replacement, and object removal
-  - Day-to-dusk, HDR, and perspective correction
-  - Batch processing for a whole listing
-
-### ListingReels
-- URL: https://listingreels.net
-- Purpose: Listing videos with AI presenters
-- Features:
-  - Scripts generated from the listing details
-  - Choice of presenter, voice, and branding
-  - Vertical and widescreen formats with HD downloads
+- Purpose: AI deal underwriting for real estate investors: ARV, rehab estimate, MAO, deal score, risk flags and exit strategies
 
 ### PlantVision
 - URL: https://plantvisionapp.com
-- Purpose: Identify any plant from a photo and get care tips, in the browser or on WhatsApp
-- Features:
-  - Upload a photo or send it on WhatsApp
-  - Plant name and care guidance, with follow-up questions
-  - Free to start, no sign-up needed
+- Purpose: Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat
 
 ## Client Work
 - Dealer assistant: custom messaging assistant built for Deals Unlimited Inc., a used-car dealership. Answers dealership staff questions about warranties and inventory. Not a public product.
 
 ## In the Works
-- PromptNexus: no-code AI workflows with monitoring (preview, https://promptnexus.ai)
+- ListingPhoto (listingphoto.net) and ListingReels (listingreels.net): in development, coming soon
+- PromptNexus: no-code AI workflows (https://promptnexus.ai)
 
 ## Our Philosophy
 - Safety and observability built into every product
