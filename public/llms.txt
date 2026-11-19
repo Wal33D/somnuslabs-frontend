@@ -29,7 +29,7 @@ Somnus Labs is a software studio founded in 2023. We build and run Deskwork, Mag
 
 ### PlantVision
 - URL: https://plantvisionapp.com
-- Purpose: Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat
+- Purpose: Identify any plant from a photo in your browser, then ask care questions in the chat
 
 ## Client Work
 - Dealer assistant: custom messaging assistant built for Deals Unlimited Inc., a used-car dealership. Answers dealership staff questions about warranties and inventory. Not a public product.

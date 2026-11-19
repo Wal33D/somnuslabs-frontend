@@ -11,7 +11,7 @@ type Product = {
   href: string;
   imageSrc: string;
   imageAlt: string;
-  badge: 'Live' | 'Beta' | 'New';
+  badge: 'Live' | 'Beta' | 'New' | 'Open source';
   description: string;
   bullets: string[];
   primaryCta: string;
@@ -100,10 +100,10 @@ const products: Product[] = [
     imageAlt: 'PlantVision logo',
     badge: 'New',
     description:
-      'Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat.',
+      'Identify any plant from a photo in your browser, then ask care questions in the chat.',
     bullets: [
       'Upload a photo in your browser: free, no sign-up',
-      'Get the name and care basics, then ask follow-ups by text or voice note on WhatsApp',
+      'Get the name and care basics, then ask follow-up care questions',
       'A library of care notes for 40 houseplants and garden plants',
     ],
     primaryCta: 'Visit PlantVision',
@@ -111,6 +111,21 @@ const products: Product[] = [
       label: 'Identify a plant',
       href: 'https://plantvisionapp.com/identify',
     },
+  },
+  {
+    name: 'OBD-Droid',
+    href: 'https://github.com/Wal33D/OBD-Droid',
+    imageSrc: '/images/obd-droid-logo.png',
+    imageAlt: 'OBD-Droid logo',
+    badge: 'Open source',
+    description:
+      'An Android car diagnostics app: plug in any ELM327 adapter and read live data, trouble codes and emissions readiness, with an AI copilot.',
+    bullets: [
+      'Live data, HUD mode, and CSV + GPS logging',
+      'Fault codes with freeze frames and fix hints',
+      'VIN decode and NHTSA safety recalls, MIT licensed',
+    ],
+    primaryCta: 'View on GitHub',
   },
 ];
 

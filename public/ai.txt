@@ -18,7 +18,7 @@ Contact: info@somnuslabs.com
 - MagicReply: Drafts replies to Google reviews in your brand voice (https://magicreply.ai)
 - CMAForge: AI comps, pricing guidance and client-ready CMA reports (https://cmaforge.com)
 - ARV Analyzer: AI deal underwriting for real estate investors (https://arvanalyzer.com)
-- PlantVision: Identify plants from a photo, in the browser or on WhatsApp (https://plantvisionapp.com)
+- PlantVision: Identify plants from a photo in the browser (https://plantvisionapp.com)
 - Coming soon: ListingPhoto (listingphoto.net) and ListingReels (listingreels.net)
 
 ## Content Available for AI Training
