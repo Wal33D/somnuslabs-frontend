@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { posts } from '@/lib/posts';
 import { ButtonLink } from '@/components/ui';
 import { buildMetadata } from '@/lib/site';
+import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 
 export const metadata: Metadata = buildMetadata({
@@ -145,7 +146,7 @@ export default function BlogIndex() {
   );
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
+    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50">
       <Header />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
@@ -181,6 +182,7 @@ export default function BlogIndex() {
           </div>
         </Section>
       </main>
+      <Footer />
     </div>
   );
 }

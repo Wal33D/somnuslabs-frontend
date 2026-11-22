@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { posts, getPostBySlug } from '@/lib/posts';
 import { ButtonLink } from '@/components/ui';
 import { OG_IMAGE, SITE_URL, buildMetadata } from '@/lib/site';
+import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 
 type PageProps = {
@@ -73,7 +74,7 @@ export default function BlogPostPage({ params }: PageProps) {
     .filter(Boolean) as string[];
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50 pb-16">
+    <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-[#f6f7ff] via-white to-indigo-50">
       <Header />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
@@ -205,6 +206,7 @@ export default function BlogPostPage({ params }: PageProps) {
           </div>
         </Section>
       </main>
+      <Footer />
     </div>
   );
 }

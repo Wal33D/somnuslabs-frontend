@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { posts } from '@/lib/posts';
+import { LEGAL_PAGES, LEGAL_UPDATED } from '@/lib/legal';
 import { SITE_UPDATED, SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    ...LEGAL_PAGES.map(page => ({
+      url: `${SITE_URL}${page.path}`,
+      lastModified: LEGAL_UPDATED,
+      changeFrequency: 'yearly' as const,
+      priority: 0.4,
+    })),
   ];
 
   posts.forEach(post => {

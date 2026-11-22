@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ButtonLink } from '@/components/ui';
+import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 import { SubscribeForm } from 'src/components/molecules/SignupForm';
 import { CONTACT_EMAIL } from '@/lib/site';
@@ -521,32 +521,7 @@ const Home: React.FC = () => (
       </Section>
     </main>
 
-    <footer className="relative mt-12 w-full border-t border-white/70 bg-gradient-to-t from-indigo-100/70 to-white/40">
-      <Section className="flex flex-col items-center gap-4 py-8 text-center">
-        <Image
-          width={150}
-          height={67}
-          alt="Somnus Labs"
-          src="/images/somnuslabs-header-logo.png"
-          className="h-10 w-auto"
-        />
-        <nav
-          aria-label="Products"
-          className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
-          {products.map(product => (
-            <a key={product.name} href={product.href} rel="noopener">
-              {product.name}
-            </a>
-          ))}
-          <Link href="/blog">Blog</Link>
-          <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
-        </nav>
-        <p className="text-muted-foreground">
-          &copy; 2023 - {new Date().getFullYear()} Somnus Labs. All rights
-          reserved.
-        </p>
-      </Section>
-    </footer>
+    <Footer />
   </div>
 );
 

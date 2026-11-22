@@ -1,6 +1,12 @@
 /** @jest-environment node */
 import { posts } from '@/lib/posts';
-import { HOME_DESCRIPTION, HOME_TITLE, siteProducts } from '@/lib/site';
+import { LEGAL_PAGES } from '@/lib/legal';
+import {
+  HOME_DESCRIPTION,
+  HOME_TITLE,
+  SITE_URL,
+  siteProducts,
+} from '@/lib/site';
 import robots from '@/app/robots';
 import sitemap from '@/app/sitemap';
 
@@ -10,6 +16,11 @@ const pages = [
     name: post.slug,
     title: post.ogTitle || post.title,
     description: post.ogDescription || post.description,
+  })),
+  ...LEGAL_PAGES.map(page => ({
+    name: page.path,
+    title: page.title,
+    description: page.description,
   })),
 ];
 
@@ -40,7 +51,14 @@ describe('robots.txt', () => {
 describe('sitemap.xml', () => {
   test('every entry has a real lastmod date, not the build time', () => {
     const entries = sitemap();
-    expect(entries.length).toBe(posts.length + 2);
+    expect(entries.length).toBe(posts.length + 2 + LEGAL_PAGES.length);
+    expect(entries.map(entry => entry.url)).toEqual(
+      expect.arrayContaining([
+        `${SITE_URL}/privacy`,
+        `${SITE_URL}/terms`,
+        `${SITE_URL}/sms`,
+      ]),
+    );
     entries.forEach(entry => {
       expect(String(entry.lastModified)).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     });
