@@ -3,8 +3,8 @@
 export const LEGAL_NAME = 'Somnus Labs Inc.';
 
 export const LEGAL_ADDRESS_LINES = [
-  '1007 N Orange St, Ste 2062',
-  'Wilmington, DE 19801',
+  '10509 Shaver Rd',
+  'Portage, MI 49024',
 ] as const;
 
 export const LEGAL_EMAIL = 'hello@somnuslabs.com';
