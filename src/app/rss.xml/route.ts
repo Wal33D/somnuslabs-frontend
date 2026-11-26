@@ -1,4 +1,5 @@
 import { posts } from '@/lib/posts';
+import { CONTACT_EMAIL } from '@/lib/site';
 
 const baseUrl = 'https://www.somnuslabs.com';
 
@@ -26,7 +27,7 @@ export async function GET() {
       <guid isPermaLink="true">${baseUrl}${post.canonicalPath}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description><![CDATA[${post.description}]]></description>
-      <author>info@somnuslabs.com (${post.author})</author>
+      <author>${CONTACT_EMAIL} (${post.author})</author>
       ${post.tags.map(tag => `<category>${tag}</category>`).join('\n      ')}
       ${
         post.heroImage

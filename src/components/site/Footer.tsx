@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { catalog, productPath } from '@/lib/products';
-import { CONTACT_EMAIL } from '@/lib/site';
 import { LEGAL_NAV } from '@/lib/legal';
 
 const footerProducts = catalog.map(product => ({
@@ -28,7 +27,7 @@ const Footer = () => (
           </Link>
         ))}
         <Link href="/blog">Blog</Link>
-        <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
+        <Link href="/contact">Contact</Link>
       </nav>
       <nav
         aria-label="Legal"

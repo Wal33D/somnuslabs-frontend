@@ -1,9 +1,15 @@
 import type { Metadata } from 'next';
+import { LEGAL_EMAIL } from '@/lib/legal';
 import { liveProducts } from '@/lib/products';
 
 export const SITE_URL = 'https://www.somnuslabs.com';
 export const SITE_NAME = 'Somnus Labs';
-export const CONTACT_EMAIL = 'info@somnuslabs.com';
+/** Public inbox. Same address the legal pages give for support. */
+export const CONTACT_EMAIL = LEGAL_EMAIL;
+
+export const CONTACT_TITLE = 'Contact Somnus Labs';
+export const CONTACT_DESCRIPTION =
+  'Email Somnus Labs about a product or a build. Subscribe on this page only for product news and beta invites.';
 export const HOME_TITLE =
   'Somnus Labs: Deskwork, MagicReply, CMAForge and more';
 export const HOME_DESCRIPTION =

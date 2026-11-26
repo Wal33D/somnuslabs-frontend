@@ -50,7 +50,7 @@ const ProductArticle = ({ product }: { product: CatalogProduct }) => (
             {product.secondaryCta.label}
           </ButtonLink>
         )}
-        <ButtonLink href="/#contact" variant="outline">
+        <ButtonLink href={`/contact?product=${product.slug}`} variant="outline">
           Ask a question
         </ButtonLink>
       </div>

@@ -358,7 +358,8 @@ const Home: React.FC = () => (
                   Questions about a product, or something you want built?
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+                  Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>,
+                  or use the <Link href="/contact">contact page</Link>.
                 </p>
               </div>
             </div>
@@ -391,21 +392,22 @@ const Home: React.FC = () => (
             <div className="space-y-3">
               <Eyebrow>Stay in the loop</Eyebrow>
               <h2 className="text-3xl font-display font-semibold text-zinc-900">
-                Get Somnus updates, invites, and early access
+                Get product news
               </h2>
               <p className="text-muted-foreground">
-                Tell us where to send product news, beta invites, and demos. No
-                spam - just the signal.
+                Product news and the occasional beta invite. For a question
+                about a product, use the{' '}
+                <Link href="/contact">contact page</Link>.
               </p>
               <div className="flex flex-wrap gap-2 text-xs text-indigo-700">
                 <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                  Early feature previews
+                  Product news
                 </span>
                 <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                  Private demo slots
+                  Beta invites
                 </span>
                 <span className="rounded-full bg-indigo-50 px-3 py-1 font-semibold">
-                  Product changelog
+                  What we shipped
                 </span>
               </div>
             </div>

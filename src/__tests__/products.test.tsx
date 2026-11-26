@@ -26,7 +26,7 @@ describe('product pages', () => {
 
       expect(
         screen.getByRole('link', { name: 'Ask a question' }),
-      ).toHaveAttribute('href', '/#contact');
+      ).toHaveAttribute('href', `/contact?product=${product.slug}`);
     },
   );
 

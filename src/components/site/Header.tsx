@@ -6,7 +6,7 @@ const navLinks = [
   { href: '/#products', label: 'Products' },
   { href: '/#why', label: 'Why Somnus' },
   { href: '/#about', label: 'About' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
 ];
 

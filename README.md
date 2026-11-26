@@ -66,16 +66,16 @@ Environment variables (set in the Vercel project; names only):
 
 ## Where things are
 
-| Path                  | What                                                                                                                                          |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/app/`            | Pages and routes: home, `products/[slug]/`, `blog/`, `privacy/`, `terms/`, `sms/`, `rss.xml`, `sitemap.ts`, `robots.ts`, `api/subscribeUser/` |
-| `src/lib/products.ts` | Product catalog: copy, links, and the on-site `/products/[slug]` paths                                                                        |
-| `src/lib/site.ts`     | Site name, URL, the live product list and default metadata                                                                                    |
-| `src/lib/posts.ts`    | Blog posts (content lives in code, not a CMS)                                                                                                 |
-| `src/lib/legal.ts`    | Legal name, address and the carrier SMS wording used by the legal pages                                                                       |
-| `src/components/`     | Header, footer, legal page layouts, sign-up form, UI pieces                                                                                   |
-| `public/`             | Images, the Open Graph image, `llms.txt` and `ai.txt`                                                                                         |
-| `next.config.js`      | Image settings and permanent redirects for retired blog posts                                                                                 |
+| Path                  | What                                                                                                                                                      |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/`            | Pages and routes: home, `products/[slug]/`, `contact/`, `blog/`, `privacy/`, `terms/`, `sms/`, `rss.xml`, `sitemap.ts`, `robots.ts`, `api/subscribeUser/` |
+| `src/lib/products.ts` | Product catalog: copy, links, and the on-site `/products/[slug]` paths                                                                                    |
+| `src/lib/site.ts`     | Site name, URL, the live product list and default metadata                                                                                                |
+| `src/lib/posts.ts`    | Blog posts (content lives in code, not a CMS)                                                                                                             |
+| `src/lib/legal.ts`    | Legal name, address and the carrier SMS wording used by the legal pages                                                                                   |
+| `src/components/`     | Header, footer, legal page layouts, sign-up form, UI pieces                                                                                               |
+| `public/`             | Images, the Open Graph image, `llms.txt` and `ai.txt`                                                                                                     |
+| `next.config.js`      | Image settings and permanent redirects for retired blog posts                                                                                             |
 
 There is no separate docs folder; this README and the comments in `src/lib/` are the documentation.
 

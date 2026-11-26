@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
     ...LEGAL_PAGES.map(page => ({
       url: `${SITE_URL}${page.path}`,
       lastModified: LEGAL_UPDATED,
