@@ -59,10 +59,15 @@ the Gas Town merge queue, not by pushing to `main` directly.
 
 Environment variables (set in the Vercel project; names only):
 
-| Name               | Used by                                                                |
-| ------------------ | ---------------------------------------------------------------------- |
-| `SENDGRID_API_KEY` | `src/app/api/subscribeUser/route.ts`: required for the sign-up to work |
-| `SENDGRID_LIST_ID` | the same route: the mailing list contacts are added to (optional)      |
+| Name               | Used by                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `SENDGRID_API_KEY` | `src/app/api/subscribeUser/route.ts`: required for the sign-up to work                                         |
+| `SENDGRID_LIST_ID` | the same route: the mailing list contacts are added to (optional; defaults to the Somnus Labs newsletter list) |
+
+The sign-up route answers the browser with `{ ok: true }` or `{ ok: false, error }` only; SendGrid's own replies and
+errors go to the server log. It refuses posts from other sites, ignores sign-ups that fill the form's hidden field, and
+allows 5 sign-ups per client address per 10 minutes. That limit is kept in memory per serverless instance, so it slows a
+script down rather than capping it.
 
 ## Where things are
 

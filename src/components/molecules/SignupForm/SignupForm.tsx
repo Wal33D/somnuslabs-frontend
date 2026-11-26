@@ -18,6 +18,7 @@ const SubscribeForm: FC = () => {
       const data = new FormData(event.currentTarget);
       const emailValue = data.get('email')?.toString().trim();
       const nameValue = data.get('name')?.toString().trim();
+      const companyValue = data.get('company')?.toString() ?? '';
 
       if (!emailValue || !/\S+@\S+\.\S+/.test(emailValue)) {
         setError('Please enter a valid email address.');
@@ -34,7 +35,11 @@ const SubscribeForm: FC = () => {
         const response = await fetch('/api/subscribeUser', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: emailValue, name: nameValue }),
+          body: JSON.stringify({
+            email: emailValue,
+            name: nameValue,
+            company: companyValue,
+          }),
           cache: 'no-store',
         });
 
@@ -107,6 +112,21 @@ const SubscribeForm: FC = () => {
               placeholder="Your name"
               value={name}
               onChange={e => setName(e.target.value)}
+            />
+          </div>
+
+          {/* Left empty by people; bots that fill every field are ignored. */}
+          <div
+            aria-hidden="true"
+            className="absolute -left-[9999px] h-px w-px overflow-hidden">
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              defaultValue=""
             />
           </div>
 
