@@ -1,5 +1,6 @@
 'use client';
 import { FC, FormEvent, useCallback, useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui';
 
 const SubscribeForm: FC = () => {
@@ -11,18 +12,12 @@ const SubscribeForm: FC = () => {
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
-    const submitForm = async () => {
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
-      const formattedFormData: { [key: string]: FormDataEntryValue } = {};
-
-      data.forEach((entry, key) => {
-        formattedFormData[key] = entry;
-      });
-
-      const emailValue = formattedFormData.email?.toString().trim();
-      const nameValue = formattedFormData.name?.toString().trim();
+      const emailValue = data.get('email')?.toString().trim();
+      const nameValue = data.get('name')?.toString().trim();
 
       if (!emailValue || !/\S+@\S+\.\S+/.test(emailValue)) {
         setError('Please enter a valid email address.');
@@ -54,21 +49,24 @@ const SubscribeForm: FC = () => {
         setStatus('success');
         setName('');
         setEmail('');
-      } catch (err: any) {
+      } catch (err: unknown) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : 'Something went wrong. Please try again.';
         setStatus('error');
-        setError(err?.message || 'Something went wrong. Please try again.');
+        setError(message);
       } finally {
         setPending(false);
       }
-    };
-
-    submitForm();
-  }, []);
+    },
+    [],
+  );
 
   return (
     <div className="flex flex-col items-center justify-center pt-4 w-full max-w-xl">
       <div className="w-full rounded-2xl border border-white/80 bg-white/90 p-6 shadow-card backdrop-blur">
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <div className="space-y-2">
             <label
               className="block text-sm font-semibold text-zinc-800"
@@ -86,6 +84,10 @@ const SubscribeForm: FC = () => {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
+              aria-invalid={status === 'error'}
+              aria-describedby={
+                status === 'error' ? 'subscribe-error' : undefined
+              }
             />
           </div>
 
@@ -123,11 +125,18 @@ const SubscribeForm: FC = () => {
         )}
         {error && status === 'error' && (
           <p
+            id="subscribe-error"
             role="alert"
             className="mt-3 text-center text-sm font-semibold text-red-700">
             {error}
           </p>
         )}
+        <p className="mt-3 text-center text-xs text-muted-foreground">
+          We use your email only for the notes you asked for.{' '}
+          <Link href="/privacy" className="font-semibold text-indigo-700">
+            Privacy Policy
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 import SendgridClient from '@sendgrid/client';
 import { ClientRequest } from '@sendgrid/client/src/request';
 import { NextRequest, NextResponse } from 'next/server';
+import { CONTACT_EMAIL } from '@/lib/site';
+
+const subscribeFailure = `We could not add you just now. Email ${CONTACT_EMAIL} and we will add you by hand.`;
 
 const LIST_ID =
   process.env.SENDGRID_LIST_ID || '10415e07-b319-4848-a22d-d7176b5d68bb';
@@ -10,10 +13,7 @@ export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.SENDGRID_API_KEY;
     if (!apiKey) {
-      return NextResponse.json(
-        { error: 'SENDGRID_API_KEY is not configured on the server.' },
-        { status: 500 },
-      );
+      return NextResponse.json({ error: subscribeFailure }, { status: 503 });
     }
 
     SendgridClient.setApiKey(apiKey);
@@ -52,11 +52,8 @@ export async function POST(request: NextRequest) {
       },
       { status: sendgridResponse.statusCode || 200 },
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error(error);
-    return NextResponse.json(
-      { error: error?.message || 'Unexpected error subscribing user.' },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: subscribeFailure }, { status: 500 });
   }
 }
