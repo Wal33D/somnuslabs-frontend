@@ -167,10 +167,10 @@ export const posts: Post[] = [
     slug: 'plantvision-identify-plants-from-a-photo',
     title: 'PlantVision: identify any plant from a photo',
     description:
-      'PlantVision names a plant from a photo and explains how to care for it, in your browser or on WhatsApp. Free to start, no sign-up.',
+      'PlantVision names a plant from a photo and explains how to care for it, in your browser. Free to start, no sign-up.',
     date: '2024-11-03',
-    updated: '2026-11-19',
-    tags: ['AI', 'Computer Vision', 'WhatsApp'],
+    updated: '2026-11-26',
+    tags: ['AI', 'Computer Vision'],
     excerpt:
       'Upload a photo of a leaf, a flower or the whole plant, and PlantVision tells you what it is and how to look after it. Keep asking follow-up questions in the chat.',
     author: 'Waleed Judah',
@@ -181,11 +181,11 @@ export const posts: Post[] = [
     canonicalPath: '/blog/plantvision-identify-plants-from-a-photo',
     ogTitle: 'PlantVision: identify any plant from a photo',
     ogDescription:
-      'Identify a plant from a photo in your browser or on WhatsApp, then ask care questions in the chat. A product of Somnus Labs.',
+      'Identify a plant from a photo in your browser, then ask care questions in the chat. A product of Somnus Labs.',
     sections: [
       {
         paragraphs: [
-          'PlantVision identifies a plant from a photo and tells you how to care for it. It works in your browser at plantvisionapp.com, and on WhatsApp when you want to keep asking questions in a chat.',
+          'PlantVision identifies a plant from a photo and tells you how to care for it. It works in your browser at plantvisionapp.com. After the name, you can ask follow-up care questions in the chat.',
           'This post was first written in 2024 for an earlier version of PlantVision. It has been updated for the current product at plantvisionapp.com.',
         ],
       },
@@ -202,7 +202,7 @@ export const posts: Post[] = [
         bullets: [
           'Open Identify in your browser and add a clear photo of a leaf, a flower or the whole plant. No account and no sign-up.',
           'PlantVision gives the common and scientific names and the basics of care.',
-          'Prefer a chat? Send the photo on WhatsApp and ask about watering, light, pests or yellowing leaves by text or voice note.',
+          'Ask follow-up questions in the chat on that page, such as watering, light, pests, or yellowing leaves.',
         ],
       },
       {

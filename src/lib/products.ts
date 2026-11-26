@@ -109,7 +109,7 @@ export const catalog: CatalogProduct[] = [
     name: 'PlantVision',
     href: 'https://plantvisionapp.com',
     summary:
-      'Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat.',
+      'Identify any plant from a photo in your browser, then ask care questions in the chat.',
     description:
       'Identify any plant from a photo in your browser, then ask care questions in the chat.',
     category: 'LifestyleApplication',

@@ -3,6 +3,7 @@ import { posts } from '@/lib/posts';
 import { LEGAL_PAGES } from '@/lib/legal';
 import {
   catalog,
+  getProduct,
   productDescription,
   productPath,
   productTitle,
@@ -90,6 +91,14 @@ describe('sitemap.xml', () => {
 describe('content', () => {
   test('no post mentions the retired PlantVision.ai domain', () => {
     expect(JSON.stringify(posts)).not.toMatch(/plantvision\.ai/i);
+  });
+
+  test('PlantVision no longer promises WhatsApp', () => {
+    const product = getProduct('plantvision');
+    expect(product?.summary).not.toMatch(/whatsapp/i);
+    expect(product?.description).not.toMatch(/whatsapp/i);
+    const post = posts.find(item => item.slug.startsWith('plantvision'));
+    expect(JSON.stringify(post)).not.toMatch(/whatsapp/i);
   });
 
   test('the five products are listed with their own live sites', () => {
