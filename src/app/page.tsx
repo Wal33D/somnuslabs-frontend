@@ -22,7 +22,7 @@ type ClientWork = {
 };
 
 type Stat = { label: string; value: string };
-type Pillar = { title: string; copy: string; icon: string };
+type Pillar = { title: string; copy: string };
 type SneakPeek = { title: string; copy: string; tag: string };
 
 const clientWork: ClientWork = {
@@ -46,17 +46,14 @@ const pillars: Pillar[] = [
   {
     title: 'Automation with control',
     copy: 'Guardrails, approvals, and human fallback so AI stays on-brand.',
-    icon: 'Shield',
   },
   {
     title: 'Data you can trust',
     copy: 'Quality signals, observability, and feedback loops baked in.',
-    icon: 'Data',
   },
   {
     title: 'Ship faster',
     copy: 'Shared building blocks - sign-in, reporting, and multi-provider AI with automatic fallback - give every launch a head start.',
-    icon: 'Launch',
   },
 ];
 
@@ -335,10 +332,15 @@ const Home: React.FC = () => (
         </div>
       </Section>
 
-      <Section id="why" className="space-y-8 scroll-mt-32">
+      <Section
+        id="why"
+        labelledBy="why-heading"
+        className="space-y-8 scroll-mt-32">
         <div className="text-center space-y-2">
           <Eyebrow>Why Somnus</Eyebrow>
-          <h2 className="text-3xl font-display font-semibold text-zinc-900">
+          <h2
+            id="why-heading"
+            className="text-3xl font-display font-semibold text-zinc-900">
             Built for reliability and speed
           </h2>
         </div>
@@ -347,13 +349,6 @@ const Home: React.FC = () => (
             <div
               key={pillar.title}
               className="rounded-2xl border border-white/70 bg-white/80 p-5 shadow-card">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-lg bg-indigo-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-700">
-                <span
-                  aria-hidden="true"
-                  className="h-2 w-2 rounded-sm bg-indigo-500"
-                />
-                {pillar.icon}
-              </div>
               <h3 className="text-lg font-semibold text-zinc-900 font-display">
                 {pillar.title}
               </h3>
