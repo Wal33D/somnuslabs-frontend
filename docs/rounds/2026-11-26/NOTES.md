@@ -33,14 +33,20 @@ The phone layout does not scroll sideways. The open menu covers the headline, wh
 4. **PlantVision still promises WhatsApp.** The home card says the browser. The blog post, its tags, and the schema summary still say WhatsApp. Someone who arrives from the blog looks for a channel the product page no longer offers.
 5. **The subscribe form hides failure.** An invalid email produced no on-page message in the phone shot (the browser tooltip, if any, is not in the page). If the mailing-list API is unset, the response names the server setting. The form collects an email and does not link to the privacy policy.
 
-## Filed, not fixed in this round
-
-- The "Why Somnus" cards label themselves Shield, Data, and Launch.
-- PromptNexus has a blog post and a visit link, and it is not in the product list on the home page.
-- The blog index does not cover Deskwork or ARV Analyzer.
-- ListingPhoto and ListingReels cards do not use the logos already in `public/images/`.
-- The hero headline talks about shipping and brand. The sentence under it is the one that names the products.
-
 ## Fixes in this bead
 
-Each of the five items above is one later commit, with a test.
+Each item above is one commit, with a test. Checked again locally after the fixes, at the same two sizes. Those shots are in `after/`.
+
+1. Each product has `/products/[slug]`. Hero chips, card titles, the footer, and Details stay on this site. Visit opens the product site in a new tab.
+2. `/contact` is a real page. The public address is hello@somnuslabs.com, the same address as the legal pages. Picking a product sets the email subject. The home section no longer offers private demo slots.
+3. The five live products are the only cards under that heading. OBD-Droid is under "Free to use, not a signup".
+4. The PlantVision blog post and the schema summary no longer say WhatsApp.
+5. An invalid email shows "Please enter a valid email address." on the page. The form links to the privacy policy. If the mailing list is not configured, the response tells the visitor to email hello@somnuslabs.com and does not name the server setting.
+
+## Filed, not fixed in this round
+
+- sw-y2e: Why Somnus cards are labeled Shield, Data, and Launch. Shot: `home--1440x900.png`.
+- sw-lft: PromptNexus is on the blog and missing from the product list. Shot: `blog--1440x900.png`.
+- sw-hpq: Blog index does not mention Deskwork or ARV Analyzer. Shot: `blog--390x844.png`.
+- sw-45y: Coming-soon cards do not use the logos already in public/images. Shot: `home--1440x900.png`.
+- sw-5nv: Home headline does not name the products. Shot: `home--1440x900.png`.
