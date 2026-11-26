@@ -11,15 +11,18 @@ import {
 import { buildMetadata } from '@/lib/site';
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return catalog.map(product => ({ slug: product.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const product = getProduct(params.slug);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProduct(slug);
   if (!product) return {};
 
   return buildMetadata({
@@ -30,8 +33,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   });
 }
 
-export default function ProductPage({ params }: PageProps) {
-  const product = getProduct(params.slug);
+export default async function ProductPage({ params }: PageProps) {
+  const { slug } = await params;
+  const product = getProduct(slug);
   if (!product) notFound();
 
   return <ProductArticle product={product} />;

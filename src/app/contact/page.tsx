@@ -10,9 +10,11 @@ export const metadata: Metadata = buildMetadata({
 });
 
 type ContactPageProps = {
-  searchParams?: { product?: string };
+  searchParams: Promise<{ product?: string | string[] }>;
 };
 
-export default function ContactPage({ searchParams }: ContactPageProps) {
-  return <ContactArticle productSlug={searchParams?.product} />;
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const { product } = await searchParams;
+  const productSlug = Array.isArray(product) ? product[0] : product;
+  return <ContactArticle productSlug={productSlug} />;
 }

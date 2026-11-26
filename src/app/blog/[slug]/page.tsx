@@ -8,15 +8,18 @@ import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return posts.map(post => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -61,8 +64,9 @@ const formatDate = (date: string) =>
     year: 'numeric',
   });
 
-export default function BlogPostPage({ params }: PageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) return notFound();
 
   const url = `${SITE_URL}${post.canonicalPath}`;

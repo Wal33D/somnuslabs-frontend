@@ -3,7 +3,7 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['cmaforge.com'],
+    remotePatterns: [{ protocol: 'https', hostname: 'cmaforge.com' }],
   },
   async redirects() {
     return [

@@ -1,5 +1,5 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import {
   CONTACT_EMAIL,
@@ -25,10 +25,14 @@ const spaceGrotesk = Space_Grotesk({
   fallback: ['Inter', 'system-ui', 'sans-serif'],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#4f46e5',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#4f46e5',
   ...buildMetadata({
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
