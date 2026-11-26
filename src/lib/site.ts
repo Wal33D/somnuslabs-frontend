@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { liveProducts } from '@/lib/products';
 
 export const SITE_URL = 'https://www.somnuslabs.com';
 export const SITE_NAME = 'Somnus Labs';
@@ -7,7 +8,7 @@ export const HOME_TITLE =
   'Somnus Labs: Deskwork, MagicReply, CMAForge and more';
 export const HOME_DESCRIPTION =
   'Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer and PlantVision: software for brokerages, agents, investors and local businesses.';
-export const SITE_UPDATED = '2026-11-19';
+export const SITE_UPDATED = '2026-11-26';
 
 export const OG_IMAGE = {
   url: '/og/somnuslabs-og.png',
@@ -25,48 +26,17 @@ export type SiteProduct = {
   /** One line, taken from the product's own live home page. */
   summary: string;
   category: string;
+  slug: string;
 };
 
-export const siteProducts: SiteProduct[] = [
-  {
-    name: 'Deskwork',
-    href: 'https://deskworkapp.com',
-    appHref: 'https://app.deskworkapp.com',
-    summary:
-      'One back office for independent real estate brokerages: transactions, documents, deadlines, commissions, payouts and reporting.',
-    category: 'BusinessApplication',
-  },
-  {
-    name: 'MagicReply',
-    href: 'https://magicreply.ai',
-    appHref: 'https://app.magicreply.ai',
-    summary:
-      'Drafts a reply to each Google review in your brand voice; you edit it, approve it, and post it to Google.',
-    category: 'BusinessApplication',
-  },
-  {
-    name: 'CMAForge',
-    href: 'https://cmaforge.com',
-    appHref: 'https://app.cmaforge.com',
-    summary:
-      'Chat with AI that knows your market: instant CMAs, comps, offer analysis, and client-ready reports for real estate agents.',
-    category: 'BusinessApplication',
-  },
-  {
-    name: 'ARV Analyzer',
-    href: 'https://arvanalyzer.com',
-    summary:
-      'AI deal underwriting for real estate investors: ARV, rehab estimate, MAO, deal score, risk flags and exit strategies.',
-    category: 'BusinessApplication',
-  },
-  {
-    name: 'PlantVision',
-    href: 'https://plantvisionapp.com',
-    summary:
-      'Identify any plant from a photo in your browser or on WhatsApp, then ask care questions in the chat.',
-    category: 'LifestyleApplication',
-  },
-];
+export const siteProducts: SiteProduct[] = liveProducts.map(product => ({
+  name: product.name,
+  href: product.href,
+  appHref: product.appHref,
+  summary: product.summary,
+  category: product.category,
+  slug: product.slug,
+}));
 
 type PageMeta = {
   title: string;

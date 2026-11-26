@@ -2,6 +2,12 @@
 import { posts } from '@/lib/posts';
 import { LEGAL_PAGES } from '@/lib/legal';
 import {
+  catalog,
+  productDescription,
+  productPath,
+  productTitle,
+} from '@/lib/products';
+import {
   HOME_DESCRIPTION,
   HOME_TITLE,
   SITE_URL,
@@ -21,6 +27,11 @@ const pages = [
     name: page.path,
     title: page.title,
     description: page.description,
+  })),
+  ...catalog.map(product => ({
+    name: productPath(product),
+    title: productTitle(product),
+    description: productDescription(product),
   })),
 ];
 
@@ -51,12 +62,15 @@ describe('robots.txt', () => {
 describe('sitemap.xml', () => {
   test('every entry has a real lastmod date, not the build time', () => {
     const entries = sitemap();
-    expect(entries.length).toBe(posts.length + 2 + LEGAL_PAGES.length);
+    expect(entries.length).toBe(
+      posts.length + 2 + LEGAL_PAGES.length + catalog.length,
+    );
     expect(entries.map(entry => entry.url)).toEqual(
       expect.arrayContaining([
         `${SITE_URL}/privacy`,
         `${SITE_URL}/terms`,
         `${SITE_URL}/sms`,
+        ...catalog.map(product => `${SITE_URL}${productPath(product)}`),
       ]),
     );
     entries.forEach(entry => {

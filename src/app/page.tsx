@@ -1,22 +1,12 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ButtonLink } from '@/components/ui';
 import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 import { SubscribeForm } from 'src/components/molecules/SignupForm';
+import { catalog, productPath, type CatalogProduct } from '@/lib/products';
 import { CONTACT_EMAIL } from '@/lib/site';
-
-type Product = {
-  name: string;
-  href: string;
-  imageSrc: string;
-  imageAlt: string;
-  badge: 'Live' | 'Beta' | 'New' | 'Open source';
-  description: string;
-  bullets: string[];
-  primaryCta: string;
-  secondaryCta?: { label: string; href: string };
-};
 
 type ClientWork = {
   name: string;
@@ -28,106 +18,6 @@ type ClientWork = {
 type Stat = { label: string; value: string };
 type Pillar = { title: string; copy: string; icon: string };
 type SneakPeek = { title: string; copy: string; tag: string };
-
-const products: Product[] = [
-  {
-    name: 'Deskwork',
-    href: 'https://deskworkapp.com',
-    imageSrc: '/images/deskwork-logo.png',
-    imageAlt: 'Deskwork logo',
-    badge: 'Live',
-    description:
-      'One back office for independent real estate brokerages: transactions, documents, deadlines, commissions, payouts and reporting.',
-    bullets: [
-      'One screen to open a file: agent, address, price',
-      'Agent statements with the split, fees and cap, emailed to each agent',
-      "Sign up with your brokerage's Google Workspace or a Gmail address",
-    ],
-    primaryCta: 'Visit Deskwork',
-    secondaryCta: { label: 'Sign in', href: 'https://app.deskworkapp.com' },
-  },
-  {
-    name: 'MagicReply',
-    href: 'https://magicreply.ai',
-    imageSrc: '/images/magicreply-logo.png',
-    imageAlt: 'MagicReply logo',
-    badge: 'Live',
-    description:
-      'Drafts a reply to each Google review in your brand voice; you edit it, approve it, and post it to Google.',
-    bullets: [
-      'A reply drafted for every review, in your brand voice',
-      'You stay in control: edit and approve before anything posts',
-      'Start free',
-    ],
-    primaryCta: 'Visit MagicReply',
-    secondaryCta: { label: 'Sign in', href: 'https://app.magicreply.ai' },
-  },
-  {
-    name: 'CMAForge',
-    href: 'https://cmaforge.com',
-    imageSrc: '/images/cmaforge-logo.png',
-    imageAlt: 'CMAForge logo',
-    badge: 'Live',
-    description:
-      'Chat with AI that knows your market: instant CMAs, comps, offer analysis, and client-ready reports for real estate agents.',
-    bullets: [
-      'Seller CMAs with sold, pending and active comps',
-      'Appraisal-risk flags, pricing scenarios, and a VA Ready Check',
-      'PDF reports and shareable web links; free to start, no card',
-    ],
-    primaryCta: 'Visit CMAForge',
-    secondaryCta: { label: 'Open the app', href: 'https://app.cmaforge.com' },
-  },
-  {
-    name: 'ARV Analyzer',
-    href: 'https://arvanalyzer.com',
-    imageSrc: '/images/arvanalyzer-logo.png',
-    imageAlt: 'ARV Analyzer logo',
-    badge: 'New',
-    description:
-      'AI deal underwriting for real estate investors: ARV, rehab estimate, MAO, deal score, risk flags and exit strategies.',
-    bullets: [
-      'A full deal analysis from an address in under 60 seconds',
-      'ARV, rehab estimate, and maximum allowable offer',
-      'Start free',
-    ],
-    primaryCta: 'Visit ARV Analyzer',
-  },
-  {
-    name: 'PlantVision',
-    href: 'https://plantvisionapp.com',
-    imageSrc: '/images/plantvision-logo.webp',
-    imageAlt: 'PlantVision logo',
-    badge: 'New',
-    description:
-      'Identify any plant from a photo in your browser, then ask care questions in the chat.',
-    bullets: [
-      'Upload a photo in your browser: free, no sign-up',
-      'Get the name and care basics, then ask follow-up care questions',
-      'A library of care notes for 40 houseplants and garden plants',
-    ],
-    primaryCta: 'Visit PlantVision',
-    secondaryCta: {
-      label: 'Identify a plant',
-      href: 'https://plantvisionapp.com/identify',
-    },
-  },
-  {
-    name: 'OBD-Droid',
-    href: 'https://github.com/Wal33D/OBD-Droid',
-    imageSrc: '/images/obd-droid-logo.png',
-    imageAlt: 'OBD-Droid logo',
-    badge: 'Open source',
-    description:
-      'An Android car diagnostics app: plug in any ELM327 adapter and read live data, trouble codes and emissions readiness, with an AI copilot.',
-    bullets: [
-      'Live data, HUD mode, and CSV + GPS logging',
-      'Fault codes with freeze frames and fix hints',
-      'VIN decode and NHTSA safety recalls, MIT licensed',
-    ],
-    primaryCta: 'View on GitHub',
-  },
-];
 
 const clientWork: ClientWork = {
   name: 'Dealer assistant',
@@ -217,11 +107,15 @@ const StatCard = ({ stat }: { stat: Stat }) => (
   </div>
 );
 
-const ProductCard = ({ product }: { product: Product }) => (
-  <article className="flex flex-col rounded-2xl bg-white/90 p-6 shadow-card border border-white/60 ring-1 ring-indigo-50 card-hover">
+const ProductCard = ({ product }: { product: CatalogProduct }) => (
+  <article
+    id={product.slug}
+    className="flex scroll-mt-32 flex-col rounded-2xl bg-white/90 p-6 shadow-card border border-white/60 ring-1 ring-indigo-50 card-hover">
     <div className="flex items-center justify-between gap-3">
       <h3 className="text-xl font-semibold text-zinc-900 font-display">
-        {product.name}
+        <Link href={productPath(product)} className="hover:text-indigo-700">
+          {product.name}
+        </Link>
       </h3>
       <Badge>{product.badge}</Badge>
     </div>
@@ -257,6 +151,9 @@ const ProductCard = ({ product }: { product: Product }) => (
           {product.secondaryCta.label}
         </ButtonLink>
       )}
+      <ButtonLink href={productPath(product)} variant="ghost">
+        Details
+      </ButtonLink>
     </div>
   </article>
 );
@@ -334,14 +231,13 @@ const Home: React.FC = () => (
                 Our products
               </span>
               <div className="flex flex-wrap items-center gap-3">
-                {products.map(product => (
-                  <a
+                {catalog.map(product => (
+                  <Link
                     key={product.name}
-                    href={product.href}
-                    rel="noopener"
+                    href={productPath(product)}
                     className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100">
                     {product.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -380,7 +276,7 @@ const Home: React.FC = () => (
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {products.map(product => (
+          {catalog.map(product => (
             <ProductCard key={product.name} product={product} />
           ))}
         </div>

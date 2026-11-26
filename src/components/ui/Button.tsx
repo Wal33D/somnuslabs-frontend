@@ -91,14 +91,19 @@ const ButtonLink = ({
   size = 'md',
   className = '',
   external = false,
-}: ButtonLinkProps) => (
-  <Link
-    href={href}
-    className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-    {...(external ? { rel: 'noopener' } : {})}>
-    {children}
-  </Link>
-);
+}: ButtonLinkProps) => {
+  const leavesSite = external || /^https?:\/\//.test(href);
+
+  return (
+    <Link
+      href={href}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      {...(leavesSite ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+      {children}
+      {leavesSite && <span className="sr-only"> (opens in a new tab)</span>}
+    </Link>
+  );
+};
 
 export { Button, ButtonLink };
 export type { ButtonProps };

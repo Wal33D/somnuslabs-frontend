@@ -1,18 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CONTACT_EMAIL, siteProducts } from '@/lib/site';
+import { catalog, productPath } from '@/lib/products';
+import { CONTACT_EMAIL } from '@/lib/site';
 import { LEGAL_NAV } from '@/lib/legal';
 
-const footerProducts = [
-  ...siteProducts.map(product => ({
-    name: product.name,
-    href: product.href,
-  })),
-  {
-    name: 'OBD-Droid',
-    href: 'https://github.com/Wal33D/OBD-Droid',
-  },
-];
+const footerProducts = catalog.map(product => ({
+  name: product.name,
+  href: productPath(product),
+}));
 
 const Footer = () => (
   <footer className="relative mt-12 w-full border-t border-white/70 bg-gradient-to-t from-indigo-100/70 to-white/40">
@@ -28,9 +23,9 @@ const Footer = () => (
         aria-label="Products"
         className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
         {footerProducts.map(product => (
-          <a key={product.name} href={product.href} rel="noopener">
+          <Link key={product.name} href={product.href}>
             {product.name}
-          </a>
+          </Link>
         ))}
         <Link href="/blog">Blog</Link>
         <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>

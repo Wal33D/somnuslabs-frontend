@@ -21,13 +21,13 @@ without them `/api/subscribeUser` answers with an error and everything else work
 
 Other scripts:
 
-| Command | What it does |
-|---|---|
-| `npm run build` | Production build (`next build`) |
-| `npm start` | Serve the production build |
-| `npm run lint` | ESLint (`next lint`, with Prettier rules) |
-| `npm test` | Jest, once |
-| `npm run test:watch` | Jest in watch mode |
+| Command              | What it does                              |
+| -------------------- | ----------------------------------------- |
+| `npm run build`      | Production build (`next build`)           |
+| `npm start`          | Serve the production build                |
+| `npm run lint`       | ESLint (`next lint`, with Prettier rules) |
+| `npm test`           | Jest, once                                |
+| `npm run test:watch` | Jest in watch mode                        |
 
 `npm ci` runs `husky install`, which sets a pre-commit hook that runs `lint-staged` (Prettier and
 ESLint on the staged files).
@@ -59,22 +59,23 @@ the Gas Town merge queue, not by pushing to `main` directly.
 
 Environment variables (set in the Vercel project; names only):
 
-| Name | Used by |
-|---|---|
+| Name               | Used by                                                                |
+| ------------------ | ---------------------------------------------------------------------- |
 | `SENDGRID_API_KEY` | `src/app/api/subscribeUser/route.ts`: required for the sign-up to work |
-| `SENDGRID_LIST_ID` | the same route: the mailing list contacts are added to (optional) |
+| `SENDGRID_LIST_ID` | the same route: the mailing list contacts are added to (optional)      |
 
 ## Where things are
 
-| Path | What |
-|---|---|
-| `src/app/` | Pages and routes: home, `blog/`, `privacy/`, `terms/`, `sms/`, `rss.xml`, `sitemap.ts`, `robots.ts`, `api/subscribeUser/` |
-| `src/lib/site.ts` | Site name, URL, product list and default metadata |
-| `src/lib/posts.ts` | Blog posts (content lives in code, not a CMS) |
-| `src/lib/legal.ts` | Legal name, address and the carrier SMS wording used by the legal pages |
-| `src/components/` | Header, footer, legal page layouts, sign-up form, UI pieces |
-| `public/` | Images, the Open Graph image, `llms.txt` and `ai.txt` |
-| `next.config.js` | Image settings and permanent redirects for retired blog posts |
+| Path                  | What                                                                                                                                          |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/`            | Pages and routes: home, `products/[slug]/`, `blog/`, `privacy/`, `terms/`, `sms/`, `rss.xml`, `sitemap.ts`, `robots.ts`, `api/subscribeUser/` |
+| `src/lib/products.ts` | Product catalog: copy, links, and the on-site `/products/[slug]` paths                                                                        |
+| `src/lib/site.ts`     | Site name, URL, the live product list and default metadata                                                                                    |
+| `src/lib/posts.ts`    | Blog posts (content lives in code, not a CMS)                                                                                                 |
+| `src/lib/legal.ts`    | Legal name, address and the carrier SMS wording used by the legal pages                                                                       |
+| `src/components/`     | Header, footer, legal page layouts, sign-up form, UI pieces                                                                                   |
+| `public/`             | Images, the Open Graph image, `llms.txt` and `ai.txt`                                                                                         |
+| `next.config.js`      | Image settings and permanent redirects for retired blog posts                                                                                 |
 
 There is no separate docs folder; this README and the comments in `src/lib/` are the documentation.
 
