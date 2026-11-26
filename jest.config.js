@@ -1,28 +1,14 @@
 const nextJest = require('next/jest');
 
 const createJestConfig = nextJest({
-  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  // Loads next.config.js and .env files into the test environment.
   dir: './',
 });
 
-// Add any custom config to be passed to Jest
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
 };
 
-const jestConfig = async () => {
-  const nextJestConfig = await createJestConfig(customJestConfig)();
-
-  return {
-    ...nextJestConfig,
-    moduleNameMapper: {
-      '\\.svg': '@svgr/webpack',
-
-      ...nextJestConfig.moduleNameMapper,
-    },
-  };
-};
-
-// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-module.exports = jestConfig;
+// createJestConfig is exported this way so next/jest can load the async Next.js config.
+module.exports = createJestConfig(customJestConfig);
