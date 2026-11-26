@@ -152,6 +152,10 @@ export const catalog: CatalogProduct[] = [
 
 export const liveProducts = catalog.filter(product => product.kind === 'live');
 
+export const openSourceProducts = catalog.filter(
+  product => product.kind === 'open-source',
+);
+
 export const getProduct = (slug: string) =>
   catalog.find(product => product.slug === slug);
 

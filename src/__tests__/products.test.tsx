@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import Home from '@/app/page';
 import { ProductArticle } from '@/components/site/ProductArticle';
 import { catalog, getProduct, productPath } from '@/lib/products';
@@ -53,5 +53,21 @@ describe('home product links stay on this site', () => {
     expect(screen.getAllByRole('link', { name: 'Details' })).toHaveLength(
       catalog.length,
     );
+
+    const products = screen.getByRole('region', {
+      name: 'One studio, five live products',
+    });
+    expect(
+      within(products).getByRole('link', { name: 'Deskwork' }),
+    ).toBeInTheDocument();
+    expect(
+      within(products).queryByRole('link', { name: 'OBD-Droid' }),
+    ).not.toBeInTheDocument();
+    const openSource = screen.getByRole('region', {
+      name: 'Free to use, not a signup',
+    });
+    expect(
+      within(openSource).getByRole('link', { name: 'OBD-Droid' }),
+    ).toBeInTheDocument();
   });
 });

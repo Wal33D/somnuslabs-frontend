@@ -5,7 +5,13 @@ import { ButtonLink } from '@/components/ui';
 import { Footer } from '@/components/site/Footer';
 import { Header } from '@/components/site/Header';
 import { SubscribeForm } from 'src/components/molecules/SignupForm';
-import { catalog, productPath, type CatalogProduct } from '@/lib/products';
+import {
+  catalog,
+  liveProducts,
+  openSourceProducts,
+  productPath,
+  type CatalogProduct,
+} from '@/lib/products';
 import { CONTACT_EMAIL } from '@/lib/site';
 
 type ClientWork = {
@@ -84,15 +90,18 @@ const Eyebrow = ({ children }: { children: ReactNode }) => (
 
 const Section = ({
   id,
+  labelledBy,
   className,
   children,
 }: {
   id?: string;
+  labelledBy?: string;
   className?: string;
   children: ReactNode;
 }) => (
   <section
     id={id}
+    aria-labelledby={labelledBy}
     className={cn('w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8', className)}>
     {children}
   </section>
@@ -265,10 +274,15 @@ const Home: React.FC = () => (
         </div>
       </Section>
 
-      <Section id="products" className="space-y-8 scroll-mt-32">
+      <Section
+        id="products"
+        labelledBy="products-heading"
+        className="space-y-8 scroll-mt-32">
         <div className="text-center space-y-3">
           <Eyebrow>Products</Eyebrow>
-          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
+          <h2
+            id="products-heading"
+            className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
             One studio, five live products
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -276,7 +290,30 @@ const Home: React.FC = () => (
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {catalog.map(product => (
+          {liveProducts.map(product => (
+            <ProductCard key={product.name} product={product} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        id="open-source"
+        labelledBy="open-source-heading"
+        className="space-y-8 scroll-mt-32">
+        <div className="text-center space-y-3">
+          <Eyebrow>Open source</Eyebrow>
+          <h2
+            id="open-source-heading"
+            className="text-3xl font-display font-semibold text-zinc-900">
+            Free to use, not a signup
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            OBD-Droid is an open-source Android app. It is not one of the five
+            hosted products.
+          </p>
+        </div>
+        <div className="mx-auto grid max-w-2xl gap-6">
+          {openSourceProducts.map(product => (
             <ProductCard key={product.name} product={product} />
           ))}
         </div>
