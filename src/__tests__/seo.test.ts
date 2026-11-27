@@ -101,13 +101,24 @@ describe('content', () => {
     expect(JSON.stringify(post)).not.toMatch(/whatsapp/i);
   });
 
-  test('the five products are listed with their own live sites', () => {
+  test('the live products are listed with their own sites', () => {
     expect(siteProducts.map(p => p.href)).toEqual([
       'https://deskworkapp.com',
       'https://magicreply.ai',
       'https://cmaforge.com',
       'https://arvanalyzer.com',
       'https://plantvisionapp.com',
+      'https://promptnexus.ai',
     ]);
+  });
+
+  test('the PromptNexus post and the product list name the same site', () => {
+    const product = getProduct('promptnexus');
+    const post = posts.find(item => item.slug.includes('promptnexus'));
+    expect(product?.badge).toBe('Beta');
+    expect(product?.href).toBe('https://promptnexus.ai');
+    expect(post?.productUrl).toBe(product?.href);
+    expect(post?.cta?.href).toBe(product?.href);
+    expect(JSON.stringify(post)).toMatch(/open beta/i);
   });
 });

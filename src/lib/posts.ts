@@ -230,13 +230,14 @@ export const posts: Post[] = [
     description:
       'PromptNexus is a revolutionary platform enabling both technical and non-technical personnel to incorporate AI into their systems without friction.',
     date: '2024-11-07',
+    updated: '2026-11-26',
     tags: ['AI', 'No-Code', 'Workflows', 'Automation', 'Observability'],
     excerpt:
       "In today's rapidly evolving digital landscape, businesses must continually adapt to emerging technologies. PromptNexus addresses the AI integration challenge through a no-code platform that empowers teams across departments.",
     author: 'Bilal Itani',
     readTimeMinutes: 6,
     productUrl: 'https://promptnexus.ai',
-    productLabel: 'PromptNexus.ai',
+    productLabel: 'PromptNexus',
     heroImage: '/images/promptnexus-logo.webp',
     canonicalPath: '/blog/promptnexus-build-ai-workflows-with-guardrails',
     ogTitle: 'PromptNexus: A No-Code Builder for AI Workflows',
@@ -311,6 +312,12 @@ export const posts: Post[] = [
         heading: 'The Way Forward',
         paragraphs: [
           "Organizations can embrace AI confidently through PromptNexus, unlocking possibilities and gaining competitive advantages in today's technology-driven marketplace. The platform represents your key to unlocking AI's transformative potential—no coding required.",
+        ],
+      },
+      {
+        heading: 'Where it stands',
+        paragraphs: [
+          'PromptNexus is in open beta at promptnexus.ai. You can create an account and build a workflow there. There is no charge during the beta.',
         ],
       },
     ],

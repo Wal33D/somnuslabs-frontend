@@ -4,7 +4,7 @@
 > Somnus Labs builds AI products that ship faster, learn faster, and stay on-brand.
 
 ## Company Overview
-Somnus Labs is a software studio founded in 2023. We build and run Deskwork, MagicReply, CMAForge, ARV Analyzer and PlantVision, and we build custom software for clients. We keep a person in the loop where money or reputation is on the line.
+Somnus Labs is a software studio founded in 2023. We build and run Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision and PromptNexus, and we build custom software for clients. We keep a person in the loop where money or reputation is on the line.
 
 ## Products
 
@@ -31,12 +31,16 @@ Somnus Labs is a software studio founded in 2023. We build and run Deskwork, Mag
 - URL: https://plantvisionapp.com
 - Purpose: Identify any plant from a photo in your browser, then ask care questions in the chat
 
+### PromptNexus
+- URL: https://promptnexus.ai
+- App: https://promptnexus.ai/workflows
+- Purpose: A no-code builder for AI workflows. Open beta: create an account and run a workflow from a button or an API call. No payment during the beta.
+
 ## Client Work
 - Dealer assistant: custom messaging assistant built for Deals Unlimited Inc., a used-car dealership. Answers dealership staff questions about warranties and inventory. Not a public product.
 
 ## In the Works
 - ListingPhoto (listingphoto.net) and ListingReels (listingreels.net): in development, coming soon
-- PromptNexus: no-code AI workflows (https://promptnexus.ai)
 
 ## Our Philosophy
 - Safety and observability built into every product

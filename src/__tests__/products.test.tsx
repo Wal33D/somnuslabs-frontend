@@ -55,11 +55,17 @@ describe('home product links stay on this site', () => {
     );
 
     const products = screen.getByRole('region', {
-      name: 'One studio, five live products',
+      name: 'One studio, six live products',
     });
     expect(
       within(products).getByRole('link', { name: 'Deskwork' }),
     ).toBeInTheDocument();
+    expect(
+      within(products).getByRole('link', { name: 'PromptNexus' }),
+    ).toBeInTheDocument();
+    expect(
+      within(products).getByRole('link', { name: /Visit PromptNexus/ }),
+    ).toHaveAttribute('href', 'https://promptnexus.ai');
     expect(
       within(products).queryByRole('link', { name: 'OBD-Droid' }),
     ).not.toBeInTheDocument();

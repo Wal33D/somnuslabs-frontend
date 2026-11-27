@@ -37,7 +37,7 @@ const clientWork: ClientWork = {
 };
 
 const stats: Stat[] = [
-  { label: 'Products live', value: '5' },
+  { label: 'Products live', value: '6' },
   { label: 'Client builds', value: '1' },
   { label: 'Building since', value: '2023' },
 ];
@@ -219,10 +219,11 @@ const Home: React.FC = () => (
               AI products that ship faster, learn faster, and stay on-brand.
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer
-              and PlantVision: a back office for real estate brokerages, replies
-              to Google reviews, CMAs clients can follow, deal underwriting for
-              investors, and plant identification from a photo.
+              Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer,
+              PlantVision and PromptNexus: a back office for real estate
+              brokerages, replies to Google reviews, CMAs clients can follow,
+              deal underwriting for investors, plant identification from a
+              photo, and no-code AI workflows.
             </p>
             <div className="flex flex-wrap gap-3">
               <ButtonLink href="#products" size="lg">
@@ -280,7 +281,7 @@ const Home: React.FC = () => (
           <h2
             id="products-heading"
             className="text-3xl sm:text-4xl font-display font-semibold text-zinc-900">
-            One studio, five live products
+            One studio, six live products
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Each product solves one job and has its own site.
@@ -305,7 +306,7 @@ const Home: React.FC = () => (
             Free to use, not a signup
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            OBD-Droid is an open-source Android app. It is not one of the five
+            OBD-Droid is an open-source Android app. It is not one of the six
             hosted products.
           </p>
         </div>
@@ -370,10 +371,10 @@ const Home: React.FC = () => (
               </h2>
               <p className="text-sm text-muted-foreground">
                 Somnus Labs has been building software since 2023. We make and
-                run Deskwork, MagicReply, CMAForge, ARV Analyzer and
-                PlantVision, and we build custom software for clients. We ship
-                in small rounds and keep a person in the loop where money or
-                reputation is on the line.
+                run Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision
+                and PromptNexus, and we build custom software for clients. We
+                ship in small rounds and keep a person in the loop where money
+                or reputation is on the line.
               </p>
               <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {stats.map(stat => (

@@ -44,6 +44,7 @@ export const metadata: Metadata = {
       'CMAForge',
       'ARV Analyzer',
       'PlantVision',
+      'PromptNexus',
       'brokerage back office software',
       'AI review responses',
       'comparative market analysis',
@@ -85,7 +86,7 @@ const organizationJsonLd = {
   },
   image: `${SITE_URL}/og/somnuslabs-og.png`,
   description:
-    'Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer and PlantVision, and custom software for clients.',
+    'Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision and PromptNexus, and custom software for clients.',
   foundingDate: '2023',
   email: CONTACT_EMAIL,
   sameAs: SOCIAL_LINKS,

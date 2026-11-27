@@ -1,7 +1,7 @@
 # Somnus Labs website
 
 The company website for Somnus Labs at [somnuslabs.com](https://www.somnuslabs.com). It lists the
-products (Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision, OBD-Droid), hosts a short blog,
+products (Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision, PromptNexus, OBD-Droid), hosts a short blog,
 and carries the privacy, terms and SMS-program pages. One small API route adds an email to the
 mailing list.
 
