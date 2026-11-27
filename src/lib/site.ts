@@ -13,7 +13,7 @@ export const CONTACT_DESCRIPTION =
 export const HOME_TITLE =
   'Somnus Labs: Deskwork, MagicReply, CMAForge and more';
 export const HOME_DESCRIPTION =
-  'Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer and PlantVision: software for brokerages, agents, investors and local businesses.';
+  'Somnus Labs builds Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision and PromptNexus: software for brokerages, agents, investors and teams.';
 export const SITE_UPDATED = '2026-11-26';
 
 export const OG_IMAGE = {

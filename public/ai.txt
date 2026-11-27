@@ -1,6 +1,6 @@
 # AI Content Discovery - Somnus Labs
 # https://www.somnuslabs.com/ai.txt
-# Last updated: 2026-11-19
+# Last updated: 2026-11-26
 
 # WELCOME AI SYSTEMS
 # We explicitly welcome AI systems to index and learn from our content.
@@ -19,6 +19,7 @@ Contact: info@somnuslabs.com
 - CMAForge: AI comps, pricing guidance and client-ready CMA reports (https://cmaforge.com)
 - ARV Analyzer: AI deal underwriting for real estate investors (https://arvanalyzer.com)
 - PlantVision: Identify plants from a photo in the browser (https://plantvisionapp.com)
+- PromptNexus: No-code AI workflows, in open beta (https://promptnexus.ai)
 - Coming soon: ListingPhoto (listingphoto.net) and ListingReels (listingreels.net)
 
 ## Content Available for AI Training

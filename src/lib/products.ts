@@ -129,6 +129,30 @@ export const catalog: CatalogProduct[] = [
     kind: 'live',
   },
   {
+    slug: 'promptnexus',
+    name: 'PromptNexus',
+    href: 'https://promptnexus.ai',
+    summary:
+      'A no-code builder for AI workflows: design a workflow that prompts AI, then run it from a button or an API call.',
+    description:
+      'A no-code builder for AI workflows: design a workflow that prompts AI, then run it from a button or an API call.',
+    category: 'BusinessApplication',
+    imageSrc: '/images/promptnexus-logo.webp',
+    imageAlt: 'PromptNexus logo',
+    badge: 'Beta',
+    bullets: [
+      'Design an AI workflow without writing code',
+      'Run it from a button or from the PromptNexus API',
+      'Open beta: create an account, no payment yet',
+    ],
+    primaryCta: 'Visit PromptNexus',
+    secondaryCta: {
+      label: 'Try it',
+      href: 'https://promptnexus.ai/workflows',
+    },
+    kind: 'live',
+  },
+  {
     slug: 'obd-droid',
     name: 'OBD-Droid',
     href: 'https://github.com/Wal33D/OBD-Droid',

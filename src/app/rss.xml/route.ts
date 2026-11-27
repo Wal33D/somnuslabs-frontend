@@ -12,7 +12,7 @@ export async function GET() {
   <channel>
     <title>Somnus Labs Blog</title>
     <link>${baseUrl}</link>
-    <description>AI products that ship faster, learn faster, and stay on-brand. Notes from the team behind Deskwork, MagicReply, CMAForge, ARV Analyzer, and PlantVision.</description>
+    <description>AI products that ship faster, learn faster, and stay on-brand. Notes from the team behind Deskwork, MagicReply, CMAForge, ARV Analyzer, PlantVision, and PromptNexus.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
